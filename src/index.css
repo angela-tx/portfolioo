@@ -1,77 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap');
 
-:root {
-  --bg: #ffffff;
-  --surface: #f6f7fb;
-  --text-primary: #0f1120;
-  --text-muted: #5d5f75;
-  --accent: #6d63ce;
-  --accent-soft: rgba(109, 99, 206, 0.12);
-  --border: #e7e8f2;
-  --shadow: 0 22px 64px rgba(15, 17, 32, 0.12);
-  --shadow-light: 0 14px 32px rgba(15, 17, 32, 0.08);
-  --radius: 10px;
-  --font-body: 'Geist', 'Instrument Sans', 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Instrument Serif', 'Times New Roman', serif;
-  --subtext: var(--font-body);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-family: var(--font-body);
-  line-height: 1.65;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: var(--text-primary);
-  background-color: var(--bg);
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+  body {
+    @apply m-0 min-h-screen bg-white font-body text-primary leading-[1.65] antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: var(--bg);
-}
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-normal tracking-[-0.02em] text-primary;
+  }
 
-a {
-  color: var(--accent);
-}
+  p {
+    @apply m-0 text-primary leading-[1.7];
+  }
 
-a:hover {
-  color: #5b50b5;
-}
+  a {
+    @apply text-accent;
+  }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-display);
-  margin: 0;
-  color: var(--text-primary);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-}
+  a:hover {
+    color: #5b50b5;
+  }
 
-p {
-  margin: 0;
-  color: var(--text-primary);
-  line-height: 1.7;
-}
-
-ul {
-  margin: 0;
-  padding: 0 0 0 18px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
+  * {
+    box-sizing: border-box;
+  }
 }
 
 ::selection {
-  background: var(--accent-soft);
+  background: rgba(109, 99, 206, 0.12);
 }

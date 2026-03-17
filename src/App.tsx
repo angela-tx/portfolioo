@@ -1,5 +1,7 @@
 import { Link, Navigate, Outlet, Route, Routes, useParams } from 'react-router-dom'
-import './App.css'
+
+const overlineClass = 'font-body uppercase tracking-[0.12em] text-[12px] font-semibold text-muted'
+const mutedClass = 'text-muted font-body text-[15px] leading-[1.7]'
 
 type LinkItem = {
   label: string
@@ -406,7 +408,7 @@ const navItems = [
 ]
 
 const IconLinkedIn = () => (
-  <svg className="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <svg className="h-[17px] w-[17px]" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     <path
       fill="currentColor"
       d="M5.5 3A1.5 1.5 0 1 0 5.5 6 1.5 1.5 0 0 0 5.5 3ZM4 8h3v9H4Zm5 0h3v1.3c.4-.7 1.3-1.4 2.7-1.4 2 0 3.3 1.3 3.3 3.9V17h-3v-5c0-1.2-.5-2-1.6-2-1 0-1.7.7-1.7 2V17H9Z"
@@ -415,7 +417,7 @@ const IconLinkedIn = () => (
 )
 
 const IconMail = () => (
-  <svg className="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <svg className="h-[17px] w-[17px]" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     <path
       fill="none"
       stroke="currentColor"
@@ -432,15 +434,21 @@ const IconMail = () => (
 )
 
 const ProjectCard = ({ project }: { project: FeaturedProject }) => (
-  <Link className="project-card fade-in" to={`/work/${project.id}`} aria-label={`Open ${project.title}`}>
-    <div className="project-image">
-      <img src={project.image} alt={project.title} loading="lazy" />
+  <Link
+    className="group flex flex-col gap-3 overflow-hidden rounded-[12px] border border-[rgba(116,99,150,0.12)] bg-white transition duration-200 ease-out hover:-translate-y-1 hover:border-[rgba(116,99,150,0.24)] hover:shadow-[0_24px_60px_rgba(32,24,63,0.12)] hover:saturate-[1.02] animate-fade-in-up"
+    to={`/work/${project.id}`}
+    aria-label={`Open ${project.title}`}
+  >
+    <div className="relative overflow-hidden">
+      <img className="h-[220px] w-full object-cover" src={project.image} alt={project.title} loading="lazy" />
     </div>
-    <div className="project-copy">
-      <p className="overline">Project</p>
-      <h3>{project.title}</h3>
-      <p className="muted">{project.description}</p>
-      <span className="view-link" aria-hidden="true">
+    <div className="px-4 pb-4">
+      <p className={overlineClass}>Project</p>
+      <h3 className="mt-[2px] mb-[6px] text-[21px] font-normal tracking-[-0.02em] text-primary font-display">
+        {project.title}
+      </h3>
+      <p className={`${mutedClass} text-[14px]`}>{project.description}</p>
+      <span className="mt-1 inline-block text-[13px] font-bold text-accent" aria-hidden="true">
         ↗
       </span>
     </div>
@@ -448,23 +456,32 @@ const ProjectCard = ({ project }: { project: FeaturedProject }) => (
 )
 
 const ContactSection = () => (
-  <section className="section contact" id="contact">
-    <div className="connect-card">
-      <div className="connect-image">
+  <section className="flex flex-col gap-6" id="contact">
+    <div className="grid grid-cols-1 items-center gap-5 rounded-[16px] border border-[rgba(116,99,150,0.12)] bg-white p-6 shadow-soft sm:grid-cols-[210px,1fr]">
+      <div className="overflow-hidden rounded-[12px] border border-border">
         <img
-          src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
-          alt="Stage visuals from BluePrint conference"
+          className="h-full w-full object-cover"
+          src="/connect.jpg"
+          alt="Angela at the carnival"
           loading="lazy"
         />
       </div>
-      <div className="connect-copy">
-        <h3>Let&apos;s connect!</h3>
-        <p className="muted">My inbox and LinkedIn DMs are always open, let&apos;s grab coffee sometime (๑ᵔ⤙ᵔ๑)</p>
-        <div className="cta-row">
-          <a className="button primary" href="mailto:hello@angelatxhuang.com">
+      <div className="flex flex-col gap-2">
+        <h3 className="text-[24px] font-normal text-primary font-display">Let&apos;s connect!</h3>
+        <p className={mutedClass}>My inbox and LinkedIn DMs are always open, let&apos;s grab coffee sometime (๑ᵔ⤙ᵔ๑)</p>
+        <div className="mt-2 flex flex-wrap items-center gap-2.5">
+          <a
+            className="inline-flex items-center justify-center rounded-[12px] border border-transparent bg-accent px-[14px] py-[10px] text-[15px] font-bold text-white shadow-button transition duration-200 ease-out hover:-translate-y-[2px] hover:shadow-button-hover"
+            href="mailto:hello@angelatxhuang.com"
+          >
             Email
           </a>
-          <a className="button ghost" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+          <a
+            className="inline-flex items-center justify-center rounded-[12px] border border-border px-[14px] py-[10px] text-[15px] font-bold text-primary transition duration-200 ease-out hover:bg-accent-soft"
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             LinkedIn
           </a>
         </div>
@@ -474,55 +491,66 @@ const ContactSection = () => (
 )
 
 const StorySection = ({ story }: { story: ProjectStory }) => (
-  <article className="story">
-    <div className="story-heading">
-      <div className="chip">{story.badge}</div>
-      <div className="story-title">
-        <p className="overline">{story.title}</p>
-        <h3>{story.headline}</h3>
-        <p className="story-summary">{story.summary}</p>
+  <article className="flex flex-col gap-[18px] pt-2">
+    <div className="flex flex-col gap-2">
+      <div className="inline-flex items-center rounded-full bg-accent-soft px-[10px] py-[6px] text-[12px] font-bold tracking-[0.08em] text-primary">
+        {story.badge}
+      </div>
+      <div className="flex flex-col gap-2">
+        <p className={overlineClass}>{story.title}</p>
+        <h3 className="text-[34px] font-normal tracking-[-0.02em] text-primary font-display">{story.headline}</h3>
+        <p className={`${mutedClass} mt-1`}>{story.summary}</p>
       </div>
     </div>
 
-    <div className="story-hero">
-      <img src={story.hero} alt={`${story.title} hero`} loading="lazy" />
+    <div>
+      <img
+        className="w-full rounded-lg border border-border object-cover"
+        src={story.hero}
+        alt={`${story.title} hero`}
+        loading="lazy"
+      />
     </div>
 
-    <div className="story-meta">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-[10px] border-y border-border py-3">
       <div>
-        <p className="meta-label">Role</p>
-        <p className="meta-value">{story.meta.role}</p>
+        <p className="mb-1 font-body text-[11px] uppercase tracking-[0.08em] text-muted">Role</p>
+        <p className="font-body text-[16px] font-semibold text-primary">{story.meta.role}</p>
       </div>
       <div>
-        <p className="meta-label">Tools</p>
-        <p className="meta-value">{story.meta.tools}</p>
+        <p className="mb-1 font-body text-[11px] uppercase tracking-[0.08em] text-muted">Tools</p>
+        <p className="font-body text-[16px] font-semibold text-primary">{story.meta.tools}</p>
       </div>
       <div>
-        <p className="meta-label">Links</p>
-        <div className="meta-links">
+        <p className="mb-1 font-body text-[11px] uppercase tracking-[0.08em] text-muted">Links</p>
+        <div className="flex flex-wrap gap-2">
           {story.meta.links.map((link) => (
-            <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
+            <a key={link.url} className="font-body text-[15px] font-medium text-muted hover:text-accent" href={link.url} target="_blank" rel="noreferrer">
               {link.label}
             </a>
           ))}
         </div>
       </div>
       <div>
-        <p className="meta-label">Year</p>
-        <p className="meta-value">{story.meta.year}</p>
+        <p className="mb-1 font-body text-[11px] uppercase tracking-[0.08em] text-muted">Year</p>
+        <p className="font-body text-[16px] font-semibold text-primary">{story.meta.year}</p>
       </div>
     </div>
 
-    <div className="story-body">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
       {story.sections.map((block) => (
-        <div key={block.title} className="story-block">
-          <h4>{block.title}</h4>
-          {block.quote ? <blockquote>{block.quote}</blockquote> : null}
-          {block.text ? <p>{block.text}</p> : null}
+        <div key={block.title} className="flex flex-col gap-2">
+          <h4 className="text-[18px] font-normal tracking-[-0.01em] text-primary font-display">{block.title}</h4>
+          {block.quote ? (
+            <blockquote className="border-l-4 border-accent pl-3 font-display italic text-primary">{block.quote}</blockquote>
+          ) : null}
+          {block.text ? <p className={mutedClass}>{block.text}</p> : null}
           {block.bullets ? (
-            <ul>
+            <ul className="grid list-disc gap-2 pl-4">
               {block.bullets.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="font-body text-primary">
+                  {item}
+                </li>
               ))}
             </ul>
           ) : null}
@@ -531,33 +559,41 @@ const StorySection = ({ story }: { story: ProjectStory }) => (
     </div>
 
     {story.gallery ? (
-      <div className="story-gallery">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-[10px]">
         {story.gallery.map((image) => (
-          <figure key={image.src}>
-            <img src={image.src} alt={image.alt} loading="lazy" />
-            <figcaption className="muted">{image.alt}</figcaption>
+          <figure key={image.src} className="flex flex-col gap-2">
+            <img
+              className="w-full rounded-lg border border-border object-cover"
+              src={image.src}
+              alt={image.alt}
+              loading="lazy"
+            />
+            <figcaption className={mutedClass}>{image.alt}</figcaption>
           </figure>
         ))}
       </div>
     ) : null}
 
-    {story.closing ? <p className="closing">{story.closing}</p> : null}
+    {story.closing ? <p className="text-center font-body font-bold text-primary">{story.closing}</p> : null}
   </article>
 )
 
 const HomePage = () => (
-  <div className="page-shell">
-    <section className="hero">
-      <div className="hero-text">
-        <h1>Angela Huang</h1>
-        <p className="tagline">✧ Product, marketing, and community impact</p>
-        <p className="intro">
+  <div className="flex flex-col gap-[72px]">
+    <section className="grid gap-5 pt-2">
+      <div className="max-w-[760px]">
+        <h1 className="mb-2 mt-1 font-display text-[clamp(40px,5vw,66px)] font-normal leading-[1.05] tracking-[-0.04em] text-primary">
+          Angela Huang
+        </h1>
+        <p className="font-body text-[15px] uppercase tracking-[0.08em] text-muted">✧ Product, marketing, and community impact</p>
+        <p className={`${mutedClass} mt-3 max-w-[720px] text-[18px] text-primary`}>
           Hi! I’m currently a Marketing Tranformation Intern @ Hootsuite, where I get to research, innovate workflows and
           make my teammates&apos; lives easier. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
         </p>
-        <p className="muted">
+        <p className={`${mutedClass} mt-3`}>
           Check out my conference interview:{' '}
           <a
+            className="font-semibold text-accent hover:text-[#5b50b5]"
             href="https://globalnews.ca/video/11648924/ubc-biztechs-2026-blueprint-conference"
             target="_blank"
             rel="noreferrer"
@@ -568,63 +604,74 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="section">
-      <div className="section-heading">
+    <section className="flex flex-col gap-6">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="overline">featured projects</p>
-          <h2>Selected work</h2>
+          <p className={overlineClass}>featured projects</p>
+          <h2 className="font-display text-[30px] font-normal text-primary">Selected work</h2>
         </div>
-        <Link className="text-link" to="/work">
+        <Link className="font-body font-semibold text-primary underline-offset-4 hover:text-accent" to="/work">
           View all
         </Link>
       </div>
-      <div className="grid projects-grid">
+      <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-5">
         {featuredProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </section>
 
-    <section className="section">
-      <p className="overline">experience</p>
-      <h2>Where I&apos;ve been</h2>
-      <div className="timeline">
+    <section className="flex flex-col gap-6">
+      <div>
+        <p className={overlineClass}>experience</p>
+        <h2 className="font-display text-[30px] font-normal text-primary">Where I&apos;ve been</h2>
+      </div>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
         {experiences.map((item) => (
-          <div key={item.role} className="timeline-card fade-in">
-            <div className="chip muted-chip">{item.dates}</div>
-            <h3>{item.role}</h3>
-            <p className="muted">{item.detail}</p>
+          <div
+            key={item.role}
+            className="flex flex-col gap-2 rounded-[12px] border border-[rgba(116,99,150,0.12)] bg-white p-[18px] shadow-soft animate-fade-in-up"
+          >
+            <div className="inline-flex w-fit items-center rounded-full bg-accent-soft px-[10px] py-[6px] text-[12px] font-bold tracking-[0.08em] text-primary">
+              {item.dates}
+            </div>
+            <h3 className="text-[18px] font-normal text-primary font-display">{item.role}</h3>
+            <p className={mutedClass}>{item.detail}</p>
           </div>
         ))}
       </div>
     </section>
 
-    <section className="section fun">
-      <div className="section-heading">
+    <section className="flex flex-col gap-6">
+      <div className="flex flex-wrap items-center gap-3">
         <div>
-          <p className="overline">More fun stuff I&apos;ve been a part of</p>
-          <h2>Moments</h2>
+          <p className={overlineClass}>More fun stuff I&apos;ve been a part of</p>
+          <h2 className="font-display text-[30px] font-normal text-primary">Moments</h2>
         </div>
       </div>
-      <div className="grid fun-grid">
+      <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-5">
         {funGallery.map((item) => {
           const isInternal = item.link?.startsWith('/')
           const content = (
             <>
-              <img src={item.image} alt={item.title} loading="lazy" />
-              <div className="fun-copy">
-                <p className="label">{item.title}</p>
+              <img className="h-[220px] w-full object-cover" src={item.image} alt={item.title} loading="lazy" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-3 pb-3 pt-12 text-white">
+                <p className="font-body text-[12px] font-bold uppercase tracking-[0.08em]">{item.title}</p>
               </div>
             </>
           )
           return isInternal ? (
-            <Link key={item.title} className="fun-card fade-in" to={item.link!}>
+            <Link
+              key={item.title}
+              className="relative block overflow-hidden rounded-[12px] border border-[rgba(116,99,150,0.12)] bg-white transition duration-200 ease-out hover:-translate-y-1 hover:shadow-soft animate-fade-in-up"
+              to={item.link!}
+            >
               {content}
             </Link>
           ) : (
             <a
               key={item.title}
-              className="fun-card fade-in"
+              className="relative block overflow-hidden rounded-[12px] border border-[rgba(116,99,150,0.12)] bg-white transition duration-200 ease-out hover:-translate-y-1 hover:shadow-soft animate-fade-in-up"
               href={item.link ?? '#contact'}
               target={item.link ? '_blank' : undefined}
               rel={item.link ? 'noreferrer' : undefined}
@@ -641,22 +688,22 @@ const HomePage = () => (
 )
 
 const AboutPage = () => (
-  <div className="page-shell">
-    <section className="section">
-      <p className="overline">aboutme(˶ᵔᵕᵔ˶)</p>
-      <h1>Nice to meet you or welcome back!</h1>
-      <p className="muted">Here&apos;s what I&apos;ve been up to:</p>
+  <div className="flex flex-col gap-[72px]">
+    <section className="flex flex-col gap-4">
+      <p className={overlineClass}>aboutme(˶ᵔᵕᵔ˶)</p>
+      <h1 className="font-display text-[clamp(34px,4vw,48px)] font-normal text-primary">Nice to meet you or welcome back!</h1>
+      <p className={mutedClass}>Here&apos;s what I&apos;ve been up to:</p>
     </section>
 
-    <section className="section about">
-      <div className="about-text">
-        <div className="about-card">
-          <p className="label">event director @ ubc biztech</p>
-          <p className="strong">leading events for vancouver&apos;s tech community ᢉ𐭩</p>
+    <section className="grid grid-cols-1 gap-7 md:grid-cols-[1.1fr,0.9fr]">
+      <div className="flex flex-col gap-4">
+        <div className="rounded-[12px] border border-[rgba(116,99,150,0.12)] bg-white p-[18px] shadow-soft">
+          <p className="font-body text-[11px] font-bold uppercase tracking-[0.08em] text-muted">event director @ ubc biztech</p>
+          <p className="mt-2 font-body font-bold text-primary">leading events for vancouver&apos;s tech community ᢉ𐭩</p>
         </div>
-        <div className="about-list">
-          <p className="label">What I do when I&apos;m not working:</p>
-          <ul>
+        <div className="flex flex-col gap-2">
+          <p className="font-body text-[11px] font-bold uppercase tracking-[0.08em] text-muted">What I do when I&apos;m not working:</p>
+          <ul className="grid list-none gap-2 pl-0 font-body">
             <li>🩰 Hang out in the studio</li>
             <li>✈️ Travel</li>
             <li>👩🏻‍🍳 On my MasterChef journey</li>
@@ -665,20 +712,20 @@ const AboutPage = () => (
           </ul>
         </div>
       </div>
-      <div className="about-visual">
-        <figure>
-          <img
-            src="https://framerusercontent.com/images/M7NZySSFmGcjnSecqOyhD935TQ.jpeg?scale-down-to=1024&width=8733&height=5822"
-            alt="Event director highlight"
-            loading="lazy"
-          />
-        </figure>
+      <div className="rounded-[12px] border border-border shadow-soft">
+        <img
+          className="h-full w-full rounded-[12px] object-cover"
+          src="https://framerusercontent.com/images/M7NZySSFmGcjnSecqOyhD935TQ.jpeg?scale-down-to=1024&width=8733&height=5822"
+          alt="Event director highlight"
+          loading="lazy"
+        />
       </div>
     </section>
 
-    <section className="section">
-      <div className="figure-wide">
+    <section className="flex flex-col gap-4">
+      <div className="w-full rounded-xl border border-[rgba(116,99,150,0.12)] shadow-soft">
         <img
+          className="h-full w-full rounded-xl object-cover"
           src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
           alt="Blueprint stage visuals"
           loading="lazy"
@@ -691,23 +738,26 @@ const AboutPage = () => (
 )
 
 const WorkPage = () => (
-  <div className="page-shell">
-    <section className="section">
-      <p className="overline">work&projectportfolio</p>
-      <h1>Thanks for being here and building with me ^_^</h1>
+  <div className="flex flex-col gap-[72px]">
+    <section className="flex flex-col gap-3">
+      <p className={overlineClass}>work&projectportfolio</p>
+      <h1 className="font-display text-[clamp(34px,4vw,48px)] font-normal text-primary">
+        Thanks for being here and building with me ^_^
+      </h1>
     </section>
-    <section className="section">
-      <p className="overline">all projects</p>
-      <div className="grid projects-grid">
+    <section className="flex flex-col gap-6">
+      <p className={overlineClass}>all projects</p>
+      <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-5">
         {allProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </section>
 
-    <section className="section">
-      <div className="figure-wide">
+    <section className="flex flex-col gap-4">
+      <div className="w-full rounded-xl border border-[rgba(116,99,150,0.12)] shadow-soft">
         <img
+          className="h-full w-full rounded-xl object-cover"
           src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
           alt="Blueprint stage visuals"
           loading="lazy"
@@ -732,25 +782,27 @@ const ProjectPage = () => {
   const next = projectStories[currentIndex + 1]
 
   return (
-    <div className="page-shell">
-      <div className="crumbs">
-        <Link to="/work">All Projects</Link>
-        <span className="divider">/</span>
+    <div className="flex flex-col gap-[72px]">
+      <div className="flex items-center gap-2 font-body text-muted">
+        <Link className="text-primary no-underline" to="/work">
+          All Projects
+        </Link>
+        <span className="text-muted">/</span>
         <span>{story.title}</span>
       </div>
 
       <StorySection story={story} />
 
-      <div className="case-nav">
+      <div className="flex items-center justify-between -mt-6 mb-2">
         {prev ? (
-          <Link to={`/work/${prev.id}`} className="text-link">
+          <Link to={`/work/${prev.id}`} className="font-body font-semibold text-primary underline-offset-4 hover:text-accent">
             ‹ {prev.title}
           </Link>
         ) : (
           <span />
         )}
         {next ? (
-          <Link to={`/work/${next.id}`} className="text-link">
+          <Link to={`/work/${next.id}`} className="font-body font-semibold text-primary underline-offset-4 hover:text-accent">
             {next.title} ›
           </Link>
         ) : (
@@ -758,9 +810,10 @@ const ProjectPage = () => {
         )}
       </div>
 
-      <section className="section">
-        <div className="figure-wide">
+      <section className="flex flex-col gap-4">
+        <div className="w-full rounded-xl border border-[rgba(116,99,150,0.12)] shadow-soft">
           <img
+            className="h-full w-full rounded-xl object-cover"
             src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
             alt="Blueprint stage visuals"
             loading="lazy"
@@ -774,49 +827,69 @@ const ProjectPage = () => {
 }
 
 const Footer = () => (
-  <footer className="site-footer">
-    <div className="footer-inner">
-      <span className="footer-name">Angela Huang</span>
-      <nav className="footer-nav" aria-label="Footer">
-        <Link to="/">home</Link>
-        <Link to="/about">about me</Link>
-        <Link to="/work">projects</Link>
+  <footer className="mt-16 border-t border-border py-4">
+    <div className="mx-auto flex w-[min(1120px,calc(100%-32px))] items-center justify-between text-muted">
+      <span className="font-body text-muted">Angela Huang</span>
+      <nav className="inline-flex items-center gap-4" aria-label="Footer">
+        <Link className="text-muted no-underline hover:text-primary" to="/">
+          home
+        </Link>
+        <Link className="text-muted no-underline hover:text-primary" to="/about">
+          about me
+        </Link>
+        <Link className="text-muted no-underline hover:text-primary" to="/work">
+          projects
+        </Link>
       </nav>
     </div>
   </footer>
 )
 
 const Layout = () => (
-  <div className="page">
-    <header className="top-nav">
-      <div className="nav-inner">
-        <div className="nav-left">
-          <Link className="brand" to="/" aria-label="Back to home">
-            <span className="wing">🪽</span>
+  <div className="min-h-screen bg-white text-primary">
+    <header className="sticky top-0 z-10 border-b border-[rgba(232,227,243,0.8)] bg-white/95 backdrop-blur-md">
+      <div className="mx-auto flex w-[min(1120px,calc(100%-32px))] flex-col items-start justify-between gap-4 py-[14px] lg:flex-row lg:items-center">
+        <div className="inline-flex items-center gap-2.5">
+          <Link className="inline-flex items-center gap-2 text-accent no-underline" to="/" aria-label="Back to home">
+            <span className="text-sm">🪽</span>
           </Link>
-          <span className="nav-divider" aria-hidden="true">
+          <span className="text-[14px] text-[rgba(97,90,117,0.5)]" aria-hidden="true">
             |
           </span>
-          <nav className="nav-links" aria-label="Primary">
+          <nav className="flex flex-wrap items-center gap-2" aria-label="Primary">
             {navItems.map((item) => (
-              <Link key={item.to} to={item.to}>
+              <Link
+                key={item.to}
+                className="rounded-full px-3 py-2 text-[15px] font-semibold tracking-[-0.01em] text-primary transition duration-200 ease-out hover:-translate-y-[1px] hover:bg-[rgba(109,99,206,0.08)] hover:text-accent no-underline"
+                to={item.to}
+              >
                 {item.label}
               </Link>
             ))}
           </nav>
         </div>
-        <div className="nav-right">
-          <a href="https://www.linkedin.com" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+        <div className="inline-flex items-center gap-2.5">
+          <a
+            className="inline-flex rounded-[10px] p-2 text-primary transition duration-200 ease-out hover:bg-[rgba(109,99,206,0.08)]"
+            href="https://www.linkedin.com"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noreferrer"
+          >
             <IconLinkedIn />
           </a>
-          <a href="mailto:hello@angelatxhuang.com" aria-label="Email">
+          <a
+            className="inline-flex rounded-[10px] p-2 text-primary transition duration-200 ease-out hover:bg-[rgba(109,99,206,0.08)]"
+            href="mailto:hello@angelatxhuang.com"
+            aria-label="Email"
+          >
             <IconMail />
           </a>
         </div>
       </div>
     </header>
 
-    <main className="content">
+    <main className="mx-auto flex w-[min(1120px,calc(100%-48px))] flex-col gap-[88px] pt-3 pb-24">
       <Outlet />
     </main>
     <Footer />
