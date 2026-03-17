@@ -440,7 +440,9 @@ const ProjectCard = ({ project }: { project: FeaturedProject }) => (
       <p className="overline">Project</p>
       <h3>{project.title}</h3>
       <p className="muted">{project.description}</p>
-      <span className="view-link">View</span>
+      <span className="view-link" aria-hidden="true">
+        ↗
+      </span>
     </div>
   </Link>
 )
@@ -449,10 +451,9 @@ const ContactSection = () => (
   <section className="section contact" id="contact">
     <div className="connect-card">
       <div className="connect-image">
-        {/* Replace with your preferred portrait if available */}
         <img
-          src="https://framerusercontent.com/images/M7NZySSFmGcjnSecqOyhD935TQ.jpeg?scale-down-to=1024&width=8733&height=5822"
-          alt="Angela at an event"
+          src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
+          alt="Stage visuals from BluePrint conference"
           loading="lazy"
         />
       </div>
@@ -678,8 +679,8 @@ const AboutPage = () => (
     <section className="section">
       <div className="figure-wide">
         <img
-          src="https://framerusercontent.com/images/IABhnZYKUneXiw5yHAcVBE34twA.png?width=1138&height=1201"
-          alt="hiker in nature"
+          src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
+          alt="Blueprint stage visuals"
           loading="lazy"
         />
       </div>
@@ -707,8 +708,8 @@ const WorkPage = () => (
     <section className="section">
       <div className="figure-wide">
         <img
-          src="https://framerusercontent.com/images/IABhnZYKUneXiw5yHAcVBE34twA.png?width=1138&height=1201"
-          alt="hiker in nature"
+          src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
+          alt="Blueprint stage visuals"
           loading="lazy"
         />
       </div>
@@ -760,8 +761,8 @@ const ProjectPage = () => {
       <section className="section">
         <div className="figure-wide">
           <img
-            src="https://framerusercontent.com/images/IABhnZYKUneXiw5yHAcVBE34twA.png?width=1138&height=1201"
-            alt="hiker in nature"
+            src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
+            alt="Blueprint stage visuals"
             loading="lazy"
           />
         </div>

@@ -2,18 +2,21 @@
 
 :root {
   --bg: #ffffff;
-  --text-primary: #1f1b2d;
-  --text-muted: #615a75;
-  --accent: #746396;
-  --accent-soft: rgba(116, 99, 150, 0.12);
-  --border: #e8e3f3;
-  --shadow: 0 18px 50px rgba(16, 8, 47, 0.08);
-  --shadow-light: 0 10px 24px rgba(16, 8, 47, 0.05);
-  --radius: 6px;
-  --subtext: 'Geist', 'Inter', 'Instrument Sans', system-ui, -apple-system, sans-serif;
+  --surface: #f6f7fb;
+  --text-primary: #0f1120;
+  --text-muted: #5d5f75;
+  --accent: #6d63ce;
+  --accent-soft: rgba(109, 99, 206, 0.12);
+  --border: #e7e8f2;
+  --shadow: 0 22px 64px rgba(15, 17, 32, 0.12);
+  --shadow-light: 0 14px 32px rgba(15, 17, 32, 0.08);
+  --radius: 10px;
+  --font-body: 'Geist', 'Instrument Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Instrument Serif', 'Times New Roman', serif;
+  --subtext: var(--font-body);
 
-  font-family: 'Instrument Sans', 'Inter', system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  line-height: 1.65;
   font-weight: 400;
   letter-spacing: -0.01em;
   color: var(--text-primary);
@@ -39,21 +42,24 @@ a {
 }
 
 a:hover {
-  color: #5d4e80;
+  color: #5b50b5;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: 'Instrument Serif', 'Times New Roman', serif;
+  font-family: var(--font-display);
   margin: 0;
   color: var(--text-primary);
   font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 p {
   margin: 0;
+  color: var(--text-primary);
+  line-height: 1.7;
 }
 
 ul {
