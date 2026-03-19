@@ -435,7 +435,7 @@ const IconMail = () => (
 
 const ProjectCard = ({ project }: { project: FeaturedProject }) => (
   <Link
-    className="group flex flex-col gap-3 overflow-hidden rounded-[12px] border border-[rgba(116,99,150,0.12)] bg-white transition duration-200 ease-out hover:-translate-y-1 hover:border-[rgba(116,99,150,0.24)] hover:shadow-[0_24px_60px_rgba(32,24,63,0.12)] hover:saturate-[1.02] animate-fade-in-up"
+    className="group flex flex-col gap-3 overflow-hidden rounded-[6px] border border-[rgba(116,99,150,0.12)] bg-white transition duration-200 ease-out hover:-translate-y-1 hover:border-[rgba(116,99,150,0.24)] hover:shadow-[0_24px_60px_rgba(32,24,63,0.12)] hover:saturate-[1.02] animate-fade-in-up"
     to={`/work/${project.id}`}
     aria-label={`Open ${project.title}`}
   >
@@ -443,22 +443,18 @@ const ProjectCard = ({ project }: { project: FeaturedProject }) => (
       <img className="h-[220px] w-full object-cover" src={project.image} alt={project.title} loading="lazy" />
     </div>
     <div className="px-4 pb-4">
-      <p className={overlineClass}>Project</p>
       <h3 className="mt-[2px] mb-[6px] text-[21px] font-normal tracking-[-0.02em] text-primary font-display">
         {project.title}
       </h3>
       <p className={`${mutedClass} text-[14px]`}>{project.description}</p>
-      <span className="mt-1 inline-block text-[13px] font-bold text-accent" aria-hidden="true">
-        ↗
-      </span>
     </div>
   </Link>
 )
 
 const ContactSection = () => (
   <section className="flex flex-col gap-6" id="contact">
-    <div className="grid grid-cols-1 items-center gap-5 rounded-[16px] border border-[rgba(116,99,150,0.12)] bg-white p-6 shadow-soft sm:grid-cols-[210px,1fr]">
-      <div className="overflow-hidden rounded-[12px] border border-border">
+    <div className="grid grid-cols-1 items-center gap-5 rounded-[6px] border border-[rgba(116,99,150,0.12)] bg-white p-6 shadow-soft sm:grid-cols-[210px,1fr]">
+      <div className="overflow-hidden rounded-[6px] border border-border">
         <img
           className="h-full w-full object-cover"
           src="/connect.jpg"
@@ -467,24 +463,8 @@ const ContactSection = () => (
         />
       </div>
       <div className="flex flex-col gap-2">
-        <h3 className="text-[24px] font-normal text-primary font-display">Let&apos;s connect!</h3>
+        <h3 className="text-[32px] font-normal text-primary font-display">Let&apos;s connect!</h3>
         <p className={mutedClass}>My inbox and LinkedIn DMs are always open, let&apos;s grab coffee sometime (๑ᵔ⤙ᵔ๑)</p>
-        <div className="mt-2 flex flex-wrap items-center gap-2.5">
-          <a
-            className="inline-flex items-center justify-center rounded-[12px] border border-transparent bg-accent px-[14px] py-[10px] text-[15px] font-bold text-white shadow-button transition duration-200 ease-out hover:-translate-y-[2px] hover:shadow-button-hover"
-            href="mailto:hello@angelatxhuang.com"
-          >
-            Email
-          </a>
-          <a
-            className="inline-flex items-center justify-center rounded-[12px] border border-border px-[14px] py-[10px] text-[15px] font-bold text-primary transition duration-200 ease-out hover:bg-accent-soft"
-            href="https://www.linkedin.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -493,7 +473,7 @@ const ContactSection = () => (
 const StorySection = ({ story }: { story: ProjectStory }) => (
   <article className="flex flex-col gap-[18px] pt-2">
     <div className="flex flex-col gap-2">
-      <div className="inline-flex items-center rounded-full bg-accent-soft px-[10px] py-[6px] text-[12px] font-bold tracking-[0.08em] text-primary">
+      <div className="inline-flex items-center rounded-[6px] bg-accent-soft px-[10px] py-[6px] text-[12px] font-bold tracking-[0.08em] text-primary">
         {story.badge}
       </div>
       <div className="flex flex-col gap-2">
@@ -582,15 +562,28 @@ const HomePage = () => (
   <div className="flex flex-col gap-[72px]">
     <section className="grid gap-5 pt-2">
       <div className="max-w-[760px]">
-        <h1 className="mb-2 mt-1 font-display text-[clamp(40px,5vw,66px)] font-normal leading-[1.05] tracking-[-0.04em] text-primary">
+        <h1
+          className="mb-2 mt-1 font-display text-[clamp(40px,5vw,66px)] font-normal leading-[1.05] tracking-[-0.04em] text-primary animate-fade-in-up"
+          style={{ animationDelay: '40ms' }}
+        >
           Angela Huang
         </h1>
-        <p className="font-body text-[15px] uppercase tracking-[0.08em] text-muted">✧ Product, marketing, and community impact</p>
-        <p className={`${mutedClass} mt-3 max-w-[720px] text-[18px] text-primary`}>
-          Hi! I’m currently a Marketing Tranformation Intern @ Hootsuite, where I get to research, innovate workflows and
-          make my teammates&apos; lives easier. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
+        <p
+          className="font-display text-[15px] uppercase tracking-[0.08em] text-muted animate-fade-in-up"
+          style={{ animationDelay: '80ms' }}
+        >
+          ✧ Product, marketing, and community impact
         </p>
-        <p className={`${mutedClass} mt-3`}>
+        <p
+          className={`${mutedClass} mt-3 max-w-[860px] text-[18px] text-primary animate-fade-in-up`}
+          style={{ animationDelay: '120ms' }}
+        >
+          Hi! I’m currently a Marketing Tranformation Intern @ Hootsuite, where I get to manage projects, optimize marketing channels and make my teammates&apos; lives easier. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
+        </p>
+        <p
+          className={`${mutedClass} mt-3 animate-fade-in-up`}
+          style={{ animationDelay: '160ms' }}
+        >
           Check out my conference interview:{' '}
           <a
             className="font-semibold text-accent hover:text-[#5b50b5]"
@@ -607,8 +600,7 @@ const HomePage = () => (
     <section className="flex flex-col gap-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className={overlineClass}>featured projects</p>
-          <h2 className="font-display text-[30px] font-normal text-primary">Selected work</h2>
+          <h2 className="font-display text-[30px] font-normal text-primary">Featured Projects</h2>
         </div>
         <Link className="font-body font-semibold text-primary underline-offset-4 hover:text-accent" to="/work">
           View all
@@ -623,16 +615,15 @@ const HomePage = () => (
 
     <section className="flex flex-col gap-6">
       <div>
-        <p className={overlineClass}>experience</p>
-        <h2 className="font-display text-[30px] font-normal text-primary">Where I&apos;ve been</h2>
+        <h2 className="font-display text-[30px] font-normal text-primary">Experience</h2>
       </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
         {experiences.map((item) => (
           <div
             key={item.role}
-            className="flex flex-col gap-2 rounded-[12px] border border-[rgba(116,99,150,0.12)] bg-white p-[18px] shadow-soft animate-fade-in-up"
+            className="flex flex-col gap-2 rounded-[8px] border border-[rgba(116,99,150,0.12)] bg-white p-[18px] shadow-soft animate-fade-in-up"
           >
-            <div className="inline-flex w-fit items-center rounded-full bg-accent-soft px-[10px] py-[6px] text-[12px] font-bold tracking-[0.08em] text-primary">
+            <div className="inline-flex w-fit items-center rounded-[6px] bg-accent-soft px-[10px] py-[6px] text-[12px] font-bold tracking-[0.08em] text-primary">
               {item.dates}
             </div>
             <h3 className="text-[18px] font-normal text-primary font-display">{item.role}</h3>
@@ -645,7 +636,6 @@ const HomePage = () => (
     <section className="flex flex-col gap-6">
       <div className="flex flex-wrap items-center gap-3">
         <div>
-          <p className={overlineClass}>More fun stuff I&apos;ve been a part of</p>
           <h2 className="font-display text-[30px] font-normal text-primary">Moments</h2>
         </div>
       </div>
@@ -663,7 +653,7 @@ const HomePage = () => (
           return isInternal ? (
             <Link
               key={item.title}
-              className="relative block overflow-hidden rounded-[12px] border border-[rgba(116,99,150,0.12)] bg-white transition duration-200 ease-out hover:-translate-y-1 hover:shadow-soft animate-fade-in-up"
+              className="relative block overflow-hidden rounded-[8px] border border-[rgba(116,99,150,0.12)] bg-white transition duration-200 ease-out hover:-translate-y-1 hover:shadow-soft animate-fade-in-up"
               to={item.link!}
             >
               {content}
@@ -671,7 +661,7 @@ const HomePage = () => (
           ) : (
             <a
               key={item.title}
-              className="relative block overflow-hidden rounded-[12px] border border-[rgba(116,99,150,0.12)] bg-white transition duration-200 ease-out hover:-translate-y-1 hover:shadow-soft animate-fade-in-up"
+              className="relative block overflow-hidden rounded-[8px] border border-[rgba(116,99,150,0.12)] bg-white transition duration-200 ease-out hover:-translate-y-1 hover:shadow-soft animate-fade-in-up"
               href={item.link ?? '#contact'}
               target={item.link ? '_blank' : undefined}
               rel={item.link ? 'noreferrer' : undefined}
@@ -689,15 +679,24 @@ const HomePage = () => (
 
 const AboutPage = () => (
   <div className="flex flex-col gap-[72px]">
-    <section className="flex flex-col gap-4">
-      <p className={overlineClass}>aboutme(˶ᵔᵕᵔ˶)</p>
-      <h1 className="font-display text-[clamp(34px,4vw,48px)] font-normal text-primary">Nice to meet you or welcome back!</h1>
-      <p className={mutedClass}>Here&apos;s what I&apos;ve been up to:</p>
+    <section className="flex flex-col gap-5">
+      <h1
+        className="max-w-[760px] font-display text-[clamp(34px,4vw,48px)] font-normal leading-[1.05] text-primary animate-fade-in-up"
+        style={{ animationDelay: '40ms' }}
+      >
+        About — Nice to meet you or welcome back!
+      </h1>
+      <p
+        className={`${mutedClass} max-w-[720px] animate-fade-in-up`}
+        style={{ animationDelay: '80ms' }}
+      >
+        Here&apos;s what I&apos;ve been up to:
+      </p>
     </section>
 
     <section className="grid grid-cols-1 gap-7 md:grid-cols-[1.1fr,0.9fr]">
       <div className="flex flex-col gap-4">
-        <div className="rounded-[12px] border border-[rgba(116,99,150,0.12)] bg-white p-[18px] shadow-soft">
+        <div className="rounded-[8px] border border-[rgba(116,99,150,0.12)] bg-white p-[18px] shadow-soft">
           <p className="font-body text-[11px] font-bold uppercase tracking-[0.08em] text-muted">event director @ ubc biztech</p>
           <p className="mt-2 font-body font-bold text-primary">leading events for vancouver&apos;s tech community ᢉ𐭩</p>
         </div>
@@ -712,9 +711,9 @@ const AboutPage = () => (
           </ul>
         </div>
       </div>
-      <div className="rounded-[12px] border border-border shadow-soft">
+      <div className="rounded-[8px] border border-border shadow-soft">
         <img
-          className="h-full w-full rounded-[12px] object-cover"
+          className="h-full w-full rounded-[8px] object-cover"
           src="https://framerusercontent.com/images/M7NZySSFmGcjnSecqOyhD935TQ.jpeg?scale-down-to=1024&width=8733&height=5822"
           alt="Event director highlight"
           loading="lazy"
@@ -723,9 +722,9 @@ const AboutPage = () => (
     </section>
 
     <section className="flex flex-col gap-4">
-      <div className="w-full rounded-xl border border-[rgba(116,99,150,0.12)] shadow-soft">
+      <div className="w-full rounded-[8px] border border-[rgba(116,99,150,0.12)] shadow-soft">
         <img
-          className="h-full w-full rounded-xl object-cover"
+          className="h-full w-full rounded-[8px] object-cover"
           src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
           alt="Blueprint stage visuals"
           loading="lazy"
@@ -739,11 +738,19 @@ const AboutPage = () => (
 
 const WorkPage = () => (
   <div className="flex flex-col gap-[72px]">
-    <section className="flex flex-col gap-3">
-      <p className={overlineClass}>work&projectportfolio</p>
-      <h1 className="font-display text-[clamp(34px,4vw,48px)] font-normal text-primary">
-        Thanks for being here and building with me ^_^
+    <section className="flex flex-col gap-5">
+      <h1
+        className="max-w-[760px] font-display text-[clamp(34px,4vw,48px)] font-normal leading-[1.05] text-primary animate-fade-in-up"
+        style={{ animationDelay: '40ms' }}
+      >
+        work & project portfolio
       </h1>
+      <p
+        className={`${mutedClass} max-w-[720px] animate-fade-in-up`}
+        style={{ animationDelay: '80ms' }}
+      >
+        A collection of select projects, reflections, and case studies ^_^
+      </p>
     </section>
     <section className="flex flex-col gap-6">
       <p className={overlineClass}>all projects</p>
@@ -755,9 +762,9 @@ const WorkPage = () => (
     </section>
 
     <section className="flex flex-col gap-4">
-      <div className="w-full rounded-xl border border-[rgba(116,99,150,0.12)] shadow-soft">
+      <div className="w-full rounded-[8px] border border-[rgba(116,99,150,0.12)] shadow-soft">
         <img
-          className="h-full w-full rounded-xl object-cover"
+          className="h-full w-full rounded-[8px] object-cover"
           src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
           alt="Blueprint stage visuals"
           loading="lazy"
@@ -811,9 +818,9 @@ const ProjectPage = () => {
       </div>
 
       <section className="flex flex-col gap-4">
-        <div className="w-full rounded-xl border border-[rgba(116,99,150,0.12)] shadow-soft">
+        <div className="w-full rounded-[8px] border border-[rgba(116,99,150,0.12)] shadow-soft">
           <img
-            className="h-full w-full rounded-xl object-cover"
+            className="h-full w-full rounded-[8px] object-cover"
             src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
             alt="Blueprint stage visuals"
             loading="lazy"
@@ -860,7 +867,7 @@ const Layout = () => (
             {navItems.map((item) => (
               <Link
                 key={item.to}
-                className="rounded-full px-3 py-2 text-[15px] font-semibold tracking-[-0.01em] text-primary transition duration-200 ease-out hover:-translate-y-[1px] hover:bg-[rgba(109,99,206,0.08)] hover:text-accent no-underline"
+                className="rounded-[6px] px-3 py-2 text-[15px] font-semibold tracking-[-0.01em] text-primary transition duration-200 ease-out hover:-translate-y-[1px] hover:bg-[rgba(109,99,206,0.08)] hover:text-accent no-underline"
                 to={item.to}
               >
                 {item.label}
@@ -870,7 +877,7 @@ const Layout = () => (
         </div>
         <div className="inline-flex items-center gap-2.5">
           <a
-            className="inline-flex rounded-[10px] p-2 text-primary transition duration-200 ease-out hover:bg-[rgba(109,99,206,0.08)]"
+            className="inline-flex rounded-[6px] p-2 text-primary transition duration-200 ease-out hover:bg-[rgba(109,99,206,0.08)]"
             href="https://www.linkedin.com"
             aria-label="LinkedIn"
             target="_blank"
@@ -879,7 +886,7 @@ const Layout = () => (
             <IconLinkedIn />
           </a>
           <a
-            className="inline-flex rounded-[10px] p-2 text-primary transition duration-200 ease-out hover:bg-[rgba(109,99,206,0.08)]"
+            className="inline-flex rounded-[6px] p-2 text-primary transition duration-200 ease-out hover:bg-[rgba(109,99,206,0.08)]"
             href="mailto:hello@angelatxhuang.com"
             aria-label="Email"
           >
