@@ -80,7 +80,7 @@ export const Layout = () => {
       </div>
     </header>
 
-    <main className="mx-auto flex w-[min(800px,calc(100%-160px))] flex-col gap-[88px] pt-36 pb-24">
+    <main className="mx-auto flex w-[min(800px,calc(100%-160px))] flex-col gap-[88px] pt-36">
       <Outlet />
     </main>
     <Footer />
