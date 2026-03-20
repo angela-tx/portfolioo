@@ -12,7 +12,7 @@ export const ContactSection = () => (
         />
       </div>
       <div className="flex flex-col gap-2">
-        <h3 className="text-[32px] font-normal text-primary font-display">Let&apos;s connect!</h3>
+        <h3 className="text-[32px]">Let&apos;s connect!</h3>
         <p className={mutedClass}>My inbox and LinkedIn DMs are always open, let&apos;s grab coffee sometime (๑ᵔ⤙ᵔ๑)</p>
       </div>
     </div>

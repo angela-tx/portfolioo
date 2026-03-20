@@ -5,16 +5,16 @@ export const AboutPage = () => (
   <div className="flex flex-col gap-[72px]">
     <section className="flex flex-col gap-5">
       <h1
-        className="max-w-[760px] font-display text-[clamp(34px,4vw,48px)] font-normal leading-[1.05] text-primary animate-fade-in-up"
+        className="max-w-[760px] text-[clamp(48px,6vw,72px)] leading-[1.05] animate-fade-in-up"
         style={{ animationDelay: '40ms' }}
       >
-        About — Nice to meet you or welcome back!
+        about me (˶ᵔ ᵕ ᵔ˶)
       </h1>
       <p
         className={`${mutedClass} max-w-[720px] animate-fade-in-up`}
         style={{ animationDelay: '80ms' }}
       >
-        Here&apos;s what I&apos;ve been up to:
+        Nice to meet you or welcome back! Here&apos;s what I&apos;ve been up to:
       </p>
     </section>
 

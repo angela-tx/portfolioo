@@ -7,7 +7,7 @@ export const WorkPage = () => (
   <div className="flex flex-col gap-[72px]">
     <section className="flex flex-col gap-5">
       <h1
-        className="max-w-[760px] font-display text-[clamp(34px,4vw,48px)] font-normal leading-[1.05] text-primary animate-fade-in-up"
+        className="max-w-[760px] text-[clamp(48px,6vw,72px)] leading-[1.05] animate-fade-in-up"
         style={{ animationDelay: '40ms' }}
       >
         work & project portfolio
@@ -16,7 +16,7 @@ export const WorkPage = () => (
         className={`${mutedClass} max-w-[720px] animate-fade-in-up`}
         style={{ animationDelay: '80ms' }}
       >
-        A collection of select projects, reflections, and case studies ^_^
+        Thanks for being here and building with me ^_^
       </p>
     </section>
     <section className="flex flex-col gap-6">

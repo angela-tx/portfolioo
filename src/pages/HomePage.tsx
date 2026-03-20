@@ -9,30 +9,30 @@ export const HomePage = () => (
     <section className="grid gap-5 pt-2">
       <div className="max-w-[760px]">
         <h1
-          className="mb-2 mt-1 font-display text-[clamp(40px,5vw,66px)] font-normal leading-[1.05] tracking-[-0.04em] text-primary animate-fade-in-up"
+          className="mb-4 mt-1 text-[clamp(72px,9vw,105px)] text-[rgb(116,99,150)] leading-[1.05] animate-fade-in-up"
           style={{ animationDelay: '40ms' }}
         >
           Angela Huang
         </h1>
         <p
-          className="font-display text-[15px] uppercase tracking-[0.08em] text-muted animate-fade-in-up"
+          className="text-[18px] text-[rgb(143,128,173)] animate-fade-in-up"
           style={{ animationDelay: '80ms' }}
         >
           ✧ Product, marketing, and community impact
         </p>
         <p
-          className={`${mutedClass} mt-3 max-w-[860px] text-[18px] text-primary animate-fade-in-up`}
+          className={`mt-9 max-w-[860px] text-[20px] font-geist tracking-[-0.02em] leading-[1.6] text-black animate-fade-in-up`}
           style={{ animationDelay: '120ms' }}
         >
-          Hi! I’m currently a Marketing Tranformation Intern @ Hootsuite, where I get to manage projects, optimize marketing channels and make my teammates&apos; lives easier. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
+          Hi! I’m currently a Marketing Tranformation Intern @ Hootsuite, where I get to research, innovate workflows and make my teammates&apos; lives easier. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
         </p>
         <p
-          className={`${mutedClass} mt-3 animate-fade-in-up`}
+          className="mt-6 font-geist text-[20px] tracking-[-0.02em] leading-[1.6] text-black animate-fade-in-up"
           style={{ animationDelay: '160ms' }}
         >
           Check out my conference interview:{' '}
           <a
-            className="font-semibold text-accent hover:text-[#5b50b5]"
+            className="font-body text-black hover:text-[#5b50b5] italic underline-offset-4"
             href="https://globalnews.ca/video/11648924/ubc-biztechs-2026-blueprint-conference"
             target="_blank"
             rel="noreferrer"
@@ -44,13 +44,16 @@ export const HomePage = () => (
     </section>
 
     <section className="flex flex-col gap-6">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h2 className="font-display text-[30px] font-normal text-primary">Featured Projects</h2>
+      <div className="flex flex-col gap-1">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 className="text-[35px]">featured projects</h2>
+          </div>
+          <Link className="font-body font-semibold text-primary underline-offset-4 hover:text-accent" to="/work">
+            View all
+          </Link>
         </div>
-        <Link className="font-body font-semibold text-primary underline-offset-4 hover:text-accent" to="/work">
-          View all
-        </Link>
+        <div className="relative h-[1px] w-full flex-none overflow-hidden bg-[#9f80ff4d]" />
       </div>
       <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-5">
         {featuredProjects.map((project) => (
@@ -60,8 +63,11 @@ export const HomePage = () => (
     </section>
 
     <section className="flex flex-col gap-6">
-      <div>
-        <h2 className="font-display text-[30px] font-normal text-primary">Experience</h2>
+      <div className="flex flex-col gap-1">
+        <div>
+          <h2 className="text-[35px]">experience</h2>
+        </div>
+        <div className="relative h-[1px] w-full flex-none overflow-hidden bg-[#9f80ff4d]" />
       </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
         {experiences.map((item) => (
@@ -72,7 +78,7 @@ export const HomePage = () => (
             <div className="inline-flex w-fit items-center rounded-[6px] bg-accent-soft px-[10px] py-[6px] text-[12px] font-bold tracking-[0.08em] text-primary">
               {item.dates}
             </div>
-            <h3 className="text-[18px] font-normal text-primary font-display">{item.role}</h3>
+            <h3 className="text-[18px]">{item.role}</h3>
             <p className={mutedClass}>{item.detail}</p>
           </div>
         ))}
@@ -80,10 +86,13 @@ export const HomePage = () => (
     </section>
 
     <section className="flex flex-col gap-6">
-      <div className="flex flex-wrap items-center gap-3">
-        <div>
-          <h2 className="font-display text-[30px] font-normal text-primary">more fun stuff I've been a part of:</h2>
+      <div className="flex flex-col gap-1">
+        <div className="flex flex-wrap items-center gap-3">
+          <div>
+            <h2 className="text-[35px]">more fun stuff I've been a part of:</h2>
+          </div>
         </div>
+        <div className="relative h-[1px] w-full flex-none overflow-hidden bg-[#9f80ff4d]" />
       </div>
       <div className="group relative flex overflow-hidden py-10" style={{ containerType: 'inline-size' }}>
         {[0, 1].map((copyIdx) => (

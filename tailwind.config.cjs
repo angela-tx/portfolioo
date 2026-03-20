@@ -12,6 +12,7 @@ module.exports = {
         surface: '#f6f7fb',
       },
       fontFamily: {
+        geist: ['Geist', 'sans-serif'],
         body: ['Geist', 'Instrument Sans', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
         display: ['Instrument Serif', 'Times New Roman', 'serif'],
       },
