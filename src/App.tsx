@@ -855,7 +855,7 @@ const ProjectPage = () => {
 
 const Footer = () => (
   <footer className="mt-16 border-t border-border py-4">
-    <div className="mx-auto flex w-[min(1120px,calc(100%-32px))] items-center justify-between text-muted">
+    <div className="mx-auto flex w-[min(800px,calc(100%-160px))] items-center justify-between text-muted">
       <span className="font-body text-muted">Angela Huang</span>
       <nav className="inline-flex items-center gap-4" aria-label="Footer">
         <Link className="text-muted no-underline hover:text-primary" to="/">
@@ -875,7 +875,7 @@ const Footer = () => (
 const Layout = () => (
   <div className="min-h-screen bg-white text-primary">
     <header className="sticky top-0 z-10 border-b border-[rgba(232,227,243,0.8)] bg-white/95 backdrop-blur-md">
-      <div className="mx-auto flex w-[min(1120px,calc(100%-32px))] flex-col items-start justify-between gap-4 py-[14px] lg:flex-row lg:items-center">
+      <div className="mx-auto flex w-[min(800px,calc(100%-160px))] flex-col items-start justify-between gap-4 py-[14px] lg:flex-row lg:items-center">
         <div className="inline-flex items-center gap-2.5">
           <Link className="inline-flex items-center gap-2 text-accent no-underline" to="/" aria-label="Back to home">
             <span className="text-sm">🪽</span>
@@ -916,7 +916,7 @@ const Layout = () => (
       </div>
     </header>
 
-    <main className="mx-auto flex w-[min(1120px,calc(100%-48px))] flex-col gap-[88px] pt-3 pb-24">
+    <main className="mx-auto flex w-[min(800px,calc(100%-160px))] flex-col gap-[88px] pt-3 pb-24">
       <Outlet />
     </main>
     <Footer />
