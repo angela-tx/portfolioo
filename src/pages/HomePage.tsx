@@ -49,8 +49,8 @@ export const HomePage = () => (
           <div>
             <h2 className="text-[35px]">featured projects</h2>
           </div>
-          <Link className="font-body font-semibold text-primary underline-offset-4 hover:text-accent" to="/work">
-            View all
+          <Link className="font-body text-primary underline-offset-4 hover:text-accent" to="/work">
+            view all
           </Link>
         </div>
         <div className="relative h-[1px] w-full flex-none overflow-hidden bg-[#9f80ff4d]" />
