@@ -51,7 +51,7 @@ export const Layout = () => {
             {navItems.map((item) => (
               <Link
                 key={item.to}
-                className="rounded-[6px] px-2 py-2 text-[15px] font-normal tracking-[-0.01em] text-primary transition duration-200 ease-out hover:-translate-y-[1px] hover:bg-[rgba(109,99,206,0.08)] hover:text-accent no-underline"
+                className="rounded-[6px] px-2 py-2 text-[15px] font-normal tracking-[-0.01em] text-primary hover:text-[rgb(143,128,173)] no-underline"
                 to={item.to}
               >
                 {item.label}
@@ -61,7 +61,7 @@ export const Layout = () => {
         </div>
         <div className="inline-flex items-center gap-0">
           <a
-            className="inline-flex rounded-[6px] p-2 text-primary transition duration-200 ease-out hover:bg-[rgba(109,99,206,0.08)]"
+            className="inline-flex rounded-[6px] p-2 text-primary hover:text-[rgb(143,128,173)]"
             href="https://www.linkedin.com/in/angelatxhuang/"
             aria-label="LinkedIn"
             target="_blank"
@@ -70,7 +70,7 @@ export const Layout = () => {
             <IconLinkedIn />
           </a>
           <a
-            className="inline-flex rounded-[6px] p-2 text-primary transition duration-200 ease-out hover:bg-[rgba(109,99,206,0.08)]"
+            className="inline-flex rounded-[6px] p-2 text-primary hover:text-[rgb(143,128,173)]"
             href="mailto:angelatxhuang@gmail.com"
             aria-label="Email"
           >
