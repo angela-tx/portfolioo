@@ -5,7 +5,7 @@ import { ProjectCard } from '../components/ProjectCard'
 import { ContactSection } from '../components/ContactSection'
 
 export const HomePage = () => (
-  <div className="flex flex-col gap-[72px]">
+  <div className="flex flex-col">
     <section className="grid gap-5 pt-2">
       <div className="max-w-[760px]">
         <h1
@@ -43,7 +43,7 @@ export const HomePage = () => (
       </div>
     </section>
 
-    <section className="flex flex-col gap-6">
+    <section className="flex flex-col gap-6 mt-[72px]">
       <div className="flex flex-col gap-1">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
@@ -62,7 +62,7 @@ export const HomePage = () => (
       </div>
     </section>
 
-    <section className="flex flex-col gap-6">
+    <section className="flex flex-col gap-6 mt-8">
       <div className="flex flex-col gap-1">
         <div>
           <h2 className="text-[35px]">experience</h2>
@@ -85,7 +85,7 @@ export const HomePage = () => (
       </div>
     </section>
 
-    <section className="flex flex-col gap-6">
+    <section className="flex flex-col gap-2 mt-8">
       <div className="flex flex-col gap-1">
         <div className="flex flex-wrap items-center gap-3">
           <div>
@@ -94,7 +94,7 @@ export const HomePage = () => (
         </div>
         <div className="relative h-[1px] w-full flex-none overflow-hidden bg-[#9f80ff4d]" />
       </div>
-      <div className="group relative flex overflow-hidden py-10" style={{ containerType: 'inline-size' }}>
+      <div className="group relative flex overflow-hidden pt-6 pb-10" style={{ containerType: 'inline-size' }}>
         {[0, 1].map((copyIdx) => (
           <div
             key={copyIdx}
@@ -153,6 +153,8 @@ export const HomePage = () => (
       </div>
     </section>
 
-    <ContactSection />
+    <div className="mt-[72px]">
+      <ContactSection />
+    </div>
   </div>
 )
