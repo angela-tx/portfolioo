@@ -137,11 +137,6 @@ const funGallery: GalleryItem[] = [
     image:
       'https://framerusercontent.com/images/TocUasee81AlT5G4znB7ru5mE.jpg?width=1206&height=1420',
   },
-  {
-    title: 'hiker in nature',
-    image:
-      'https://framerusercontent.com/images/IABhnZYKUneXiw5yHAcVBE34twA.png?width=1138&height=1201',
-  },
 ]
 
 const projectStories: ProjectStory[] = [
@@ -636,40 +631,65 @@ const HomePage = () => (
     <section className="flex flex-col gap-6">
       <div className="flex flex-wrap items-center gap-3">
         <div>
-          <h2 className="font-display text-[30px] font-normal text-primary">Moments</h2>
+          <h2 className="font-display text-[30px] font-normal text-primary">more fun stuff I've been a part of:</h2>
         </div>
       </div>
-      <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-5">
-        {funGallery.map((item) => {
-          const isInternal = item.link?.startsWith('/')
-          const content = (
-            <>
-              <img className="h-[220px] w-full object-cover" src={item.image} alt={item.title} loading="lazy" />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-3 pb-3 pt-12 text-white">
-                <p className="font-body text-[12px] font-bold uppercase tracking-[0.08em]">{item.title}</p>
-              </div>
-            </>
-          )
-          return isInternal ? (
-            <Link
-              key={item.title}
-              className="relative block overflow-hidden rounded-[8px] border border-[rgba(116,99,150,0.12)] bg-white transition duration-200 ease-out hover:-translate-y-1 hover:shadow-soft animate-fade-in-up"
-              to={item.link!}
-            >
-              {content}
-            </Link>
-          ) : (
-            <a
-              key={item.title}
-              className="relative block overflow-hidden rounded-[8px] border border-[rgba(116,99,150,0.12)] bg-white transition duration-200 ease-out hover:-translate-y-1 hover:shadow-soft animate-fade-in-up"
-              href={item.link ?? '#contact'}
-              target={item.link ? '_blank' : undefined}
-              rel={item.link ? 'noreferrer' : undefined}
-            >
-              {content}
-            </a>
-          )
-        })}
+      <div className="group relative flex overflow-hidden py-10" style={{ containerType: 'inline-size' }}>
+        {[0, 1].map((copyIdx) => (
+          <div
+            key={copyIdx}
+            className="flex shrink-0 animate-marquee gap-8 pl-8"
+            aria-hidden={copyIdx === 1}
+          >
+            {funGallery.map((item, index) => {
+              const rotationClass = index % 2 === 0 ? '-rotate-[2deg] hover:rotate-0' : 'rotate-[2deg] hover:rotate-0'
+
+              const content = (
+                <div className={`flex h-full flex-col bg-white p-[10px] pb-[14px] shadow-xl transition-transform duration-300 ease-out hover:scale-[1.03] hover:z-20 ${rotationClass}`}>
+                  <img className="aspect-square w-full object-cover" src={item.image} alt={item.title} loading="lazy" />
+                  <div className="mt-2 flex flex-grow items-center justify-center text-center">
+                    <p className="font-body text-[14px] font-medium text-[#746396]">{item.title}</p>
+                  </div>
+                </div>
+              )
+
+              const isInternal = item.link?.startsWith('/')
+              const itemStyle = { width: 'calc((100cqi - 64px) / 3)' }
+
+              if (isInternal) {
+                return (
+                  <Link
+                    key={item.title}
+                    style={itemStyle}
+                    className="relative block shrink-0 z-0 hover:z-20"
+                    to={item.link!}
+                  >
+                    {content}
+                  </Link>
+                )
+              } else if (item.link) {
+                return (
+                  <a
+                    key={item.title}
+                    style={itemStyle}
+                    className="relative block shrink-0 z-0 hover:z-20"
+                    href={item.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {content}
+                  </a>
+                )
+              } else {
+                return (
+                  <div key={item.title} style={itemStyle} className="relative block shrink-0 z-0 hover:z-20">
+                    {content}
+                  </div>
+                )
+              }
+            })}
+          </div>
+        ))}
       </div>
     </section>
 

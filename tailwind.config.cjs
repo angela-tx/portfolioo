@@ -29,9 +29,14 @@ module.exports = {
           from: { opacity: '0', transform: 'translateY(10px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
       },
       animation: {
         'fade-in-up': 'fade-in-up 0.6s ease both',
+        marquee: 'marquee 30s linear infinite',
       },
       borderRadius: {
         md: '10px',
