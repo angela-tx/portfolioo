@@ -7,7 +7,7 @@ export const WorkPage = () => (
   <div className="flex flex-col gap-[72px]">
     <section className="flex flex-col gap-5">
       <h1
-        className="max-w-[760px] text-[clamp(48px,6vw,72px)] leading-[1.05] animate-fade-in-up"
+        className="max-w-[760px] text-[clamp(44px,5.5vw,66px)] leading-[1.05] animate-fade-in-up"
         style={{ animationDelay: '40ms' }}
       >
         work & project portfolio
@@ -25,17 +25,6 @@ export const WorkPage = () => (
         {allProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
-      </div>
-    </section>
-
-    <section className="flex flex-col gap-4">
-      <div className="w-full rounded-[8px] border border-[rgba(116,99,150,0.12)] shadow-soft">
-        <img
-          className="h-full w-full rounded-[8px] object-cover"
-          src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
-          alt="Blueprint stage visuals"
-          loading="lazy"
-        />
       </div>
     </section>
 

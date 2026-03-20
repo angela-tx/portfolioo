@@ -26,7 +26,7 @@ export type GalleryItem = {
 export type ProjectStory = {
   id: string
   title: string
-  badge: string
+  navTitle: string
   headline: string
   hero: string
   meta: {

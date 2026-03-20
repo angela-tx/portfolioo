@@ -14,6 +14,7 @@ module.exports = {
       fontFamily: {
         geist: ['Geist', 'sans-serif'],
         body: ['Geist', 'Instrument Sans', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        instrument: ['Instrument Sans', 'Geist', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
         display: ['Instrument Serif', 'Times New Roman', 'serif'],
       },
       letterSpacing: {

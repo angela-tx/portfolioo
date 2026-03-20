@@ -8,7 +8,7 @@ export const HomePage = () => (
     <section className="grid gap-5 pt-2">
       <div className="max-w-[760px]">
         <h1
-          className="mb-4 mt-1 text-[clamp(72px,9vw,105px)] text-[rgb(116,99,150)] leading-[1.05] animate-fade-in-up"
+          className="mb-4 mt-1 text-[clamp(64px,8vw,96px)] text-[rgb(116,99,150)] leading-[1.05] animate-fade-in-up"
           style={{ animationDelay: '40ms' }}
         >
           Angela Huang
@@ -20,13 +20,13 @@ export const HomePage = () => (
           ✧ Product, marketing, and community impact
         </p>
         <p
-          className={`mt-9 max-w-[860px] text-[20px] font-geist tracking-[-0.02em] leading-[1.6] text-black animate-fade-in-up`}
+          className={`mt-9 max-w-[860px] text-[18px] font-geist tracking-[-0.02em] leading-[1.6] text-black animate-fade-in-up`}
           style={{ animationDelay: '120ms' }}
         >
           Hi! I’m currently a Marketing Tranformation Intern @ Hootsuite, where I get to research, innovate workflows and make my teammates&apos; lives easier. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
         </p>
         <p
-          className="mt-6 font-geist text-[20px] tracking-[-0.02em] leading-[1.6] text-black animate-fade-in-up"
+          className="mt-6 font-geist text-[18px] tracking-[-0.02em] leading-[1.6] text-black animate-fade-in-up"
           style={{ animationDelay: '160ms' }}
         >
           Check out my conference interview:{' '}
@@ -46,7 +46,7 @@ export const HomePage = () => (
       <div className="flex flex-col gap-1">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h2 className="text-[35px]">featured projects</h2>
+            <h2 className="text-[30px]">featured projects</h2>
           </div>
           <Link className="font-body text-primary underline-offset-4 hover:text-accent" to="/work">
             view all
@@ -63,14 +63,14 @@ export const HomePage = () => (
 
     <section className="flex flex-col gap-8 mt-6 mb-8">
       <div className="flex flex-col gap-2">
-        <h2 className="font-display text-[35px] text-primary">experience</h2>
+        <h2 className="font-display text-[30px] text-primary">experience</h2>
         <div className="h-[1px] w-full bg-[#E5E5E5]" />
       </div>
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-6">
         {experiences.map((item, index) => (
           <div
             key={item.role}
-            className="flex flex-col sm:flex-row sm:items-start justify-between gap-x-4 gap-y-2 animate-fade-in-up"
+            className="flex flex-col sm:flex-row sm:items-start justify-between gap-x-4 gap-y-1 animate-fade-in-up"
             style={{ animationDelay: `${150 + index * 50}ms` }}
           >
             <div className="flex flex-col gap-1">
@@ -81,20 +81,20 @@ export const HomePage = () => (
                   rel="noreferrer"
                   className="w-fit no-underline"
                 >
-                  <h3 className="font-geist text-[22px] font-semibold tracking-tight text-[#333333] transition-colors duration-200 hover:text-[rgb(143,128,173)]">
+                  <h3 className="font-geist text-[20px] font-normal tracking-tight text-[#333333] transition-colors duration-200 hover:text-[rgb(143,128,173)]">
                     {item.role}
                   </h3>
                 </a>
               ) : (
-                <h3 className="font-geist text-[22px] font-semibold tracking-tight text-[#333333]">
+                <h3 className="font-geist text-[20px] font-normal tracking-tight text-[#333333]">
                   {item.role}
                 </h3>
               )}
-              <p className="font-geist text-[16px] text-[#4B4B4B] flex items-center gap-2">
+              <p className="font-geist text-[15px] text-[#4B4B4B] flex items-center gap-2">
                 {item.detail}
               </p>
             </div>
-            <div className="shrink-0 text-[16px] font-geist text-[#A1A1A1] sm:text-right mt-1 sm:mt-0">
+            <div className="shrink-0 text-[14px] font-geist text-[#A1A1A1] sm:text-right mt-1 sm:mt-0">
               {item.dates}
             </div>
           </div>
@@ -106,7 +106,7 @@ export const HomePage = () => (
       <div className="flex flex-col gap-1">
         <div className="flex flex-wrap items-center gap-3">
           <div>
-            <h2 className="text-[35px]">more fun stuff I've been a part of:</h2>
+            <h2 className="text-[30px]">more fun stuff I've been a part of:</h2>
           </div>
         </div>
         <div className="relative h-[1px] w-full flex-none overflow-hidden bg-[#9f80ff4d]" />

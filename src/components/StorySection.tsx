@@ -2,7 +2,7 @@ import type { ProjectStory } from '../types'
 import { overlineClass, mutedClass } from '../utils/constants'
 
 export const StorySection = ({ story }: { story: ProjectStory }) => (
-  <article className="flex flex-col gap-6 pt-2 lg:gap-8">
+  <article className="flex flex-col gap-5 pt-2 lg:gap-6">
     <div className="flex flex-col gap-3">
       <p className={overlineClass}>{story.title}</p>
       <h3 className="text-[clamp(30px,3.5vw,44px)] leading-[1.08]">{story.headline}</h3>

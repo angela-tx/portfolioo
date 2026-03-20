@@ -38,7 +38,7 @@ export const Layout = () => {
       <div className="mx-auto flex w-[min(800px,calc(100%-160px))] flex-col items-start justify-between gap-4 py-[14px] lg:flex-row lg:items-center">
         <div className="inline-flex items-center">
           <Link className="inline-flex items-center text-accent no-underline" to="/" aria-label="Back to home">
-            <span className="text-[38px] leading-none mb-1">🪽</span>
+            <span className="text-[32px] leading-none mb-1">🪽</span>
           </Link>
           <span 
             className="font-geist text-[18px] font-normal tracking-[-0.02em] leading-none text-start no-underline ml-5 mr-2" 
@@ -80,7 +80,7 @@ export const Layout = () => {
       </div>
     </header>
 
-    <main className="mx-auto flex w-[min(800px,calc(100%-160px))] flex-col gap-[88px] pt-36">
+    <main className="mx-auto flex w-[min(800px,calc(100%-160px))] flex-col gap-[88px] pt-16">
       <Outlet />
     </main>
     <Footer />

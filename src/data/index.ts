@@ -91,8 +91,8 @@ export const funGallery: GalleryItem[] = [
 export const projectStories: ProjectStory[] = [
   {
     id: 'blueprint',
-    title: 'BluePrint Conference',
-    badge: 'Club Event',
+    title: 'Club Event',
+    navTitle: 'BluePrint Conference',
     headline: "BluePrint – Vancouver's Largest Student-Led Tech Conference",
     hero:
       'https://framerusercontent.com/images/Vcg9T1IEU4PlJIkPb56gxv4LQKQ.jpg?width=5514&height=3676',
@@ -157,8 +157,8 @@ export const projectStories: ProjectStory[] = [
   },
   {
     id: 'safespace',
-    title: 'safespace',
-    badge: 'UXathon - 1st Place, Best Pitch',
+    title: 'UXathon - 1st Place, Best Pitch',
+    navTitle: 'safespace',
     headline: 'safespace – a habit app that integrates into the physical space',
     hero:
       'https://framerusercontent.com/images/aiyO6sx5qCCyXHuyCMZc5qQvZg8.jpeg?width=1348&height=744',
@@ -226,8 +226,8 @@ export const projectStories: ProjectStory[] = [
   },
   {
     id: 'encore',
-    title: 'Encore',
-    badge: 'StormHacks Winner (2/220 Projects)',
+    title: 'StormHacks Winner (2/220 Projects)',
+    navTitle: 'Encore',
     headline: 'Encore – Your Concert Companion App',
     hero:
       'https://framerusercontent.com/images/JHtBElTyJhcpvlMJnQcgljkZdpQ.png?width=2230&height=1250',
@@ -286,8 +286,8 @@ export const projectStories: ProjectStory[] = [
   },
   {
     id: 'banana-art-lab',
-    title: 'Art Studio Website Redesign',
-    badge: 'FLUI Design Competition - Best Visual Design',
+    title: 'FLUI Design Competition - Best Visual Design',
+    navTitle: 'Art Studio Website Redesign',
     headline: 'Banana Art Lab – Website Brand and UX Redesign',
     hero:
       'https://framerusercontent.com/images/ganHUOUIHXSUJsM0ERwLHZeRdU.png?width=1982&height=860',
