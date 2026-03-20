@@ -45,17 +45,6 @@ export const AboutPage = () => (
       </div>
     </section>
 
-    <section className="flex flex-col gap-4">
-      <div className="w-full rounded-[8px] border border-[rgba(116,99,150,0.12)] shadow-soft">
-        <img
-          className="h-full w-full rounded-[8px] object-cover"
-          src="https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png?width=1800&height=1012"
-          alt="Blueprint stage visuals"
-          loading="lazy"
-        />
-      </div>
-    </section>
-
     <ContactSection />
   </div>
 )
