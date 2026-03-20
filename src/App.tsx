@@ -631,30 +631,30 @@ const HomePage = () => (
     <section className="flex flex-col gap-6">
       <div className="flex flex-wrap items-center gap-3">
         <div>
-          <h2 className="font-display text-[30px] font-normal text-primary">Moments</h2>
+          <h2 className="font-display text-[30px] font-normal text-primary">more fun stuff I've been a part of:</h2>
         </div>
       </div>
-      <div className="group relative flex w-[calc(100%+80px)] -mx-[40px] overflow-hidden py-10" style={{ containerType: 'inline-size' }}>
+      <div className="group relative flex overflow-hidden py-10" style={{ containerType: 'inline-size' }}>
         {[0, 1].map((copyIdx) => (
           <div
             key={copyIdx}
-            className="flex shrink-0 animate-marquee gap-10 pl-[40px]"
+            className="flex shrink-0 animate-marquee gap-8 pl-8"
             aria-hidden={copyIdx === 1}
           >
             {funGallery.map((item, index) => {
-              const rotationClass = index % 2 === 0 ? '-rotate-[2deg] hover:-rotate-[4deg]' : 'rotate-[2deg] hover:rotate-[4deg]'
-              
+              const rotationClass = index % 2 === 0 ? '-rotate-[2deg] hover:rotate-0' : 'rotate-[2deg] hover:rotate-0'
+
               const content = (
-                <div className={`flex h-full flex-col rounded-[4px] bg-white p-[16px] pb-[24px] shadow-[0_0_20px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-out hover:scale-[1.03] hover:z-20 ${rotationClass}`}>
-                  <img className="aspect-square w-full object-cover rounded-[2px]" src={item.image} alt={item.title} loading="lazy" />
-                  <div className="mt-4 flex flex-grow items-center justify-center text-center">
-                    <p className="font-body text-[18px] font-medium text-[#746396]">{item.title}</p>
+                <div className={`flex h-full flex-col bg-white p-[10px] pb-[14px] shadow-xl transition-transform duration-300 ease-out hover:scale-[1.03] hover:z-20 ${rotationClass}`}>
+                  <img className="aspect-square w-full object-cover" src={item.image} alt={item.title} loading="lazy" />
+                  <div className="mt-2 flex flex-grow items-center justify-center text-center">
+                    <p className="font-body text-[14px] font-medium text-[#746396]">{item.title}</p>
                   </div>
                 </div>
               )
 
               const isInternal = item.link?.startsWith('/')
-              const itemStyle = { width: 'calc((100cqi - 80px) / 3)' }
+              const itemStyle = { width: 'calc((100cqi - 64px) / 3)' }
 
               if (isInternal) {
                 return (
