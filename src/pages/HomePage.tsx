@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { featuredProjects, experiences, funGallery } from '../data'
-import { mutedClass } from '../utils/constants'
 import { ProjectCard } from '../components/ProjectCard'
 import { ContactSection } from '../components/ContactSection'
 
@@ -49,8 +48,8 @@ export const HomePage = () => (
           <div>
             <h2 className="text-[35px]">featured projects</h2>
           </div>
-          <Link className="font-body font-semibold text-primary underline-offset-4 hover:text-accent" to="/work">
-            View all
+          <Link className="font-body text-primary underline-offset-4 hover:text-accent" to="/work">
+            view all
           </Link>
         </div>
         <div className="relative h-[1px] w-full flex-none overflow-hidden bg-[#9f80ff4d]" />
@@ -62,30 +61,48 @@ export const HomePage = () => (
       </div>
     </section>
 
-    <section className="flex flex-col gap-6 mt-8">
-      <div className="flex flex-col gap-1">
-        <div>
-          <h2 className="text-[35px]">experience</h2>
-        </div>
-        <div className="relative h-[1px] w-full flex-none overflow-hidden bg-[#9f80ff4d]" />
+    <section className="flex flex-col gap-8 mt-6 mb-8">
+      <div className="flex flex-col gap-2">
+        <h2 className="font-display text-[35px] text-primary">experience</h2>
+        <div className="h-[1px] w-full bg-[#E5E5E5]" />
       </div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
-        {experiences.map((item) => (
+      <div className="flex flex-col gap-10">
+        {experiences.map((item, index) => (
           <div
             key={item.role}
-            className="flex flex-col gap-2 rounded-[8px] border border-[rgba(116,99,150,0.12)] bg-white p-[18px] shadow-soft animate-fade-in-up"
+            className="flex flex-col sm:flex-row sm:items-start justify-between gap-x-4 gap-y-2 animate-fade-in-up"
+            style={{ animationDelay: `${150 + index * 50}ms` }}
           >
-            <div className="inline-flex w-fit items-center rounded-[6px] bg-accent-soft px-[10px] py-[6px] text-[12px] font-bold tracking-[0.08em] text-primary">
+            <div className="flex flex-col gap-1">
+              {item.link ? (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-fit no-underline"
+                >
+                  <h3 className="font-geist text-[22px] font-semibold tracking-tight text-[#333333] transition-colors duration-200 hover:text-[rgb(143,128,173)]">
+                    {item.role}
+                  </h3>
+                </a>
+              ) : (
+                <h3 className="font-geist text-[22px] font-semibold tracking-tight text-[#333333]">
+                  {item.role}
+                </h3>
+              )}
+              <p className="font-geist text-[16px] text-[#4B4B4B] flex items-center gap-2">
+                {item.detail}
+              </p>
+            </div>
+            <div className="shrink-0 text-[16px] font-geist text-[#A1A1A1] sm:text-right mt-1 sm:mt-0">
               {item.dates}
             </div>
-            <h3 className="text-[18px]">{item.role}</h3>
-            <p className={mutedClass}>{item.detail}</p>
           </div>
         ))}
       </div>
     </section>
 
-    <section className="flex flex-col gap-2 mt-8">
+    <section className="flex flex-col gap-2 mt-4">
       <div className="flex flex-col gap-1">
         <div className="flex flex-wrap items-center gap-3">
           <div>
