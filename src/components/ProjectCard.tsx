@@ -12,7 +12,7 @@ export const ProjectCard = ({ project }: { project: FeaturedProject }) => (
       <img className="h-[220px] w-full object-cover" src={project.image} alt={project.title} loading="lazy" />
     </div>
     <div className="px-4 pb-4">
-      <h3 className="mt-[2px] mb-[6px] text-[21px] font-normal tracking-[-0.02em] text-primary font-display">
+      <h3 className="mb-[6px] mt-[2px] text-[21px]">
         {project.title}
       </h3>
       <p className={`${mutedClass} text-[14px]`}>{project.description}</p>

@@ -9,7 +9,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => (
       </div>
       <div className="flex flex-col gap-2">
         <p className={overlineClass}>{story.title}</p>
-        <h3 className="text-[34px] font-normal tracking-[-0.02em] text-primary font-display">{story.headline}</h3>
+        <h3 className="text-[34px]">{story.headline}</h3>
         <p className={`${mutedClass} mt-1`}>{story.summary}</p>
       </div>
     </div>
@@ -51,7 +51,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => (
     <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
       {story.sections.map((block) => (
         <div key={block.title} className="flex flex-col gap-2">
-          <h4 className="text-[18px] font-normal tracking-[-0.01em] text-primary font-display">{block.title}</h4>
+          <h4 className="text-[18px]">{block.title}</h4>
           {block.quote ? (
             <blockquote className="border-l-4 border-accent pl-3 font-display italic text-primary">{block.quote}</blockquote>
           ) : null}
