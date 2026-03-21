@@ -54,8 +54,8 @@ export const HomePage = () => (
         </div>
         <div className="relative h-[1px] w-full flex-none overflow-hidden bg-[#9f80ff4d]" />
       </div>
-      <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-5">
-        {featuredProjects.map((project) => (
+      <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5">
+        {featuredProjects.slice(0, 2).map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>
@@ -66,37 +66,30 @@ export const HomePage = () => (
         <h2 className="font-display text-[30px] text-primary">experience</h2>
         <div className="h-[1px] w-full bg-[#E5E5E5]" />
       </div>
-      <div className="flex flex-col gap-6">
+      <div className="overflow-hidden rounded-[8px] border border-[#e5e5e5]">
         {experiences.map((item, index) => (
           <div
             key={item.role}
-            className="flex flex-col sm:flex-row sm:items-start justify-between gap-x-4 gap-y-1 animate-fade-in-up"
+            className="grid grid-cols-1 gap-1 px-4 py-3 animate-fade-in-up sm:grid-cols-[140px,1fr,120px] sm:items-center sm:gap-3"
             style={{ animationDelay: `${150 + index * 50}ms` }}
           >
-            <div className="flex flex-col gap-1">
-              {item.link ? (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-fit no-underline"
-                >
-                  <h3 className="font-geist text-[20px] font-normal tracking-tight text-[#333333] transition-colors duration-200 hover:text-[rgb(143,128,173)]">
-                    {item.role}
-                  </h3>
-                </a>
-              ) : (
-                <h3 className="font-geist text-[20px] font-normal tracking-tight text-[#333333]">
-                  {item.role}
-                </h3>
-              )}
-              <p className="font-geist text-[15px] text-[#4B4B4B] flex items-center gap-2">
-                {item.detail}
+            <p className="font-geist text-[14px] text-[#A1A1A1] whitespace-nowrap">{item.company ?? item.role.split('@')[1]?.trim() ?? ''}</p>
+            {item.link ? (
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                className="w-fit no-underline font-geist text-[14px] tracking-tight text-[#333333] transition-colors duration-200 hover:text-[rgb(143,128,173)] whitespace-nowrap"
+              >
+                {item.role.split('@')[0]?.trim() || item.role}
+              </a>
+            ) : (
+              <p className="font-geist text-[14px] tracking-tight text-[#333333] whitespace-nowrap">
+                {item.role.split('@')[0]?.trim() || item.role}
               </p>
-            </div>
-            <div className="shrink-0 text-[14px] font-geist text-[#A1A1A1] sm:text-right mt-1 sm:mt-0">
-              {item.dates}
-            </div>
+            )}
+            <p className="font-geist text-[14px] text-[#A1A1A1] whitespace-nowrap text-right">{item.dates}</p>
+            {index < experiences.length - 1 ? <div className="col-span-full h-[1px] bg-[#e5e5e5] sm:col-span-2" /> : null}
           </div>
         ))}
       </div>

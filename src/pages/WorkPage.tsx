@@ -21,7 +21,7 @@ export const WorkPage = () => (
     </section>
     <section className="flex flex-col gap-6">
       <p className={overlineClass}>all projects</p>
-      <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-5">
+      <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5">
         {allProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

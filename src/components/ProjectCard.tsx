@@ -8,13 +8,26 @@ export const ProjectCard = ({ project }: { project: FeaturedProject }) => (
     to={`/work/${project.id}`}
     aria-label={`Open ${project.title}`}
   >
-    <div className="relative overflow-hidden">
-      <img 
-        className="h-[220px] w-full object-cover rounded-[6px] transition-all duration-300 group-hover:opacity-85" 
-        src={project.image} 
-        alt={project.title} 
-        loading="lazy" 
-      />
+    <div className="relative overflow-hidden rounded-none">
+      {project.image.toLowerCase().endsWith('.webm') ? (
+        <video
+          className="h-[240px] w-full object-cover transition-all duration-300 group-hover:opacity-85"
+          src={project.image}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          aria-label={project.title}
+        />
+      ) : (
+        <img
+          className="h-[240px] w-full object-cover transition-all duration-300 group-hover:opacity-85"
+          src={project.image}
+          alt={project.title}
+          loading="lazy"
+        />
+      )}
     </div>
     <div className="px-1 pb-4">
       <div className="flex items-center justify-between transition-colors duration-300 group-hover:text-[rgb(143,128,173)]">
