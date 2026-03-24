@@ -1,87 +1,76 @@
 import type { ProjectStory } from '../types'
-import { overlineClass, mutedClass } from '../utils/constants'
+import { mutedClass } from '../utils/constants'
 
 export const StorySection = ({ story }: { story: ProjectStory }) => (
-  <article className="flex flex-col gap-5 pt-2 lg:gap-6">
-    <div className="flex flex-col gap-3">
-      <p className={overlineClass}>{story.title}</p>
-      <h3 className="text-[clamp(30px,3.5vw,44px)] leading-[1.08]">{story.headline}</h3>
-      <p className={`${mutedClass} mt-1 max-w-[960px]`}>{story.summary}</p>
-    </div>
+  <article className="flex flex-col gap-16 pt-2 lg:gap-20">
+    <div className="flex flex-col gap-12">
+      {story.sections.flatMap((block) => {
+        const items: JSX.Element[] = []
 
-    <div className="overflow-hidden rounded-[6px] border border-border shadow-soft">
-      <img
-        className="w-full object-cover"
-        src={story.hero}
-        alt={`${story.headline} hero`}
-        loading="lazy"
-      />
-    </div>
+        if (story.id === 'blueprint' && block.title === 'Looking back') {
+          items.push(
+            <figure key="blueprint-win-image" className="flex flex-col gap-3">
+              <img
+                className="w-full rounded-[6px] border border-border object-cover"
+                src="/CommerceNightWin.JPG"
+                alt="Winning Conference of the Year!"
+                loading="lazy"
+              />
+              <figcaption className={`${mutedClass} text-[14px] text-center`}>
+                Winning Conference of the Year!
+              </figcaption>
+            </figure>,
+          )
+        }
 
-    <div className="rounded-[6px] border border-border bg-surface px-5 py-6 shadow-soft font-instrument">
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <p className="mb-1 font-body text-[11px] uppercase tracking-[0.08em] text-muted">Role</p>
-          <p className="text-[16px] font-normal text-primary">{story.meta.role}</p>
-        </div>
-        <div>
-          <p className="mb-1 font-body text-[11px] uppercase tracking-[0.08em] text-muted">Tools</p>
-          <p className="text-[16px] font-normal text-primary">{story.meta.tools}</p>
-        </div>
-        <div>
-          <p className="mb-1 font-body text-[11px] uppercase tracking-[0.08em] text-muted">Links</p>
-          <div className="flex flex-wrap gap-2">
-            {story.meta.links.map((link) => (
-              <a key={link.url} className="text-[15px] font-normal text-muted underline-offset-4 hover:text-accent" href={link.url} target="_blank" rel="noreferrer">
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
-        <div>
-          <p className="mb-1 font-body text-[11px] uppercase tracking-[0.08em] text-muted">Year</p>
-          <p className="text-[16px] font-normal text-primary">{story.meta.year}</p>
-        </div>
-      </div>
-    </div>
+        items.push(
+          <div
+            key={block.title}
+            className="grid grid-cols-1 gap-6 rounded-[6px] border border-border bg-white px-6 py-7 shadow-soft md:grid-cols-12"
+          >
+            <div className="md:col-span-4 lg:col-span-3">
+              <h3 className="text-[22px] leading-[1.2] text-primary">{block.title}</h3>
+            </div>
+            <div className="md:col-span-8 lg:col-span-8 md:col-start-5 lg:col-start-5 flex flex-col gap-4">
+              {block.quote ? (
+                <blockquote className="rounded-[6px] border border-accent-soft bg-accent-soft/40 px-4 py-3 font-body italic text-primary">
+                  {block.quote}
+                </blockquote>
+              ) : null}
+              {block.text ? <p className={`${mutedClass} text-[16px] leading-[1.7]`}>{block.text}</p> : null}
+              {block.bullets ? (
+                <ul className="grid list-disc gap-2 pl-5">
+                  {block.bullets.map((item) => (
+                    <li key={item} className="font-body text-[15px] text-primary">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+          </div>,
+        )
 
-    <div className="flex flex-col gap-4">
-      {story.sections.map((block) => (
-        <div key={block.title} className="flex flex-col gap-3 rounded-[6px] border border-border bg-white px-5 py-6 shadow-soft">
-          <h4 className="text-[19px] leading-[1.25]">{block.title}</h4>
-          {block.quote ? (
-            <blockquote className="border-l-4 border-accent pl-3 font-body italic text-primary">{block.quote}</blockquote>
-          ) : null}
-          {block.text ? <p className={mutedClass}>{block.text}</p> : null}
-          {block.bullets ? (
-            <ul className="grid list-disc gap-2 pl-4">
-              {block.bullets.map((item) => (
-                <li key={item} className="font-body text-primary">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          ) : null}
-        </div>
-      ))}
+        return items
+      })}
     </div>
 
     {story.gallery ? (
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {story.gallery.map((image) => (
-          <figure key={image.src} className="flex flex-col gap-2">
+          <figure key={image.src} className="flex flex-col gap-3">
             <img
               className="w-full rounded-[6px] border border-border object-cover shadow-soft"
               src={image.src}
               alt={image.alt}
               loading="lazy"
             />
-            <figcaption className={mutedClass}>{image.alt}</figcaption>
+            <figcaption className={`${mutedClass} text-[14px]`}>{image.alt}</figcaption>
           </figure>
         ))}
       </div>
     ) : null}
 
-    {story.closing ? <p className="text-center font-body font-bold text-primary">{story.closing}</p> : null}
+    {story.closing ? <p className="text-center font-body text-[16px] font-semibold text-primary">{story.closing}</p> : null}
   </article>
 )
