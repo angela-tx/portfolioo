@@ -61,37 +61,45 @@ export const HomePage = () => (
       </div>
     </section>
 
-    <section className="flex flex-col gap-8 mt-6 mb-8">
+    <section className="flex flex-col gap-5 mt-6 mb-10">
       <div className="flex flex-col gap-2">
         <h2 className="font-display text-[30px] text-primary">experience</h2>
         <div className="h-[1px] w-full bg-[#E5E5E5]" />
       </div>
-      <div className="overflow-hidden rounded-[8px] border border-[#e5e5e5]">
-        {experiences.map((item, index) => (
-          <div
-            key={item.role}
-            className="grid grid-cols-1 gap-1 px-4 py-3 animate-fade-in-up sm:grid-cols-[140px,1fr,120px] sm:items-center sm:gap-3"
-            style={{ animationDelay: `${150 + index * 50}ms` }}
-          >
-            <p className="font-geist text-[14px] text-[#A1A1A1] whitespace-nowrap">{item.company ?? item.role.split('@')[1]?.trim() ?? ''}</p>
-            {item.link ? (
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noreferrer"
-                className="w-fit no-underline font-geist text-[14px] tracking-tight text-[#333333] transition-colors duration-200 hover:text-[rgb(143,128,173)] whitespace-nowrap"
-              >
-                {item.role.split('@')[0]?.trim() || item.role}
-              </a>
-            ) : (
-              <p className="font-geist text-[14px] tracking-tight text-[#333333] whitespace-nowrap">
-                {item.role.split('@')[0]?.trim() || item.role}
-              </p>
-            )}
-            <p className="font-geist text-[14px] text-[#A1A1A1] whitespace-nowrap text-right">{item.dates}</p>
-            {index < experiences.length - 1 ? <div className="col-span-full h-[1px] bg-[#e5e5e5] sm:col-span-2" /> : null}
-          </div>
-        ))}
+      <div className="grid gap-2">
+        {experiences.map((item, index) => {
+          const company = item.company ?? item.role.split('@')[1]?.trim() ?? ''
+          const title = item.role.split('@')[0]?.trim() || item.role
+
+          return (
+            <article
+              key={item.role}
+              className="group rounded-[10px] border border-border bg-white/90 p-4 shadow-[0_8px_24px_rgba(12,10,29,0.04)] transition-transform duration-150 ease-out hover:-translate-y-[2px] hover:shadow-[0_12px_28px_rgba(12,10,29,0.06)]"
+              style={{ animationDelay: `${150 + index * 40}ms` }}
+            >
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="flex flex-col">
+                  <span className="text-[12px] uppercase tracking-[0.08em] text-muted">{company || 'Independent'}</span>
+                  {item.link ? (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-geist text-[16px] font-medium tracking-[-0.01em] text-primary no-underline transition-colors duration-200 hover:text-[rgb(143,128,173)]"
+                    >
+                      {title}
+                    </a>
+                  ) : (
+                    <span className="font-geist text-[16px] font-medium tracking-[-0.01em] text-primary">
+                      {title}
+                    </span>
+                  )}
+                </div>
+                <span className="font-geist text-[13px] text-[#6c6c6c]">{item.dates}</span>
+              </div>
+            </article>
+          )
+        })}
       </div>
     </section>
 
