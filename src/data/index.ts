@@ -31,7 +31,7 @@ export const allProjects: FeaturedProject[] = [
     title: 'Art Studio Website Redesign',
     description: 'Full branding and website redesign for a local client',
     image:
-      'https://framerusercontent.com/images/iq5snVem8c1ZI1yvUJIGDUo1Z0.png?width=1580&height=956',
+      '/BananaArtLab.webm',
   },
 ]
 
@@ -95,7 +95,7 @@ export const projectStories: ProjectStory[] = [
     navTitle: 'BluePrint Conference',
     headline: "BluePrint – Vancouver's Largest Student-Led Tech Conference",
     hero:
-      'https://framerusercontent.com/images/Vcg9T1IEU4PlJIkPb56gxv4LQKQ.jpg?width=5514&height=3676',
+      '/BluePrintStage.jpg',
     meta: {
       role: 'Project Manager',
       tools: 'Notion, Excel, Figma',

@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react'
 import type { ProjectStory } from '../types'
 import { mutedClass } from '../utils/constants'
 
@@ -5,7 +6,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => (
   <article className="flex flex-col gap-16 pt-2 lg:gap-20">
     <div className="flex flex-col gap-12">
       {story.sections.flatMap((block) => {
-        const items: JSX.Element[] = []
+        const items: ReactElement[] = []
 
         if (story.id === 'blueprint' && block.title === 'Looking back') {
           items.push(
@@ -33,7 +34,8 @@ export const StorySection = ({ story }: { story: ProjectStory }) => (
             </div>
             <div className="md:col-span-8 lg:col-span-8 md:col-start-5 lg:col-start-5 flex flex-col gap-4">
               {block.quote ? (
-                <blockquote className="rounded-[6px] border border-accent-soft bg-accent-soft/40 px-4 py-3 font-body italic text-primary">
+                <blockquote className="relative pl-5 font-body italic text-primary">
+                  <span className="absolute left-0 top-0 h-full w-[3px] rounded-full bg-[#e7e8f2]" aria-hidden="true" />
                   {block.quote}
                 </blockquote>
               ) : null}
