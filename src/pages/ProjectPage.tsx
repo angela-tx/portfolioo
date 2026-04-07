@@ -10,7 +10,20 @@ export const ProjectPage = () => {
 
   useEffect(() => {
     if (!slug) return
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    const html = document.documentElement
+    const body = document.body
+    const previousHtmlBehavior = html.style.scrollBehavior
+    const previousBodyBehavior = body.style.scrollBehavior
+
+    html.style.scrollBehavior = 'auto'
+    body.style.scrollBehavior = 'auto'
+    window.scrollTo({ top: 0, left: 0 })
+
+    // Restore whatever was set inline before this effect
+    return () => {
+      html.style.scrollBehavior = previousHtmlBehavior
+      body.style.scrollBehavior = previousBodyBehavior
+    }
   }, [slug])
 
   if (!story) {
@@ -24,12 +37,30 @@ export const ProjectPage = () => {
   return (
     <div className="flex flex-col gap-12">
       <div className="flex flex-col gap-8">
-        <div className="flex flex-wrap items-center gap-3 text-[12px] uppercase tracking-[0.12em] text-muted">
-          <Link className="font-body text-primary no-underline hover:text-accent" to="/work">
-            all projects
-          </Link>
-          <span className="text-border">/</span>
-          <span className="font-body text-primary">{story.navTitle}</span>
+        <div className="flex flex-wrap items-center justify-between gap-3 text-[12px] uppercase tracking-[0.12em] text-muted">
+          <div className="flex flex-wrap items-center gap-3">
+            <Link className="font-body text-primary no-underline hover:text-accent" to="/work">
+              all projects
+            </Link>
+            <span className="text-primary">/</span>
+            <span className="font-body text-primary">{story.navTitle}</span>
+          </div>
+          <span className="inline-flex items-center gap-2 font-body text-[12px] uppercase tracking-[0.12em] text-muted">
+            <svg
+              className="h-[14px] w-[14px]"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M4 22h16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            stream prize - stormhacks 2025
+          </span>
         </div>
 
         <div className="flex flex-col gap-4">
