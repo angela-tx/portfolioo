@@ -43,9 +43,9 @@ export const experiences: ExperienceItem[] = [
     link: 'https://www.hootsuite.com/',
   },
   {
-    role: 'Tech Director & Consultant @ UBC Marketing Association',
+    role: 'Software Engineer & Marketing Consultant @ UBC Marketing Association',
     dates: 'Sep 2025 – Present',
-    detail: '💻 Web development & GTM strategy for local companies',
+    detail: '💻 Web development & GTM strategy',
     link: 'https://www.ubcma.ca/about',
   },
   {
@@ -186,8 +186,7 @@ export const projectStories: ProjectStory[] = [
           'In a world that rewards being “always on,” how might we design an experience that helps people set and keep boundaries to make recovery time feel socially safe, rewarding, and easy to sustain?',
       },
       {
-        title: 'Insights',
-        text: 'To further undertand the problem, our team explored:',
+        title: 'To further undertand the problem, our team explored:',
         bullets: [
           'Market research: how our target audience approaches goal-setting',
           'Psychology: passive (scrolling, avoidance) vs intentional rest',
@@ -195,8 +194,7 @@ export const projectStories: ProjectStory[] = [
         ],
       },
       {
-        title: 'Making recovery intentional',
-        text: 'Instead of asking: What did you accomplish today? It asks: Did you take time for your wellness goals today?',
+        title: 'Instead of asking: What did you accomplish today? It asks: Did you take time for your wellness goals today? to make recovery intentional',
         bullets: [
           'A core feature is our NFC journal sticker. When placed on a notebook or in a designated goal space, it acts as a physical barrier for intentional rest.',
           'The sticker automatically launches safespace when you tap your phone and opens to a guided page with prompts and a focus timer.',
@@ -215,7 +213,7 @@ export const projectStories: ProjectStory[] = [
     ],
     gallery: [
       {
-        src: 'https://framerusercontent.com/images/pv2HzEbAegTYhvuDKawZps2d4I.png',
+        src: '/Safespace-slide.webp',
         alt: 'safespace research snapshot',
       },
       {
@@ -246,44 +244,38 @@ export const projectStories: ProjectStory[] = [
       'Live music is one of the fastest-growing spending categories among students. But while concerts are inherently social, the digital experience around them is not.',
     sections: [
       {
-        title: 'Two common pain points',
-        text: "Each of our team members went to at least one concert this summer, often to the same artists, yet we didn't realize until after. Encore is our answer to two common pain points concert-goers face:",
-        bullets: [
-          'Discovery gap: Not knowing who in your network is going to the same show',
-          'Chaos: Being unable to connect once you’ve arrived at the crowded venue',
-        ],
+        title: 'Each of our team members have gone to the same concerts this summer, yet we didn’t realize until after.',
+        text: "Encore is our answer to two common pain points music-lovers face: (1) Not knowing who in your network is going to the same show, (2) Being unable to find each other once you’ve arrived at the crowded venue."
       },
       {
-        title: 'Friction in the ticketing experience',
-        text: 'In the current ecosystem, ticketing platforms optimize for checkout speed, while social platforms optimize for post-event updates. Our app bridges this gap by allowing users to:',
-        bullets: [
-          'Explore shows in your area with live data from Ticketmaster',
-          'See which of your friends are attending',
-          'Mark your status as attending or interested',
-          'Optionally share seat information to find nearby friends',
-        ],
+        title: 'Ticketing platforms currently optimize for sales, while social platforms optimize for post-event updates.',
+        text: 'Our app bridges this social connection gap by allowing users to:',
+        inlineVisual: {
+          src: '/Encore-screens.webp',
+          alt: 'Encore mobile screens',
+        },
       },
+
       {
-        title: 'Reducing friction in the journey',
-        text: 'We focused on reducing friction at key moments in the user journey: Discover → Signal Intent → Connect & Share Information → Coordinate → Experience Together',
-      },
-      {
-        title: 'For our ideal user ◡̈',
-        text: 'What I learned from my first time at SFU!',
+        title: 'What I learned from my first time at SFU ◡̈',
         bullets: [
           'Forestry is an important major',
           'The power of networking = free poke bowls',
           'Redbull gives you wings',
         ],
       },
-    ],
-    gallery: [
-      {
-        src: 'https://framerusercontent.com/images/6mJCiZMw9W0djWdgELk5MoFqSQU.png?width=2224&height=1248',
-        alt: 'Encore flows and states',
-      },
-    ],
-  },
+  ],
+  gallery: [
+    {
+      src: '/Encore-flow.webp',
+      alt: 'Pitch slide',
+    },
+    {
+      src: '/Encore-win.webp',
+      alt: 'Our team :)',
+    },
+  ],
+},
   {
     id: 'banana-art-lab',
     title: 'FLUI Design Competition - Best Visual Design',
