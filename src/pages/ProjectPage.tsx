@@ -59,7 +59,13 @@ export const ProjectPage = () => {
               <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            stream prize - stormhacks 2025
+            {story.id === 'banana-art-lab'
+              ? 'stream winner - flui design competition 2025'
+              : story.id === 'encore'
+              ? 'stream winner - stormhacks 2025'
+              : story.id === 'blueprint'
+              ? 'top conference - sauder cus 2026'
+              : '1st & best pitch - uxathon 2026'}
           </span>
         </div>
 
@@ -110,10 +116,12 @@ export const ProjectPage = () => {
         {prev ? (
           <Link
             to={`/work/${prev.id}`}
-            className="group flex flex-col items-start gap-2 font-body text-primary no-underline"
+            className='group flex flex-col items-start gap-2 text-primary no-underline font-["Instrument Sans","Inter",system-ui,sans-serif]'
           >
-            <span className="text-[11px] uppercase tracking-[0.14em] text-muted group-hover:text-accent transition-colors">Previous</span>
-            <span className="text-[18px] font-normal leading-tight group-hover:-translate-x-[6px] transition-transform">
+            <span className='text-[11px] uppercase tracking-[0.14em] text-muted font-["Instrument Sans","Inter",system-ui,sans-serif]'>
+              Previous
+            </span>
+            <span className='text-[18px] font-normal leading-tight font-["Instrument Sans","Inter",system-ui,sans-serif]'>
               {prev.navTitle}
             </span>
           </Link>
@@ -123,10 +131,12 @@ export const ProjectPage = () => {
         {next ? (
           <Link
             to={`/work/${next.id}`}
-            className="group flex flex-col items-end gap-2 font-body text-primary no-underline"
+            className='group flex flex-col items-end gap-2 text-primary no-underline font-["Instrument Sans","Inter",system-ui,sans-serif]'
           >
-            <span className="text-[11px] uppercase tracking-[0.14em] text-muted group-hover:text-accent transition-colors">Next</span>
-            <span className="text-[18px] font-normal leading-tight group-hover:translate-x-[6px] transition-transform">
+            <span className='text-[11px] uppercase tracking-[0.14em] text-muted font-["Instrument Sans","Inter",system-ui,sans-serif]'>
+              Next
+            </span>
+            <span className='text-[18px] font-normal leading-tight font-["Instrument Sans","Inter",system-ui,sans-serif]'>
               {next.navTitle}
             </span>
           </Link>

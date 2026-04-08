@@ -8,9 +8,10 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
   const isEncore = story.id === 'encore'
 
   const safespaceLabels: Record<string, string> = {
-    'The given prompt': 'problem',
-    Insights: 'problem',
-    'Making recovery intentional': 'solution',
+    'The given prompt': 'the given prompt',
+    'To further undertand the problem, our team explored:': 'discovery',
+    'Instead of asking: What did you accomplish today? It asks: Did you take time for your wellness goals today? to make recovery intentional':
+      'solution',
     'What I learned when designing this product': 'takeaways',
   }
 
@@ -21,11 +22,11 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
   }
 
   const safespaceSteps = [
-    'Discover',
-    'Signal Intent',
-    'Connect & Share Information',
-    'Coordinate',
-    'Experience Together',
+    'Tap phone on NFC journal sticker',
+    'safespace launches',
+    'Journaling UI appears',
+    'Guided prompts + focus mode',
+    'Time logged to monthly goal',
   ]
 
   const encoreSteps = [
@@ -53,7 +54,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
     }
   }, [activeImage])
 
-  const showJourney = isSafespace || isEncore
+  const showJourney = isEncore || isSafespace
   const steps = isSafespace ? safespaceSteps : encoreSteps
   let journeyInserted = false
   let growthInserted = false
@@ -104,22 +105,19 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
           if (isSafespace || isEncore) {
             const label = (isSafespace ? safespaceLabels[block.title] : encoreLabels[block.title]) ?? 'takeaways'
             if (label === 'takeaways') {
-              if (showJourney && !journeyInserted) {
+              if (showJourney && !journeyInserted && !isSafespace) {
                 items.push(renderJourney())
                 journeyInserted = true
               }
-              if (!growthInserted) {
+              if (!growthInserted && isEncore) {
                 items.push(
                   <div className="flex flex-col gap-2 pt-4" key="growth-strategy">
                     <span className="text-[11px] uppercase tracking-[0.12em] text-muted">growth strategy</span>
                     <h3 className='font-["Instrument Sans","Inter",system-ui,sans-serif] text-[22px] leading-[1.25] text-primary'>
-                      Rather than mass user acquisition, we aim to get people you already know onto the platform.
+                      Rather than mass user acquisition, we focus on getting people you already know onto the platform.
                     </h3>
                     <p className={`${mutedClass} text-[15px] leading-[1.65]`}>
-                      That's why our North Star Metric is the % of users who successfully connect with at least one person at an event. However 
-                      similar to Beli, there is a cold start problem where no friends on the platform = no value.
-                      To mitigate this, we hone in on a group invite strategy, where a shareable link lets someone invite their entire friend group and unlock features, 
-                      so users are inclined to create a network.
+                      Our North Star Metric is the % of users who successfully connect with at least one person at an event. This is similar to other social apps, where there's a cold start risk of no friends on the platform leading to no value. To support this, we would focus on a "group invite" strategy, where a shareable event link lets someone add their friends so users immediately see people they know in attendance.
                     </p>
                   </div>,
                 )
@@ -129,11 +127,19 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
             items.push(
               <div key={block.title} className="flex flex-col gap-2 rounded-[10px] bg-white/90">
                 <span className="text-[11px] uppercase tracking-[0.12em] text-muted">{label}</span>
-                <h3 className='font-["Instrument Sans","Inter",system-ui,sans-serif] text-[22px] leading-[1.25] text-primary'>
-                  {block.title}
-                </h3>
+                {!(isSafespace && label === 'the given prompt') ? (
+                  <h3
+                    className={
+                      isSafespace
+                        ? 'text-[22px] leading-[1.25] text-primary'
+                        : 'text-[22px] leading-[1.25] text-primary font-["Instrument Sans","Inter",system-ui,sans-serif]'
+                    }
+                  >
+                    {block.title}
+                  </h3>
+                ) : null}
                 {block.quote ? (
-                  <blockquote className="relative rounded-[10px] bg-[#f7f7fb] px-4 py-3 font-body italic text-primary">
+                  <blockquote className="relative pl-5 font-body italic text-primary">
                     <span className="absolute left-0 top-0 h-full w-[3px] rounded-full bg-[#e7e8f2]" aria-hidden="true" />
                     {block.quote}
                   </blockquote>
@@ -161,6 +167,10 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 ) : null}
               </div>,
             )
+            if (isSafespace && block.title === 'Instead of asking: What did you accomplish today? It asks: Did you take time for your wellness goals today? to make recovery intentional' && !journeyInserted) {
+              items.push(renderJourney())
+              journeyInserted = true
+            }
           } else {
             items.push(
               <div

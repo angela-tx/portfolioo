@@ -31,7 +31,7 @@ export const ProjectCard = ({ project }: { project: FeaturedProject }) => (
     </div>
     <div className="px-1 pb-4">
       <div className="flex items-center justify-between transition-colors duration-300 group-hover:text-[rgb(143,128,173)]">
-        <h3 className="mb-[6px] mt-[2px] text-[21px] font-geist transition-colors duration-300 group-hover:text-[rgb(143,128,173)]">
+        <h3 className="mb-[6px] mt-[2px] text-[18px] font-geist transition-colors duration-300 group-hover:text-[rgb(143,128,173)]">
           {project.title}
         </h3>
         <span className="opacity-0 transition-all duration-300 group-hover:opacity-100 shrink-0 -translate-y-[4px]">
@@ -77,7 +77,7 @@ export const ProjectCard = ({ project }: { project: FeaturedProject }) => (
           </svg>
         </span>
       </div>
-      <p className={`${mutedClass} text-[14px]`}>{project.description}</p>
+      <p className={`${mutedClass} text-[13px]`}>{project.description}</p>
     </div>
   </Link>
 )

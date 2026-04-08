@@ -42,6 +42,7 @@ export type ProjectStory = {
     text?: string
     bullets?: string[]
     quote?: string
+    inlineVisual?: { src: string; alt: string }
   }[]
   gallery?: { src: string; alt: string }[]
   closing?: string

@@ -6,10 +6,6 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     @apply m-0 min-h-screen bg-white font-body text-primary leading-[1.6] tracking-[-0.02em] antialiased;
     text-rendering: optimizeLegibility;
@@ -42,4 +38,21 @@
 
 ::selection {
   background: rgba(109, 99, 206, 0.12);
+}
+
+.animate-page {
+  animation: pageBlur 280ms ease-out;
+}
+
+@keyframes pageBlur {
+  0% {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
 }

@@ -14,35 +14,20 @@ export const AboutPage = () => (
         className={`${mutedClass} max-w-[720px] animate-fade-in-up`}
         style={{ animationDelay: '80ms' }}
       >
-        Nice to meet you or welcome back! Here&apos;s what I&apos;ve been up to:
+        More about me! When I'm not working, here's what I like to do:
       </p>
-    </section>
-
-    <section className="grid grid-cols-1 gap-7 md:grid-cols-[1.1fr,0.9fr]">
-      <div className="flex flex-col gap-4">
-        <div className="rounded-[8px] border border-[rgba(116,99,150,0.12)] bg-white p-[18px] shadow-soft">
-          <p className="font-body text-[11px] font-bold uppercase tracking-[0.08em] text-muted">event director @ ubc biztech</p>
-          <p className="mt-2 font-body font-bold text-primary">leading events for vancouver&apos;s tech community ᢉ𐭩</p>
-        </div>
+        <div className="flex flex-col gap-8 animate-fade-in-up" style={{ animationDelay: '120ms' }}>
         <div className="flex flex-col gap-2">
-          <p className="font-body text-[11px] font-bold uppercase tracking-[0.08em] text-muted">What I do when I&apos;m not working:</p>
           <ul className="grid list-none gap-2 pl-0 font-body">
-            <li>🩰 Hang out in the studio</li>
-            <li>✈️ Travel</li>
-            <li>👩🏻‍🍳 On my MasterChef journey</li>
+            <li>🩰 Take dance drop-ins</li>
+            <li>✈️ Travel! Next up: Shanghai ᢉ𐭩</li>
+            <li>👩🏻‍🍳 Try to be MasterChef</li>
             <li>⛰️ Hike (shoutout British Columbia mountains)</li>
-            <li>📖 Journal</li>
+            <li>🧘🏻‍♀️ Journal</li>
           </ul>
         </div>
       </div>
-      <div className="rounded-[8px] border border-border shadow-soft">
-        <img
-          className="h-full w-full rounded-[8px] object-cover"
-          src="https://framerusercontent.com/images/M7NZySSFmGcjnSecqOyhD935TQ.jpeg?scale-down-to=1024&width=8733&height=5822"
-          alt="Event director highlight"
-          loading="lazy"
-        />
-      </div>
+
     </section>
 
     <ContactSection />

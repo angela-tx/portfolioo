@@ -19,26 +19,22 @@ export const HomePage = () => (
         >
           ✧ Product, marketing, and community impact
         </p>
-        <p
-          className={`mt-9 max-w-[860px] text-[18px] font-geist tracking-[-0.02em] leading-[1.6] text-black animate-fade-in-up`}
-          style={{ animationDelay: '120ms' }}
-        >
-          Hi! I’m currently a Marketing Tranformation Intern @ Hootsuite, where I get to research, innovate workflows and make my teammates&apos; lives easier. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
-        </p>
-        <p
-          className="mt-6 font-geist text-[18px] tracking-[-0.02em] leading-[1.6] text-black animate-fade-in-up"
-          style={{ animationDelay: '160ms' }}
-        >
-          Check out my conference interview:{' '}
-          <a
-            className="font-body text-black hover:text-[#5b50b5] italic underline-offset-4"
-            href="https://globalnews.ca/video/11648924/ubc-biztechs-2026-blueprint-conference"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Global News
-          </a>
-        </p>
+        <div className="mt-9 flex flex-col gap-4 text-[18px] font-geist tracking-[-0.02em] leading-[1.6] text-black">
+          <p className="animate-fade-in-up" style={{ animationDelay: '120ms' }}>
+            Hi! I’m currently a Marketing Tranformation Intern @ Hootsuite, where I build scalable systems that drive enterprise demand and improve how marketing converts pipeline. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
+          </p>
+          <p className="animate-fade-in-up" style={{ animationDelay: '160ms' }}>
+            Check out my conference interview:{' '}
+            <a
+              className="font-body text-black hover:text-[#5b50b5] italic underline-offset-4"
+              href="https://globalnews.ca/video/11648924/ubc-biztechs-2026-blueprint-conference"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Global News
+            </a>
+          </p>
+        </div>
       </div>
     </section>
 

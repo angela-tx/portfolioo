@@ -187,20 +187,15 @@ export const projectStories: ProjectStory[] = [
       },
       {
         title: 'To further undertand the problem, our team explored:',
-        bullets: [
-          'Market research: how our target audience approaches goal-setting',
-          'Psychology: passive (scrolling, avoidance) vs intentional rest',
-          'A core value proposition: shifting our messaging from working to wellness',
-        ],
+        text: 'A core feature is our NFC journal sticker. When placed on a notebook or in a designated goal space, it acts as a physical barrier for intentional rest. The sticker automatically launches safespace when you tap your phone and opens to a guided page with prompts and a focus timer.',
       },
       {
         title: 'Instead of asking: What did you accomplish today? It asks: Did you take time for your wellness goals today? to make recovery intentional',
-        bullets: [
-          'A core feature is our NFC journal sticker. When placed on a notebook or in a designated goal space, it acts as a physical barrier for intentional rest.',
-          'The sticker automatically launches safespace when you tap your phone and opens to a guided page with prompts and a focus timer.',
-          'Example user flow: tap phone on NFC journal sticker → safespace launches → journaling UI appears with prompts & focus mode enabled → time is logged to monthly recovery goal',
-          'Keeping in mind accessible and cozy design choices!',
-        ],
+        text: 'The focus is our NFC sticker. When placed on a notebook or in another designated goal space, it acts as a physical barrier for intentional rest. The NFC automatically launches safespace when you tap your phone and opens to a guided page with prompts and a focus timer.',
+        inlineVisual: {
+          src: '/Safespace-screens.webp',
+          alt: 'Safespace screens',
+        },
       },
       {
         title: 'What I learned when designing this product',
@@ -214,11 +209,11 @@ export const projectStories: ProjectStory[] = [
     gallery: [
       {
         src: '/Safespace-slide.webp',
-        alt: 'safespace research snapshot',
+        alt: 'Research pitch slide',
       },
       {
-        src: 'https://framerusercontent.com/images/zCWaxyVmI6AWrjGda4b03NN3iZk.png?width=2034&height=1106',
-        alt: 'safespace journaling UI',
+        src: '/Safespace-slidestyle.webp',
+        alt: 'Brand style guide (essential for a design competition)',
       },
     ],
   },

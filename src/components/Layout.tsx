@@ -1,10 +1,11 @@
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { navItems } from '../data'
 import { IconLinkedIn, IconMail } from './Icons'
 import { Footer } from './Footer'
 
 export const Layout = () => {
+  const { pathname } = useLocation()
   const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
@@ -49,9 +50,17 @@ export const Layout = () => {
           </span>
           <nav className="flex flex-wrap items-center gap-1" aria-label="Primary">
             {navItems.map((item) => (
+              // Highlight current page in accent color
+              // Treat nested routes (e.g., /work/slug) as active for their parent
+              // eslint-disable-next-line react/jsx-no-comment-textnodes
               <Link
                 key={item.to}
-                className="rounded-[6px] px-2 py-2 text-[15px] font-normal tracking-[-0.01em] text-primary hover:text-[rgb(143,128,173)] no-underline"
+                className={`rounded-[6px] px-2 py-2 text-[15px] font-normal tracking-[-0.01em] no-underline ${
+                  pathname.startsWith(item.to)
+                    ? 'text-[rgb(143,128,173)] hover:text-[rgb(143,128,173)]'
+                    : 'text-primary hover:text-[rgb(143,128,173)]'
+                }`}
+                aria-current={pathname.startsWith(item.to) ? 'page' : undefined}
                 to={item.to}
               >
                 {item.label}
@@ -81,7 +90,9 @@ export const Layout = () => {
     </header>
 
     <main className="mx-auto flex w-[min(800px,calc(100%-160px))] flex-col gap-[88px] pt-16">
-      <Outlet />
+      <div key={pathname} className="animate-page">
+        <Outlet />
+      </div>
     </main>
     <Footer />
   </div>
