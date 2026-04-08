@@ -65,26 +65,22 @@ export const experiences: ExperienceItem[] = [
 export const funGallery: GalleryItem[] = [
   {
     title: 'blueprint tech conference',
-    image:
-      'https://framerusercontent.com/images/oFGebZy66V3occrMSMGRir6KqA.jpg?width=1177&height=1315',
+    image: '/carousel-blueprint.webp',
     link: '/work/blueprint',
   },
   {
     title: 'dance battle!',
-    image:
-      'https://framerusercontent.com/images/CUzUeA0K3WyA7lgV9fR1O4GvI.jpg?width=1206&height=1379',
+    image: '/carousel-udcbattle.webp',
     link: 'https://www.instagram.com/unlimiteddanceclub/',
   },
   {
     title: 'gateways marketing conference',
-    image:
-      'https://framerusercontent.com/images/TnpJjuLwMqGhY3xUFUpo3Rsc1vg.jpeg?width=1206&height=1504',
+    image: '/carousel-gateways.webp',
     link: 'https://www.ubcma.ca/',
   },
   {
     title: 'choreographed a piece 💃',
-    image:
-      'https://framerusercontent.com/images/TocUasee81AlT5G4znB7ru5mE.jpg?width=1206&height=1420',
+    image: '/carousel-pug.webp',
   },
 ]
 
