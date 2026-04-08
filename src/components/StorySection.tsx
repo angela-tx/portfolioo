@@ -6,6 +6,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
   const [activeImage, setActiveImage] = useState<{ src: string; alt: string } | null>(null)
   const isSafespace = story.id === 'safespace'
   const isEncore = story.id === 'encore'
+  const isBanana = story.id === 'banana-art-lab'
 
   const safespaceLabels: Record<string, string> = {
     'The given prompt': 'the given prompt',
@@ -19,6 +20,12 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
     'Each of our team members have gone to the same concerts this summer, yet we didn’t realize until after.': 'problem',
     'Ticketing platforms currently optimize for sales, while social platforms optimize for post-event updates.': 'solution',
     'What I learned from my first time at SFU ◡̈': 'takeaways',
+  }
+
+  const bananaLabels: Record<string, string> = {
+    'Pain points': 'problem',
+    'We approached this as both a UX and positioning problem.': 'discovery',
+    Impact: 'impact',
   }
 
   const safespaceSteps = [
@@ -58,7 +65,10 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
   const steps = isSafespace ? safespaceSteps : encoreSteps
   let journeyInserted = false
   let growthInserted = false
-  const galleryAspectClass = story.id === 'encore' || story.id === 'safespace' || story.id === 'blueprint' ? 'aspect-[16/9]' : ''
+  const galleryAspectClass =
+    story.id === 'encore' || story.id === 'safespace' || story.id === 'blueprint' || story.id === 'banana-art-lab'
+      ? 'aspect-[16/9]'
+      : ''
 
   const renderJourney = () => (
     <div className="flex flex-col gap-3 pt-2 -mt-8" key="journey-block">
@@ -88,8 +98,15 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
 
           const isBlueprint = story.id === 'blueprint'
 
-          if (isSafespace || isEncore || isBlueprint) {
-            const label = (isSafespace ? safespaceLabels[block.title] : isEncore ? encoreLabels[block.title] : undefined) ?? 'takeaways'
+          if (isSafespace || isEncore || isBlueprint || isBanana) {
+            const label =
+              (isSafespace
+                ? safespaceLabels[block.title]
+                : isEncore
+                ? encoreLabels[block.title]
+                : isBanana
+                ? bananaLabels[block.title]
+                : undefined) ?? 'takeaways'
             if (label === 'takeaways') {
               if (showJourney && !journeyInserted && !isSafespace) {
                 items.push(renderJourney())
@@ -110,6 +127,30 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 growthInserted = true
               }
             }
+
+            if (isBanana && block.title.startsWith('After meeting with our client')) {
+              // Do not render label; render as standard text/bullets block
+              const bananaBullets = (
+                <ul className="grid list-disc gap-2 pl-5">
+                  {block.bullets?.map((item) => (
+                    <li key={item} className="font-body text-[15px] text-primary">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )
+
+              items.push(
+                <div key={block.title} className="flex flex-col gap-2 rounded-[10px] bg-white/90">
+                  <span className="text-[11px] uppercase tracking-[0.12em] text-muted">problem</span>
+                  <h3 className='text-[22px] leading-[1.25] text-primary font-["Instrument Sans","Inter",system-ui,sans-serif]'>
+                    {block.title}
+                  </h3>
+                  {bananaBullets}
+                </div>,
+              )
+              return items
+            }
             const isBlueprintMC = isBlueprint && block.title === 'MCing for the first time at a large-scale event'
             items.push(
               <div
@@ -119,7 +160,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 {!isBlueprint ? (
                   <span className="text-[11px] uppercase tracking-[0.12em] text-muted">{label}</span>
                 ) : null}
-                {!(isSafespace && label === 'the given prompt') && !isBlueprintMC ? (
+                {!(isSafespace && label === 'the given prompt') && !isBlueprintMC && !(isBanana && label === 'impact') ? (
                   <h3
                     className={
                       isSafespace || isBlueprint

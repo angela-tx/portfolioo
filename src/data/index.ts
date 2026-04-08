@@ -6,21 +6,21 @@ export const featuredProjects: FeaturedProject[] = [
     title: 'BluePrint Conference',
     description: "Leading Vancouver's largest student-run tech conference",
     image:
-      'https://framerusercontent.com/images/zjpBEVbnTiJIddmrKVdwIbvS4Y0.png?width=883&height=660',
+      '/project-blueprint.webp',
   },
   {
     id: 'safespace',
     title: 'safespace',
     description: 'Wellness app that integrates into the physical space',
     image:
-      'https://framerusercontent.com/images/y33rZrsEcRw5CJn1yFi6h0y7WAI.png?width=1213&height=756',
+      '/project-safespace.webp',
   },
   {
     id: 'encore',
     title: 'Encore',
     description: 'Making the concert experience more social and connected',
     image:
-      'https://framerusercontent.com/images/uzBFPAHFbCanqGuqOMYsBvay5Y.png?width=1894&height=1048',
+      '/project-encore.webp',
   },
 ]
 
@@ -163,7 +163,7 @@ export const projectStories: ProjectStory[] = [
     navTitle: 'safespace',
     headline: 'safespace – a habit app that integrates into the physical space',
     hero:
-      'https://framerusercontent.com/images/aiyO6sx5qCCyXHuyCMZc5qQvZg8.jpeg?width=1348&height=744',
+      '/Safespace-cover.webp',
     meta: {
       role: 'Product Manager, Designer',
       tools: 'Figma, Google Slides, NFCs',
@@ -225,7 +225,7 @@ export const projectStories: ProjectStory[] = [
     navTitle: 'Encore',
     headline: 'Encore – Your Concert Companion App',
     hero:
-      'https://framerusercontent.com/images/JHtBElTyJhcpvlMJnQcgljkZdpQ.png?width=2230&height=1250',
+      '/encore-cover.webp',
     meta: {
       role: 'PM, UI/UX Designer',
       tools: 'TypeScript, CSS, Figma, Firebase, Ticketmaster API',
@@ -299,8 +299,7 @@ export const projectStories: ProjectStory[] = [
       "Banana Art Lab's website lacked clarity and ease of use, making it difficult for prospective customers to book DIY workshops, ultimately hindering business growth.",
     sections: [
       {
-        title: 'Pain points',
-        text: 'After meeting with our client, we clarified the objectives, limitations, and 3 core problems to influence our product design.',
+        title: 'After meeting with our client, we clarified the objectives, limitations, and 3 pain points to influence our product design.',
         bullets: [
           'A faulty booking system',
           'Inconsistent branding & visual identity',
@@ -308,8 +307,8 @@ export const projectStories: ProjectStory[] = [
         ],
       },
       {
-        title: 'UX + positioning approach',
-        text: 'Instead of only fixing the booking system, our team aligned brand and conversion flow to support one goal: making it easy and trustworthy to book.',
+        title: 'We approached this as both a UX and positioning problem.',
+        text: 'Instead of only fixing the booking system, our team aligned brand and conversion flow to support one goal: making it easy and trustworthy to book. The actions included:',
         bullets: [
           'Developing a refined GTM strategy aligned with their target audience',
           'Revamping website pages including Hero, About, Gallery, and Booking',
@@ -324,12 +323,12 @@ export const projectStories: ProjectStory[] = [
     ],
     gallery: [
       {
-        src: 'https://framerusercontent.com/images/5S4KMP0yKQjBPVYjcaOKeGfc0.png',
-        alt: 'Branding exploration for Banana Art Lab',
+        src: '/artstudio-research.webp',
+        alt: 'FigJam notes from our client meeting',
       },
       {
-        src: 'https://framerusercontent.com/images/vF51QpUFindesuQKQFHYginVtI.png?width=1988&height=1112',
-        alt: 'Booking flow preview',
+        src: '/artstudio-slide.webp',
+        alt: 'Hi-fi comparison with the original',
       },
     ],
   },
