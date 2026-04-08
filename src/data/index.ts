@@ -108,11 +108,10 @@ export const projectStories: ProjectStory[] = [
       year: '2026',
     },
     summary:
-      "BluePrint is a technology conference hosted by UBC's largest tech club with 200+ attendees, 70 delegates, and 50 executives. Our mission is to help students find their place in tech through workshops, networking, and mentor chats.",
+      "BluePrint is a tech conference I led for UBC's largest tech club with 850+ members. Our mission was to help students find their place in the industry through workshops, networking, and mentor chats.",
     sections: [
       {
-        title: 'What I was responsible for',
-        text: 'My role sat at the intersection of creative strategy, execution, and people.',
+        title: 'My role sat at the intersection of creative strategy, execution, and people. Some of my responsibilities included:',
         bullets: [
           'Designing practical career workshops for students with Microsoft, TELUS, and Asana',
           'Coordinating across marketing, engineering, design, and sponsorship teams to align priorities',
@@ -125,12 +124,20 @@ export const projectStories: ProjectStory[] = [
         text: "I thought the hardest part would be logistics, but it turned out to be responsibility. When things go wrong, people look to you. When things go right, you make space for the team to be proud of what they’ve built. I learned that being a leader is less about having all the answers and more about creating enough clarity that others can do their best work, even when everything feels urgent.",
       },
       {
+        title: 'MCing for the first time at a large-scale event',
+        inlineVisual: {
+          src: '/blueprint-mc.webp',
+          alt: 'MCing at Blueprint',
+        },
+        inlineCaption: 'MCing for the first time at a large-scale event',
+      },
+      {
         title: 'Accessibility, inclusion, and impact',
-        text: "Representation played a heavy influence throughout my planning. Some outcomes I'm proud of include:",
+        text: "Representation played a heavy influence throughout my planning. I'm proud of:",
         bullets: [
-          'Interntionally sending female-identifying reps to the news, amplifying underrepresented voices',
+          'Intentionally sending female-identifying reps to the news, amplifying underrepresented voices',
           'Marketing the event to students of all backgrounds and skill levels, with the only requirement being an interest in business or technology',
-          'Creating space for each attendee to make intentional connections, as boothing helps them learn about the company, but small chats make long-lasting connections',
+          'Creating space for each attendee to make lasting connections, as company booths help them learn about the company, but small chats make real connections',
         ],
       },
       {
@@ -140,16 +147,15 @@ export const projectStories: ProjectStory[] = [
     ],
     gallery: [
       {
-        src: 'https://framerusercontent.com/images/585IrOTUVapK1qVLEIyA8HzbIpY.jpg?width=5867&height=3113',
-        alt: 'The BizTech 2025/26 team',
+        src: '/blueprint-commercenight.webp',
+        alt: 'Winning Top Conference in my business school!',
       },
       {
-        src: 'https://framerusercontent.com/images/Hw4716zakmU1LcG3JpyrWAo88.png',
-        alt: 'Blueprint stage visuals',
+        src: '/blueprint-slide.webp',
+        alt: 'Our engineering team\'s tech',
       },
     ],
-    closing:
-      'Happy to have had the chance to build under pressure, learn from one another, and grow alongside people who make the work worth it 💙',
+    closing: '',
   },
   {
     id: 'safespace',

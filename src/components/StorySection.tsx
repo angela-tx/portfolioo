@@ -58,7 +58,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
   const steps = isSafespace ? safespaceSteps : encoreSteps
   let journeyInserted = false
   let growthInserted = false
-  const galleryAspectClass = story.id === 'encore' ? 'aspect-[16/9]' : ''
+  const galleryAspectClass = story.id === 'encore' || story.id === 'safespace' || story.id === 'blueprint' ? 'aspect-[16/9]' : ''
 
   const renderJourney = () => (
     <div className="flex flex-col gap-3 pt-2 -mt-8" key="journey-block">
@@ -86,24 +86,10 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
         {story.sections.flatMap((block) => {
           const items: ReactElement[] = []
 
-          if (story.id === 'blueprint' && block.title === 'Looking back') {
-            items.push(
-              <figure key="blueprint-win-image" className="flex flex-col gap-3">
-                <img
-                  className="w-full rounded-[6px] border border-border object-cover"
-                  src="/CommerceNightWin.JPG"
-                  alt="Winning Conference of the Year!"
-                  loading="lazy"
-                />
-                <figcaption className={`${mutedClass} text-[14px] text-center`}>
-                  Winning Conference of the Year!
-                </figcaption>
-              </figure>,
-            )
-          }
+          const isBlueprint = story.id === 'blueprint'
 
-          if (isSafespace || isEncore) {
-            const label = (isSafespace ? safespaceLabels[block.title] : encoreLabels[block.title]) ?? 'takeaways'
+          if (isSafespace || isEncore || isBlueprint) {
+            const label = (isSafespace ? safespaceLabels[block.title] : isEncore ? encoreLabels[block.title] : undefined) ?? 'takeaways'
             if (label === 'takeaways') {
               if (showJourney && !journeyInserted && !isSafespace) {
                 items.push(renderJourney())
@@ -124,13 +110,19 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 growthInserted = true
               }
             }
+            const isBlueprintMC = isBlueprint && block.title === 'MCing for the first time at a large-scale event'
             items.push(
-              <div key={block.title} className="flex flex-col gap-2 rounded-[10px] bg-white/90">
-                <span className="text-[11px] uppercase tracking-[0.12em] text-muted">{label}</span>
-                {!(isSafespace && label === 'the given prompt') ? (
+              <div
+                key={block.title}
+                className={isBlueprintMC ? 'flex flex-col gap-2' : 'flex flex-col gap-2 rounded-[10px] bg-white/90'}
+              >
+                {!isBlueprint ? (
+                  <span className="text-[11px] uppercase tracking-[0.12em] text-muted">{label}</span>
+                ) : null}
+                {!(isSafespace && label === 'the given prompt') && !isBlueprintMC ? (
                   <h3
                     className={
-                      isSafespace
+                      isSafespace || isBlueprint
                         ? 'text-[22px] leading-[1.25] text-primary'
                         : 'text-[22px] leading-[1.25] text-primary font-["Instrument Sans","Inter",system-ui,sans-serif]'
                     }
@@ -146,7 +138,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 ) : null}
                 {block.text ? <p className={`${mutedClass} text-[16px] leading-[1.6]`}>{block.text}</p> : null}
                 {block.inlineVisual ? (
-                  <div className="mt-3 overflow-hidden rounded-[12px]">
+                  <figure className={`mt-3 overflow-hidden ${isBlueprintMC ? 'rounded-b-[6px] rounded-t-[6px]' : 'rounded-[12px]'}`}>
                     <img
                       className="w-full object-cover"
                       src={block.inlineVisual.src}
@@ -154,7 +146,10 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                       draggable={false}
                       loading="lazy"
                     />
-                  </div>
+                    {block.inlineCaption ? (
+                      <figcaption className={`${mutedClass} mt-2 text-[14px] text-left`}>{block.inlineCaption}</figcaption>
+                    ) : null}
+                  </figure>
                 ) : null}
                 {block.bullets ? (
                   <ul className="grid list-disc gap-2 pl-5">
