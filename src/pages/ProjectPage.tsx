@@ -249,39 +249,6 @@ export const ProjectPage = () => {
 
       <StorySection story={story} />
 
-      <div className="flex flex-col gap-6 border-t border-border pt-8 lg:flex-row lg:items-center lg:justify-between">
-        {prev ? (
-          <Link
-            to={`/work/${prev.id}`}
-            className='group flex flex-col items-start gap-2 text-primary no-underline font-["Instrument Sans","Inter",system-ui,sans-serif]'
-          >
-            <span className='text-[11px] uppercase tracking-[0.14em] text-muted font-["Instrument Sans","Inter",system-ui,sans-serif]'>
-              Previous
-            </span>
-            <span className='text-[18px] font-normal leading-tight font-["Instrument Sans","Inter",system-ui,sans-serif]'>
-              {prev.navTitle}
-            </span>
-          </Link>
-        ) : (
-          <span />
-        )}
-        {next ? (
-          <Link
-            to={`/work/${next.id}`}
-            className='group flex flex-col items-end gap-2 text-primary no-underline font-["Instrument Sans","Inter",system-ui,sans-serif]'
-          >
-            <span className='text-[11px] uppercase tracking-[0.14em] text-muted font-["Instrument Sans","Inter",system-ui,sans-serif]'>
-              Next
-            </span>
-            <span className='text-[18px] font-normal leading-tight font-["Instrument Sans","Inter",system-ui,sans-serif]'>
-              {next.navTitle}
-            </span>
-          </Link>
-        ) : (
-          <span />
-        )}
-      </div>
-
       <ContactSection />
     </div>
   )
