@@ -247,7 +247,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
           {story.gallery.map((image) => (
             <figure
               key={image.src}
-              className="group flex cursor-zoom-in flex-col gap-3 rounded-[6px] focus-within:ring-2 focus-within:ring-[rgb(143,128,173)] focus-within:ring-offset-2"
+              className="group flex cursor-zoom-in flex-col gap-3 outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 focus-within:ring-0 focus-within:ring-offset-0 active:outline-none"
               role="button"
               tabIndex={0}
               onClick={() => setActiveImage(image)}
@@ -259,7 +259,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
               }}
             >
               <img
-                className={`w-full rounded-[6px] border border-border object-cover shadow-soft ${galleryAspectClass}`}
+                className={`w-full rounded-[6px] object-cover shadow-soft ${galleryAspectClass}`}
                 src={image.src}
                 alt={image.alt}
                 loading="lazy"
