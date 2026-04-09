@@ -33,6 +33,12 @@ export const allProjects: FeaturedProject[] = [
     image:
       '/BananaArtLab.webm',
   },
+  {
+    id: 'doomagotchi',
+    title: 'Doomagotchi',
+    description: 'A counterintuitive browser extension pet',
+    image: '/project-doomagotchi.webp',
+  },
 ]
 
 export const experiences: ExperienceItem[] = [
@@ -89,7 +95,7 @@ export const projectStories: ProjectStory[] = [
     id: 'blueprint',
     title: 'Club Event',
     navTitle: 'BluePrint Conference',
-    headline: "BluePrint – Vancouver's Largest Student-Led Tech Conference",
+    headline: "BluePrint – Vancouver's Largest Collegiate Tech Conference",
     hero:
       '/BluePrintStage.jpg',
     meta: {
@@ -188,7 +194,7 @@ export const projectStories: ProjectStory[] = [
           'In a world that rewards being “always on,” how might we design an experience that helps people set and keep boundaries to make recovery time feel socially safe, rewarding, and easy to sustain?',
       },
       {
-        title: 'To further undertand the problem, our team explored:',
+        title: 'To further undertand the prompt, our team explored:',
         text: 'A core feature is our NFC journal sticker. When placed on a notebook or in a designated goal space, it acts as a physical barrier for intentional rest. The sticker automatically launches safespace when you tap your phone and opens to a guided page with prompts and a focus timer.',
       },
       {
@@ -331,6 +337,47 @@ export const projectStories: ProjectStory[] = [
         alt: 'Hi-fi comparison with the original',
       },
     ],
+  },
+  {
+    id: 'doomagotchi',
+    title: 'Doomagotchi',
+    navTitle: 'Doomagotchi',
+    headline: 'Doomagotchi – A SillyHacks browser pet',
+    hero: '/project-doomagotchi.webp',
+    meta: {
+      role: 'Product Manager',
+      tools: 'React, TailwindCSS, Figma',
+      links: [
+        {
+          label: 'Devpost', 
+          url: 'https://devpost.com/software/doomagatchi',
+        },
+        {
+          label: 'Deck',
+          url: 'https://canva.link/jw2y38pbievoiv0',
+        },
+      ],
+      year: '2026',
+    },
+    summary: 'Instead of fighting against doomscrolling short-form content, we\'re embracing it.',
+    sections: [
+      {
+        title: 'overview',
+        quote: 'Small habits, when repeated consistently, lead to remarkable results.',
+        text: 'Doomagotchi is a Chrome extension Tamagotchi that reacts to your browsing behavior in real time.\n\nYour pet gains health when you visit doomscrolling sites like TikTok, Discord, or X, and loses health when you open productive tools like Google Docs or Canvas. This is how we\'re tackling the ever-growing problem of low attention spans.',
+      },
+    ],
+    gallery: [
+      {
+        src: '/doomagotchi-functionality.webp',
+        alt: 'Functionality preview',
+      },
+      {
+        src: '/doomagotchi-slide.webp',
+        alt: 'Technical considerations',
+      },
+    ],
+    closing: '',
   },
 ]
 

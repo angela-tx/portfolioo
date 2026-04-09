@@ -7,10 +7,11 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
   const isSafespace = story.id === 'safespace'
   const isEncore = story.id === 'encore'
   const isBanana = story.id === 'banana-art-lab'
+  const isDoom = story.id === 'doomagotchi'
 
   const safespaceLabels: Record<string, string> = {
     'The given prompt': 'the given prompt',
-    'To further undertand the problem, our team explored:': 'discovery',
+    'To further undertand the prompt, our team explored:': 'discovery',
     'Instead of asking: What did you accomplish today? It asks: Did you take time for your wellness goals today? to make recovery intentional':
       'solution',
     'What I learned when designing this product': 'takeaways',
@@ -27,6 +28,11 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
     'We approached this as both a UX and positioning problem.': 'discovery',
     Impact: 'impact',
   }
+
+  const doomLabels: Record<string, string> = {
+    overview: 'overview',
+  }
+
 
   const safespaceSteps = [
     'Tap phone on NFC journal sticker',
@@ -66,7 +72,11 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
   let journeyInserted = false
   let growthInserted = false
   const galleryAspectClass =
-    story.id === 'encore' || story.id === 'safespace' || story.id === 'blueprint' || story.id === 'banana-art-lab'
+    story.id === 'encore' ||
+    story.id === 'safespace' ||
+    story.id === 'blueprint' ||
+    story.id === 'banana-art-lab' ||
+    story.id === 'doomagotchi'
       ? 'aspect-[16/9]'
       : ''
 
@@ -97,8 +107,9 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
           const items: ReactElement[] = []
 
           const isBlueprint = story.id === 'blueprint'
+          const isBlueprintMC = isBlueprint && block.title === 'MCing for the first time at a large-scale event'
 
-          if (isSafespace || isEncore || isBlueprint || isBanana) {
+          if (isSafespace || isEncore || isBanana || isDoom || isBlueprint) {
             const label =
               (isSafespace
                 ? safespaceLabels[block.title]
@@ -106,7 +117,18 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 ? encoreLabels[block.title]
                 : isBanana
                 ? bananaLabels[block.title]
+                : isDoom
+                ? doomLabels[block.title]
+                : isBlueprint
+                ? ''
                 : undefined) ?? 'takeaways'
+            const labelText = label?.trim().toLowerCase()
+            const titleText = block.title.trim().toLowerCase()
+            const showLabel =
+              !!label &&
+              !(isSafespace && label === 'the given prompt') &&
+              !isBlueprintMC &&
+              (labelText !== titleText || (isBanana && label === 'impact') || (isDoom && label === 'overview'))
             if (label === 'takeaways') {
               if (showJourney && !journeyInserted && !isSafespace) {
                 items.push(renderJourney())
@@ -151,16 +173,15 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
               )
               return items
             }
-            const isBlueprintMC = isBlueprint && block.title === 'MCing for the first time at a large-scale event'
             items.push(
               <div
                 key={block.title}
                 className={isBlueprintMC ? 'flex flex-col gap-2' : 'flex flex-col gap-2 rounded-[10px] bg-white/90'}
               >
-                {!isBlueprint ? (
+                {showLabel ? (
                   <span className="text-[11px] uppercase tracking-[0.12em] text-muted">{label}</span>
                 ) : null}
-                {!(isSafespace && label === 'the given prompt') && !isBlueprintMC && !(isBanana && label === 'impact') ? (
+                {!(isSafespace && label === 'the given prompt') && !isBlueprintMC && !(isBanana && label === 'impact') && !(isDoom && label === 'overview') ? (
                   <h3
                     className={
                       isSafespace || isBlueprint

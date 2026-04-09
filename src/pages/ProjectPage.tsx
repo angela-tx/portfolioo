@@ -124,7 +124,7 @@ export const ProjectPage = () => {
               ? 'stream winner - stormhacks 2025'
               : story.id === 'blueprint'
               ? 'top conference - sauder cus 2026'
-              : '1st & best pitch - uxathon 2026'}
+              : ''}
           </span>
         </div>
 
@@ -139,8 +139,20 @@ export const ProjectPage = () => {
             <span className="font-body text-[16px] text-primary">{story.meta.role}</span>
           </div>
           <div className="flex flex-col gap-2">
-            <span className="font-body text-[11px] uppercase tracking-[0.12em] text-muted">Tools</span>
-            <span className="font-body text-[16px] text-primary">{story.meta.tools}</span>
+            <span className="font-body text-[11px] uppercase tracking-[0.12em] text-muted">Skills</span>
+            <span className="whitespace-pre-line font-body text-[16px] text-primary">
+              {story.id === 'blueprint'
+                ? 'Leadership\nProject management\nRoadmap alignment'
+                : story.id === 'safespace'
+                ? 'Product design\nFeature scoping\nUser research'
+                : story.id === 'encore'
+                ? '0→1 product ideation\nPitching & storytelling\nUser journey mapping'
+                : story.id === 'banana-art-lab'
+                ? 'Brand positioning\nCommunication\nCompetitive analysis'
+                : story.id === 'doomagotchi'
+                ? 'Storytelling\nPrototyping\nProduct strategy'
+                : 'placeholder'}
+            </span>
           </div>
           <div className="flex flex-col gap-2">
             <span className="font-body text-[11px] uppercase tracking-[0.12em] text-muted">Links</span>
