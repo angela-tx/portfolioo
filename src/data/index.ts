@@ -9,18 +9,18 @@ export const featuredProjects: FeaturedProject[] = [
       '/project-blueprint.webp',
   },
   {
-    id: 'safespace',
-    title: 'safespace',
-    description: 'Wellness app that integrates into the physical space',
-    image:
-      '/project-safespace.webp',
-  },
-  {
     id: 'encore',
     title: 'Encore',
     description: 'Making the concert experience more social and connected',
     image:
       '/project-encore.webp',
+  },
+  {
+    id: 'safespace',
+    title: 'safespace',
+    description: 'Wellness app that integrates into the physical space',
+    image:
+      '/project-safespace.webp',
   },
 ]
 
