@@ -45,7 +45,6 @@ export const ProjectPage = () => {
     return <Navigate to="/work" replace />
   }
 
-  const currentIndex = projectStories.findIndex((p) => p.id === story.id)
   const isBlueprint = story.id === 'blueprint'
   const heroWrapperClass = isBlueprint
     ? 'overflow-hidden rounded-[6px]'
