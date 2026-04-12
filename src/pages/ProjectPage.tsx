@@ -46,8 +46,6 @@ export const ProjectPage = () => {
   }
 
   const currentIndex = projectStories.findIndex((p) => p.id === story.id)
-  const prev = projectStories[currentIndex - 1]
-  const next = projectStories[currentIndex + 1]
   const isBlueprint = story.id === 'blueprint'
   const heroWrapperClass = isBlueprint
     ? 'overflow-hidden rounded-[6px]'
