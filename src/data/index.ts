@@ -114,7 +114,7 @@ export const projectStories: ProjectStory[] = [
       year: '2026',
     },
     summary:
-      "BluePrint is a tech conference I led for UBC's largest tech club with 850+ members. Our mission was to help students find their place in the industry through workshops, networking, and mentor chats.",
+      "BluePrint is a conference I led for UBC's largest tech & business club with 850+ members. Our mission was to help students find their place in the industry through workshops, networking, and mentor chats.",
     sections: [
       {
         title: 'My role sat at the intersection of creative strategy, execution, and people. Some of my responsibilities included:',
@@ -126,16 +126,24 @@ export const projectStories: ProjectStory[] = [
         ],
       },
       {
+        title: 'Internal day-of schedules that I made for all of our execs',
+        inlineVisual: {
+          src: '/blueprint-compendium.webp',
+          alt: 'Blueprint compendium schedules',
+        },
+        inlineCaption: 'Internal day-of schedules that I made for all of our execs',
+      },
+      {
         title: 'Learning about leadership',
         text: "I thought the hardest part would be logistics, but it turned out to be responsibility. When things go wrong, people look to you. When things go right, you make space for the team to be proud of what they’ve built. I learned that being a leader is less about having all the answers and more about creating enough clarity that others can do their best work, even when everything feels urgent.",
       },
       {
-        title: 'MCing for the first time at a large-scale event',
+        title: 'MCing at the opening ceremony',
         inlineVisual: {
           src: '/blueprint-mc.webp',
           alt: 'MCing at Blueprint',
         },
-        inlineCaption: 'MCing for the first time at a large-scale event',
+        inlineCaption: 'MCing at the opening ceremony',
       },
       {
         title: 'Accessibility, inclusion, and impact',

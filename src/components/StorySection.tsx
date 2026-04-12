@@ -107,7 +107,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
           const items: ReactElement[] = []
 
           const isBlueprint = story.id === 'blueprint'
-          const isBlueprintMC = isBlueprint && block.title === 'MCing for the first time at a large-scale event'
+          const isBlueprintMC = isBlueprint && block.title === 'MCing at the opening ceremony'
 
           if (isSafespace || isEncore || isBanana || isDoom || isBlueprint) {
             const label =
@@ -181,7 +181,11 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 {showLabel ? (
                   <span className="text-[11px] uppercase tracking-[0.12em] text-muted">{label}</span>
                 ) : null}
-                {!(isSafespace && label === 'the given prompt') && !isBlueprintMC && !(isBanana && label === 'impact') && !(isDoom && label === 'overview') ? (
+                {!(isSafespace && label === 'the given prompt') &&
+                !isBlueprintMC &&
+                !(isBanana && label === 'impact') &&
+                !(isDoom && label === 'overview') &&
+                !(isBlueprint && block.title === 'Internal day-of schedules that I made for all of our execs') ? (
                   <h3
                     className={
                       isSafespace || isBlueprint
