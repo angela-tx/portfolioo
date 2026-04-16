@@ -37,7 +37,7 @@ export const allProjects: FeaturedProject[] = [
     id: 'doomagotchi',
     title: 'Doomagotchi',
     description: 'A counterintuitive browser extension pet',
-    image: '/project-doomagotchi.webp',
+    image: '/project-doomagotchi.webm',
   },
 ]
 
