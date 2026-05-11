@@ -114,7 +114,7 @@ export const projectStories: ProjectStory[] = [
       year: '2026',
     },
     summary:
-      "BluePrint is a conference I led for UBC's largest tech & business club with 850+ members. Our mission was to help students find their place in the industry through workshops, networking, and mentor chats.",
+      "BluePrint is a conference I led for UBC's largest tech & business club with 900+ members. Our mission was to help students find their place in the industry through workshops, networking, and mentor chats.",
     sections: [
       {
         title: 'My role sat at the intersection of creative strategy, execution, and people. Some of my responsibilities included:',

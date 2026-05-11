@@ -14,7 +14,7 @@ export const AboutPage = () => (
         className={`${mutedClass} max-w-[720px] animate-fade-in-up`}
         style={{ animationDelay: '80ms' }}
       >
-        More about me! When I'm not working, here's what I like to do:
+        I believe that being curious about life outside of work makes me a better thinker & teammate. That's why when I'm not working, I like to:
       </p>
         <div className="flex flex-col gap-8 animate-fade-in-up" style={{ animationDelay: '120ms' }}>
         <div className="flex flex-col gap-2">

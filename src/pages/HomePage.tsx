@@ -17,11 +17,11 @@ export const HomePage = () => (
           className="text-[18px] text-[rgb(143,128,173)] animate-fade-in-up"
           style={{ animationDelay: '80ms' }}
         >
-          ✧ Product, marketing, and community impact
+          ✧ Human-centered tech + marketing
         </p>
         <div className="mt-9 flex flex-col gap-4 text-[18px] font-geist tracking-[-0.02em] leading-[1.6] text-black">
           <p className="animate-fade-in-up" style={{ animationDelay: '120ms' }}>
-            Hi! I’m currently a Marketing Tranformation Intern @ Hootsuite, where I build scalable systems that drive enterprise demand and improve how marketing converts pipeline. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
+            Hi! I’m currently a Project Management Intern @ SAP, where I manage product localization projects. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
           </p>
           <p className="animate-fade-in-up" style={{ animationDelay: '160ms' }}>
             Check out my conference interview:{' '}
