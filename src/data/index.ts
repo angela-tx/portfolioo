@@ -49,7 +49,7 @@ export const experiences: ExperienceItem[] = [
     link: 'https://www.hootsuite.com/',
   },
   {
-    role: 'Software Engineer & Marketing Consultant @ UBC Marketing Association',
+    role: 'Marketing Consultant @ UBC Marketing Association',
     dates: 'Sep 2025 – Present',
     detail: '💻 Web development & GTM strategy',
     link: 'https://www.ubcma.ca/about',

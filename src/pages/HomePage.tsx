@@ -21,7 +21,7 @@ export const HomePage = () => (
         </p>
         <div className="mt-9 flex flex-col gap-4 text-[18px] font-geist tracking-[-0.02em] leading-[1.6] text-black">
           <p className="animate-fade-in-up" style={{ animationDelay: '120ms' }}>
-            Hi! I’m currently a Project Management Intern @ SAP, where I manage product localization projects. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
+            Hi! I’m currently a Project Management Intern @ SAP, where I drive product localization initiatives. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
           </p>
           <p className="animate-fade-in-up" style={{ animationDelay: '160ms' }}>
             Check out my conference interview:{' '}
