@@ -7,6 +7,7 @@ export const featuredProjects: FeaturedProject[] = [
     description: "Leading Vancouver's largest student-run tech conference",
     image:
       '/project-blueprint.webp',
+    category: 'Leadership',
   },
   {
     id: 'encore',
@@ -14,6 +15,7 @@ export const featuredProjects: FeaturedProject[] = [
     description: 'Making the concert experience more social and connected',
     image:
       '/project-encore.webp',
+    category: 'Development',
   },
   {
     id: 'safespace',
@@ -21,6 +23,7 @@ export const featuredProjects: FeaturedProject[] = [
     description: 'Wellness app that integrates into the physical space',
     image:
       '/project-safespace.webp',
+    category: 'Development',
   },
 ]
 
@@ -28,16 +31,18 @@ export const allProjects: FeaturedProject[] = [
   ...featuredProjects,
   {
     id: 'banana-art-lab',
-    title: 'Art Studio Website Redesign',
+    title: 'Art Studio Brand Redesign',
     description: 'Full branding and website redesign for a local client',
     image:
       '/BananaArtLab.webm',
+    category: 'Marketing',
   },
   {
     id: 'doomagotchi',
     title: 'Doomagotchi',
     description: 'A counterintuitive browser extension pet',
     image: '/project-doomagotchi.webm',
+    category: 'Development',
   },
 ]
 
@@ -290,7 +295,7 @@ export const projectStories: ProjectStory[] = [
   {
     id: 'banana-art-lab',
     title: 'FLUI Design Competition - Best Visual Design',
-    navTitle: 'Art Studio Website Redesign',
+    navTitle: 'Art Studio Brand Redesign',
     headline: 'Banana Art Lab – Website Brand and UX Redesign',
     hero:
       'https://framerusercontent.com/images/ganHUOUIHXSUJsM0ERwLHZeRdU.png?width=1982&height=860',

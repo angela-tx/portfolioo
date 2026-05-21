@@ -2,6 +2,12 @@ import { Link } from 'react-router-dom'
 import type { FeaturedProject } from '../types'
 import { mutedClass } from '../utils/constants'
 
+const categoryClass: Record<FeaturedProject['category'], string> = {
+  Leadership: 'border-pink-200 bg-pink-100 text-pink-700',
+  Development: 'border-sky-200 bg-sky-100 text-sky-700',
+  Marketing: 'border-emerald-200 bg-emerald-100 text-emerald-700',
+}
+
 export const ProjectCard = ({ project }: { project: FeaturedProject }) => (
   <Link
     className="group flex flex-col gap-3 transition-all duration-300 ease-out animate-fade-in-up"
@@ -28,6 +34,9 @@ export const ProjectCard = ({ project }: { project: FeaturedProject }) => (
           loading="lazy"
         />
       )}
+      <span className={`absolute bottom-2 left-2 rounded-sm border px-2 py-0.5 font-geist text-[9px] font-medium uppercase tracking-[0.08em] shadow-sm ${categoryClass[project.category]}`}>
+        {project.category}
+      </span>
     </div>
     <div className="px-1 pb-4">
       <div className="flex items-center justify-between transition-colors duration-300 group-hover:text-[rgb(143,128,173)]">
