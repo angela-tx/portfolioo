@@ -34,9 +34,6 @@ export const ProjectCard = ({ project }: { project: FeaturedProject }) => (
           loading="lazy"
         />
       )}
-      <span className={`absolute bottom-2 left-2 rounded-sm border px-2 py-0.5 font-geist text-[9px] font-medium uppercase tracking-[0.08em] shadow-sm ${categoryClass[project.category]}`}>
-        {project.category}
-      </span>
     </div>
     <div className="px-1 pb-4">
       <div className="flex items-center justify-between transition-colors duration-300 group-hover:text-[rgb(143,128,173)]">
@@ -87,6 +84,9 @@ export const ProjectCard = ({ project }: { project: FeaturedProject }) => (
         </span>
       </div>
       <p className={`${mutedClass} text-[13px]`}>{project.description}</p>
+      <span className={`mt-2 inline-flex w-fit rounded-sm border px-2 py-0.5 font-geist text-[9px] font-medium uppercase tracking-[0.08em] shadow-sm ${categoryClass[project.category]}`}>
+        {project.category}
+      </span>
     </div>
   </Link>
 )
