@@ -15,7 +15,7 @@ export const featuredProjects: FeaturedProject[] = [
     description: 'Making the concert experience more social and connected',
     image:
       '/project-encore.webp',
-    category: 'Development',
+    category: 'Product',
   },
   {
     id: 'safespace',
@@ -23,7 +23,7 @@ export const featuredProjects: FeaturedProject[] = [
     description: 'Wellness app that integrates into the physical space',
     image:
       '/project-safespace.webp',
-    category: 'Development',
+    category: 'Product',
   },
 ]
 
@@ -42,31 +42,25 @@ export const allProjects: FeaturedProject[] = [
     title: 'Doomagotchi',
     description: 'A counterintuitive browser extension pet',
     image: '/project-doomagotchi.webm',
-    category: 'Development',
+    category: 'Product',
   },
 ]
 
 export const experiences: ExperienceItem[] = [
   {
+    role: 'Project Manager Intern @ SAP',
+    dates: 'May 2026 – Present',
+    detail: '🌐 Product localization',
+    link: 'https://www.sap.com/',
+  },
+  {
     role: 'Marketing Transformation Intern @ Hootsuite',
-    dates: 'Jan 2026 – Present',
+    dates: 'Jan 2026 – Apr 2026',
     detail: '🚀 Enterprise acceleration',
     link: 'https://www.hootsuite.com/',
   },
   {
-    role: 'Marketing Consultant @ UBC Marketing Association',
-    dates: 'Sep 2025 – Present',
-    detail: '💻 Web development & GTM strategy',
-    link: 'https://www.ubcma.ca/about',
-  },
-  {
-    role: 'Project Manager @ UBC BizTech',
-    dates: 'Oct 2024 – Present',
-    detail: '💼 Event logistics',
-    link: 'https://www.ubcbiztech.com/events/blueprint2026',
-  },
-  {
-    role: 'Digital Marketing @ Wun2Free Entertainment',
+    role: 'Digital Marketer @ Wun2Free Entertainment',
     dates: 'Mar 2023 – Dec 2025',
     detail: '📲 Social media growth',
     link: 'https://www.tiktok.com/@playsidegg',

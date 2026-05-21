@@ -4,7 +4,7 @@ import { mutedClass } from '../utils/constants'
 
 const categoryClass: Record<FeaturedProject['category'], string> = {
   Leadership: 'border-pink-200 bg-pink-100 text-pink-700',
-  Development: 'border-sky-200 bg-sky-100 text-sky-700',
+  Product: 'border-sky-200 bg-sky-100 text-sky-700',
   Marketing: 'border-emerald-200 bg-emerald-100 text-emerald-700',
 }
 
