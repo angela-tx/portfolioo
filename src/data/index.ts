@@ -10,12 +10,12 @@ export const featuredProjects: FeaturedProject[] = [
     category: 'Leadership',
   },
   {
-    id: 'encore',
-    title: 'Encore',
-    description: 'Making the concert experience more social and connected',
+    id: 'banana-art-lab',
+    title: 'Art Studio Brand Redesign',
+    description: 'Full branding and website redesign for a local client',
     image:
-      '/project-encore.webp',
-    category: 'Product',
+      '/BananaArtLab.webm',
+    category: 'Marketing',
   },
   {
     id: 'safespace',
@@ -30,11 +30,19 @@ export const featuredProjects: FeaturedProject[] = [
 export const allProjects: FeaturedProject[] = [
   ...featuredProjects,
   {
-    id: 'banana-art-lab',
-    title: 'Art Studio Brand Redesign',
-    description: 'Full branding and website redesign for a local client',
+    id: 'encore',
+    title: 'Encore',
+    description: 'Making the concert experience more social and connected',
     image:
-      '/BananaArtLab.webm',
+      '/project-encore.webp',
+    category: 'Product',
+  },
+  {
+    id: 'bakd-cookies-consulting',
+    title: "BAK'D Cookies Consulting",
+    description: 'Building a cohesive and multi-channel bakery experience',
+    image:
+      '/project-bakd.webm',
     category: 'Marketing',
   },
   {
@@ -292,7 +300,7 @@ export const projectStories: ProjectStory[] = [
     navTitle: 'Art Studio Brand Redesign',
     headline: 'Banana Art Lab – Website Brand and UX Redesign',
     hero:
-      'https://framerusercontent.com/images/ganHUOUIHXSUJsM0ERwLHZeRdU.png?width=1982&height=860',
+      '/artstudio-cover.webp',
     meta: {
       role: 'UI/UX Designer, Researcher',
       tools: 'Figma',
@@ -342,6 +350,33 @@ export const projectStories: ProjectStory[] = [
       {
         src: '/artstudio-slide.webp',
         alt: 'Hi-fi comparison with the original',
+      },
+    ],
+  },
+  {
+    id: 'bakd-cookies-consulting',
+    title: "BAK'D Cookies Consulting",
+    navTitle: "BAK'D Cookies Consulting",
+    headline: "BAK'D Cookies Consulting",
+    hero:
+      '/bakd-cover.webp',
+    meta: {
+      role: 'Consultant, Product Designer',
+      tools: 'Campaign strategy, Wireframing, Brand storytelling',
+      links: [
+        {
+          label: 'Slide Deck',
+          url: 'https://canva.link/zwxuy7257ejchx3',
+        },
+      ],
+      year: '2026',
+    },
+    summary:
+      'Alongside UBC\'s premier marketing strategy consulting team, we transformed BAK\'D\'s marketing to better promote their iconic, ooey gooey cookies!',
+    sections: [
+      {
+        title: 'Work in progress',
+        text: 'This page is a work in progress :)',
       },
     ],
   },

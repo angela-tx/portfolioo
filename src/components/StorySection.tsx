@@ -7,6 +7,8 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
   const isSafespace = story.id === 'safespace'
   const isEncore = story.id === 'encore'
   const isBanana = story.id === 'banana-art-lab'
+  const isBakd = story.id === 'bakd-cookies-consulting'
+  const isBananaStyle = isBanana || isBakd
   const isDoom = story.id === 'doomagotchi'
 
   const safespaceLabels: Record<string, string> = {
@@ -26,6 +28,12 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
   const bananaLabels: Record<string, string> = {
     'Pain points': 'problem',
     'We approached this as both a UX and positioning problem.': 'discovery',
+    Impact: 'impact',
+  }
+
+  const bakdLabels: Record<string, string> = {
+    'Placeholder client context and strategic challenge.': 'problem',
+    'We approached this as both a brand and growth strategy problem.': 'discovery',
     Impact: 'impact',
   }
 
@@ -76,6 +84,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
     story.id === 'safespace' ||
     story.id === 'blueprint' ||
     story.id === 'banana-art-lab' ||
+    story.id === 'bakd-cookies-consulting' ||
     story.id === 'doomagotchi'
       ? 'aspect-[16/9]'
       : ''
@@ -108,8 +117,18 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
 
           const isBlueprint = story.id === 'blueprint'
           const isBlueprintMC = isBlueprint && block.title === 'MCing at the opening ceremony'
+          const isBakdWorkInProgress = isBakd && block.title === 'Work in progress'
 
-          if (isSafespace || isEncore || isBanana || isDoom || isBlueprint) {
+          if (isSafespace || isEncore || isBananaStyle || isDoom || isBlueprint) {
+            if (isBakdWorkInProgress) {
+              items.push(
+                <div key={block.title} className="flex flex-col gap-2 rounded-[10px] bg-white/90">
+                  {block.text ? <p className={`${mutedClass} text-[16px] leading-[1.6]`}>{block.text}</p> : null}
+                </div>,
+              )
+              return items
+            }
+
             const label =
               (isSafespace
                 ? safespaceLabels[block.title]
@@ -117,6 +136,8 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 ? encoreLabels[block.title]
                 : isBanana
                 ? bananaLabels[block.title]
+                : isBakd
+                ? bakdLabels[block.title]
                 : isDoom
                 ? doomLabels[block.title]
                 : isBlueprint
@@ -128,7 +149,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
               !!label &&
               !(isSafespace && label === 'the given prompt') &&
               !isBlueprintMC &&
-              (labelText !== titleText || (isBanana && label === 'impact') || (isDoom && label === 'overview'))
+              (labelText !== titleText || (isBananaStyle && label === 'impact') || (isDoom && label === 'overview'))
             if (label === 'takeaways') {
               if (showJourney && !journeyInserted && !isSafespace) {
                 items.push(renderJourney())
@@ -150,7 +171,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
               }
             }
 
-            if (isBanana && block.title.startsWith('After meeting with our client')) {
+            if (isBananaStyle && (block.title.startsWith('After meeting with our client') || block.title.startsWith('Placeholder client context'))) {
               // Do not render label; render as standard text/bullets block
               const bananaBullets = (
                 <ul className="grid list-disc gap-2 pl-5">
@@ -183,7 +204,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 ) : null}
                 {!(isSafespace && label === 'the given prompt') &&
                 !isBlueprintMC &&
-                !(isBanana && label === 'impact') &&
+                !(isBananaStyle && label === 'impact') &&
                 !(isDoom && label === 'overview') &&
                 !(isBlueprint && block.title === 'Internal day-of schedules that I made for all of our execs') ? (
                   <h3

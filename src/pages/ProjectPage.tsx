@@ -146,6 +146,8 @@ export const ProjectPage = () => {
                 ? '0→1 product ideation\nPitching & storytelling\nUser journey mapping'
                 : story.id === 'banana-art-lab'
                 ? 'Brand positioning\nCommunication\nCompetitive analysis'
+                : story.id === 'bakd-cookies-consulting'
+                ? 'Campaign strategy\nEvent activation\nBrand storytelling'
                 : story.id === 'doomagotchi'
                 ? 'Storytelling\nPrototyping\nProduct strategy'
                 : 'placeholder'}
