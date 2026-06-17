@@ -52,7 +52,6 @@ export const Layout = () => {
             {navItems.map((item) => (
               // Highlight current page in accent color
               // Treat nested routes (e.g., /work/slug) as active for their parent
-              // eslint-disable-next-line react/jsx-no-comment-textnodes
               <Link
                 key={item.to}
                 className={`rounded-[6px] px-2 py-2 text-[15px] font-normal tracking-[-0.01em] no-underline ${

@@ -30,17 +30,6 @@ export const ProjectPage = () => {
     }
   }, [slug])
 
-  useEffect(() => {
-    // reset video when navigating between projects
-    if (videoRef.current) {
-      videoRef.current.pause()
-      videoRef.current.currentTime = 0
-    }
-    setIsPlaying(false)
-    setProgress(0)
-    setDuration(0)
-  }, [story?.id])
-
   if (!story) {
     return <Navigate to="/work" replace />
   }
@@ -183,9 +172,10 @@ export const ProjectPage = () => {
               <div className="relative aspect-[16/9] w-full group">
                 <video
                   ref={videoRef}
+                  key={story.id}
                   className="h-full w-full cursor-pointer object-cover"
                   src="/blueprint-closing.mp4"
-                poster="/BluePrintStage.jpg"
+                poster="/project-blueprint.webp"
                 playsInline
                 onClick={handleVideoToggle}
                 onLoadedMetadata={handleLoadedMetadata}

@@ -77,8 +77,6 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
 
   const showJourney = isEncore || isSafespace
   const steps = isSafespace ? safespaceSteps : encoreSteps
-  let journeyInserted = false
-  let growthInserted = false
   const galleryAspectClass =
     story.id === 'encore' ||
     story.id === 'safespace' ||
@@ -88,6 +86,24 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
     story.id === 'doomagotchi'
       ? 'aspect-[16/9]'
       : ''
+
+  const getBlockLabel = (title: string) =>
+    (isSafespace
+      ? safespaceLabels[title]
+      : isEncore
+      ? encoreLabels[title]
+      : isBanana
+      ? bananaLabels[title]
+      : isBakd
+      ? bakdLabels[title]
+      : isDoom
+      ? doomLabels[title]
+      : story.id === 'blueprint'
+      ? ''
+      : undefined) ?? 'takeaways'
+
+  const isFirstTakeawaysBlock = (index: number) =>
+    !story.sections.slice(0, index).some((section) => getBlockLabel(section.title) === 'takeaways')
 
   const renderJourney = () => (
     <div className="flex flex-col gap-3 pt-2 -mt-8" key="journey-block">
@@ -112,7 +128,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
   return (
     <article className="flex flex-col gap-16 pt-2 lg:gap-20">
       <div className="flex flex-col gap-12">
-        {story.sections.flatMap((block) => {
+        {story.sections.flatMap((block, index) => {
           const items: ReactElement[] = []
 
           const isBlueprint = story.id === 'blueprint'
@@ -129,20 +145,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
               return items
             }
 
-            const label =
-              (isSafespace
-                ? safespaceLabels[block.title]
-                : isEncore
-                ? encoreLabels[block.title]
-                : isBanana
-                ? bananaLabels[block.title]
-                : isBakd
-                ? bakdLabels[block.title]
-                : isDoom
-                ? doomLabels[block.title]
-                : isBlueprint
-                ? ''
-                : undefined) ?? 'takeaways'
+            const label = getBlockLabel(block.title)
             const labelText = label?.trim().toLowerCase()
             const titleText = block.title.trim().toLowerCase()
             const showLabel =
@@ -151,11 +154,10 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
               !isBlueprintMC &&
               (labelText !== titleText || (isBananaStyle && label === 'impact') || (isDoom && label === 'overview'))
             if (label === 'takeaways') {
-              if (showJourney && !journeyInserted && !isSafespace) {
+              if (showJourney && isFirstTakeawaysBlock(index) && !isSafespace) {
                 items.push(renderJourney())
-                journeyInserted = true
               }
-              if (!growthInserted && isEncore) {
+              if (isFirstTakeawaysBlock(index) && isEncore) {
                 items.push(
                   <div className="flex flex-col gap-2 pt-4" key="growth-strategy">
                     <span className="text-[11px] uppercase tracking-[0.12em] text-muted">growth strategy</span>
@@ -167,7 +169,6 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                     </p>
                   </div>,
                 )
-                growthInserted = true
               }
             }
 
@@ -249,9 +250,8 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 ) : null}
               </div>,
             )
-            if (isSafespace && block.title === 'Instead of asking: What did you accomplish today? It asks: Did you take time for your wellness goals today? to make recovery intentional' && !journeyInserted) {
+            if (isSafespace && block.title === 'Instead of asking: What did you accomplish today? It asks: Did you take time for your wellness goals today? to make recovery intentional') {
               items.push(renderJourney())
-              journeyInserted = true
             }
           } else {
             items.push(

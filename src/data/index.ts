@@ -104,7 +104,7 @@ export const projectStories: ProjectStory[] = [
     navTitle: 'BluePrint Conference',
     headline: "BluePrint – Vancouver's Largest Collegiate Tech Conference",
     hero:
-      '/BluePrintStage.jpg',
+      '/project-blueprint.webp',
     meta: {
       role: 'Project Manager',
       tools: 'Notion, Excel, Figma',
