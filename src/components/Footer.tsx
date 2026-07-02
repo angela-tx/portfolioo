@@ -1,4 +1,5 @@
-import { IconLinkedIn, IconMail } from './Icons'
+import { EmailCopyButton } from './EmailCopyButton'
+import { IconLinkedIn } from './Icons'
 
 export const Footer = () => (
   <footer className="mt-16 border-t border-border py-4">
@@ -14,13 +15,7 @@ export const Footer = () => (
         >
           <IconLinkedIn />
         </a>
-        <a
-          className="inline-flex rounded-[6px] p-2 text-primary hover:text-[rgb(143,128,173)]"
-          href="mailto:angelatxhuang@gmail.com"
-          aria-label="Email"
-        >
-          <IconMail />
-        </a>
+        <EmailCopyButton />
       </nav>
     </div>
   </footer>
