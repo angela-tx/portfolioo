@@ -1,5 +1,5 @@
 import { Link, Outlet, useLocation } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 import { navItems } from '../data'
 import { IconLinkedIn, IconMail } from './Icons'
 import { Footer } from './Footer'
@@ -7,6 +7,25 @@ import { Footer } from './Footer'
 export const Layout = () => {
   const { pathname } = useLocation()
   const [isVisible, setIsVisible] = useState(true)
+  const [emailCopied, setEmailCopied] = useState(false)
+  const copyTimeoutRef = useRef<number | null>(null)
+  const emailAddress = 'angelatxhuang@gmail.com'
+
+  useEffect(() => {
+    if (!('scrollRestoration' in window.history)) return
+
+    const previousScrollRestoration = window.history.scrollRestoration
+    window.history.scrollRestoration = 'manual'
+
+    return () => {
+      window.history.scrollRestoration = previousScrollRestoration
+    }
+  }, [])
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    setIsVisible(true)
+  }, [pathname])
 
   useEffect(() => {
     let lastScrollY = window.scrollY
@@ -32,6 +51,33 @@ export const Layout = () => {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    return () => {
+      if (copyTimeoutRef.current) window.clearTimeout(copyTimeoutRef.current)
+    }
+  }, [])
+
+  const handleCopyEmail = async () => {
+    if (copyTimeoutRef.current) window.clearTimeout(copyTimeoutRef.current)
+
+    try {
+      await navigator.clipboard.writeText(emailAddress)
+    } catch {
+      const textarea = document.createElement('textarea')
+      textarea.value = emailAddress
+      textarea.setAttribute('readonly', '')
+      textarea.style.position = 'fixed'
+      textarea.style.opacity = '0'
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+    }
+
+    setEmailCopied(true)
+    copyTimeoutRef.current = window.setTimeout(() => setEmailCopied(false), 2200)
+  }
 
   return (
   <div className="min-h-screen bg-white text-primary">
@@ -77,13 +123,24 @@ export const Layout = () => {
           >
             <IconLinkedIn />
           </a>
-          <a
-            className="inline-flex rounded-[6px] p-2 text-primary hover:text-[rgb(143,128,173)]"
-            href="mailto:angelatxhuang@gmail.com"
-            aria-label="Email"
+          <button
+            className={`inline-flex h-[33px] items-center overflow-hidden rounded-[6px] border-0 bg-transparent px-2 text-primary transition-[max-width,color,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-[rgb(143,128,173)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(116,99,150,0.2)] [&_svg]:shrink-0 ${
+              emailCopied ? 'max-w-[340px] bg-[#f7f5fb] text-[rgb(143,128,173)]' : 'max-w-[33px]'
+            }`}
+            type="button"
+            aria-label="Copy email address"
+            aria-live="polite"
+            onClick={handleCopyEmail}
           >
             <IconMail />
-          </a>
+            <span
+              className={`whitespace-nowrap pl-2 font-body text-[13px] font-medium tracking-[0.01em] transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                emailCopied ? 'translate-x-0 opacity-100' : 'translate-x-1 opacity-0'
+              }`}
+            >
+              copied to clipboard: {emailAddress}
+            </span>
+          </button>
         </div>
       </div>
     </header>
