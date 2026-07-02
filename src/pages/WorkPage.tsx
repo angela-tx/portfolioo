@@ -56,9 +56,12 @@ export const WorkPage = () => {
             })}
           </div>
         </div>
-        <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5">
+        <div
+          key={activeFilter}
+          className="grid w-full grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5 animate-fade-in-up"
+        >
           {visibleProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard key={project.id} project={project} animate={false} />
           ))}
         </div>
       </section>

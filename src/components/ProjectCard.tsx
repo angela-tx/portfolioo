@@ -8,9 +8,9 @@ const categoryClass: Record<FeaturedProject['category'], string> = {
   Marketing: 'border-emerald-200 bg-emerald-100 text-emerald-700',
 }
 
-export const ProjectCard = ({ project }: { project: FeaturedProject }) => (
+export const ProjectCard = ({ project, animate = true }: { project: FeaturedProject; animate?: boolean }) => (
   <Link
-    className="group flex flex-col gap-3 transition-all duration-300 ease-out animate-fade-in-up"
+    className={`group flex flex-col gap-3 transition-all duration-300 ease-out ${animate ? 'animate-fade-in-up' : ''}`}
     to={`/work/${project.id}`}
     aria-label={`Open ${project.title}`}
   >
