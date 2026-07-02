@@ -81,6 +81,15 @@ export const funGallery: GalleryItem[] = [
     image: '/carousel-blueprint.webp',
     link: '/work/blueprint',
   },
+    {
+    title: 'last day in the nest :(',
+    image: '/carousel-hootsuite.webp',
+  },
+    {
+    title: 'SAP developer conference',
+    image: '/carousel-dcom.webp',
+  },
+
   {
     title: 'dance battle!',
     image: '/carousel-udcbattle.webp',
@@ -91,10 +100,7 @@ export const funGallery: GalleryItem[] = [
     image: '/carousel-gateways.webp',
     link: 'https://www.ubcma.ca/',
   },
-  {
-    title: 'choreographed a piece 💃',
-    image: '/carousel-pug.webp',
-  },
+
 ]
 
 export const aboutGallery: AboutGalleryItem[] = [
