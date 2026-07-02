@@ -1,4 +1,4 @@
-import type { FeaturedProject, ExperienceItem, GalleryItem, ProjectStory } from '../types'
+import type { FeaturedProject, ExperienceItem, GalleryItem, AboutGalleryItem, ProjectStory } from '../types'
 
 export const featuredProjects: FeaturedProject[] = [
   {
@@ -59,7 +59,7 @@ export const experiences: ExperienceItem[] = [
     role: 'Project Manager Intern @ SAP',
     dates: 'May 2026 – Present',
     detail: '🌐 Product localization',
-    link: 'https://www.sap.com/',
+    link: 'https://translation.sap.com/index.html',
   },
   {
     role: 'Marketing Transformation Intern @ Hootsuite',
@@ -68,7 +68,7 @@ export const experiences: ExperienceItem[] = [
     link: 'https://www.hootsuite.com/',
   },
   {
-    role: 'Digital Marketer @ Wun2Free Entertainment',
+    role: 'Social Media Marketer @ Wun2Free Entertainment',
     dates: 'Mar 2023 – Dec 2025',
     detail: '📲 Social media growth',
     link: 'https://www.tiktok.com/@playsidegg',
@@ -94,6 +94,33 @@ export const funGallery: GalleryItem[] = [
   {
     title: 'choreographed a piece 💃',
     image: '/carousel-pug.webp',
+  },
+]
+
+export const aboutGallery: AboutGalleryItem[] = [
+  {
+    image: '/gallery-hike.webp',
+    caption: 'hiking in BC',
+  },
+  {
+    image: '/gallery-concert.webp',
+    caption: 'going to concerts',
+  },
+  {
+    image: '/gallery-blueprint.webp',
+    caption: 'running UBC\'s largest tech conference',
+  },
+  {
+    image: '/gallery-food.webp',
+    caption: 'discovering new restaurants',
+  },
+  {
+    image: '/gallery-nyc.webp',
+    caption: 'travelling',
+  },
+  {
+    image: '/gallery-pug.webp',
+    caption: 'competitive dance with my team',
   },
 ]
 

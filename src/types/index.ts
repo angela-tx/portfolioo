@@ -25,6 +25,11 @@ export type GalleryItem = {
   link?: string
 }
 
+export type AboutGalleryItem = {
+  image: string
+  caption: string
+}
+
 export type ProjectStory = {
   id: string
   title: string
