@@ -97,6 +97,7 @@ export const AboutPage = () => {
                     src={item.image}
                     alt={item.caption}
                     loading="lazy"
+                    draggable={false}
                   />
                 </div>
                 <figcaption className="pt-1">
