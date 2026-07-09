@@ -160,9 +160,9 @@ export const projectStories: ProjectStory[] = [
         title: 'My role sat at the intersection of creative strategy, execution, and people. Some of my responsibilities included:',
         bullets: [
           'Designing practical career workshops for students with Microsoft, TELUS, and Asana',
-          'Coordinating across marketing, engineering, design, and sponsorship teams to align priorities',
+          'Coordinating across marketing, engineering, design, and sponsorship teams to align priorities over 8 months',
           'Communicating day-of roles so everyone knew where to be 🏃‍♀️',
-          'Acting as the central point of contact over 8 months',
+          'Leading a career night event for 70+ 1st and 2nd year students to prepare them before BluePrint',
         ],
       },
       {
