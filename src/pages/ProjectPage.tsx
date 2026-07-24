@@ -137,6 +137,8 @@ export const ProjectPage = () => {
                 ? 'Brand positioning\nCommunication\nCompetitive analysis'
                 : story.id === 'bakd-cookies-consulting'
                 ? 'Campaign strategy\nEvent activation\nBrand storytelling'
+                : story.id === 'marketing-association-membership-portal'
+                ? 'UX research\nInformation architecture'
                 : story.id === 'doomagotchi'
                 ? 'Storytelling\nPrototyping\nProduct strategy'
                 : 'placeholder'}

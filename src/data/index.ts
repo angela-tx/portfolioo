@@ -2,14 +2,6 @@ import type { FeaturedProject, ExperienceItem, GalleryItem, AboutGalleryItem, Pr
 
 export const featuredProjects: FeaturedProject[] = [
   {
-    id: 'blueprint',
-    title: 'BluePrint Conference',
-    description: "Leading Vancouver's largest student-run tech conference",
-    image:
-      '/project-blueprint.webp',
-    category: 'Leadership',
-  },
-  {
     id: 'banana-art-lab',
     title: 'Art Studio Brand Redesign',
     description: 'Full branding and website redesign for a local client',
@@ -25,18 +17,19 @@ export const featuredProjects: FeaturedProject[] = [
       '/project-safespace.webp',
     category: 'Product',
   },
+  {
+    id: 'blueprint',
+    title: 'BluePrint Conference',
+    description: "Leading Vancouver's largest student-run tech conference",
+    image:
+      '/project-blueprint.webp',
+    category: 'Marketing',
+  },
 ]
 
 export const allProjects: FeaturedProject[] = [
-  ...featuredProjects,
-  {
-    id: 'encore',
-    title: 'Encore',
-    description: 'Making the concert experience more social and connected',
-    image:
-      '/project-encore.webp',
-    category: 'Product',
-  },
+  featuredProjects[0],
+  featuredProjects[1],
   {
     id: 'bakd-cookies-consulting',
     title: "BAK'D Cookies Consulting",
@@ -45,6 +38,23 @@ export const allProjects: FeaturedProject[] = [
       '/project-bakd.webm',
     category: 'Marketing',
   },
+  {
+    id: 'marketing-association-membership-portal',
+    title: 'Marketing Association Membership Portal',
+    description: 'A digital hub for 400+ club members to access events',
+    image:
+      '/project-maportal.webp',
+    category: 'Product',
+  },
+  {
+    id: 'encore',
+    title: 'Encore',
+    description: 'Making the concert experience more social and connected',
+    image:
+      '/project-encore.webp',
+    category: 'Product',
+  },
+  featuredProjects[2],
   {
     id: 'doomagotchi',
     title: 'Doomagotchi',
@@ -406,6 +416,33 @@ export const projectStories: ProjectStory[] = [
     },
     summary:
       'Alongside UBC\'s premier marketing strategy consulting team, we transformed BAK\'D\'s marketing to better promote their iconic, ooey gooey cookies!',
+    sections: [
+      {
+        title: 'Work in progress',
+        text: 'This page is a work in progress :)',
+      },
+    ],
+  },
+  {
+    id: 'marketing-association-membership-portal',
+    title: 'Marketing Association Membership Portal',
+    navTitle: 'Marketing Association Membership Portal',
+    headline: 'Marketing Association Membership Portal',
+    hero:
+      '/maportal-cover.webp',
+    meta: {
+      role: 'Product Designer',
+      tools: 'Figma',
+      links: [
+        {
+          label: 'Portal',
+          url: 'https://app.ubcma.ca/sign-in',
+        },
+      ],
+      year: '2026',
+    },
+    summary:
+      'Our team set out to streamline ticketing, job searching, and community engagement with technology. Our innovations led us to win Club of the Year 2026 from the Sauder School of Business!',
     sections: [
       {
         title: 'Work in progress',

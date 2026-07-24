@@ -7,7 +7,7 @@ import type { FeaturedProject } from '../types'
 
 type ProjectFilter = 'All' | FeaturedProject['category']
 
-const projectFilters: ProjectFilter[] = ['All', 'Marketing', 'Product', 'Leadership']
+const projectFilters: ProjectFilter[] = ['All', 'Marketing', 'Product']
 
 export const WorkPage = () => {
   const [activeFilter, setActiveFilter] = useState<ProjectFilter>('All')

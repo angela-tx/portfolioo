@@ -8,7 +8,9 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
   const isEncore = story.id === 'encore'
   const isBanana = story.id === 'banana-art-lab'
   const isBakd = story.id === 'bakd-cookies-consulting'
-  const isBananaStyle = isBanana || isBakd
+  const isMarketingPortal = story.id === 'marketing-association-membership-portal'
+  const isWorkInProgress = isBakd || isMarketingPortal
+  const isBananaStyle = isBanana || isWorkInProgress
   const isDoom = story.id === 'doomagotchi'
 
   const safespaceLabels: Record<string, string> = {
@@ -133,10 +135,10 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
 
           const isBlueprint = story.id === 'blueprint'
           const isBlueprintMC = isBlueprint && block.title === 'MCing at the opening ceremony'
-          const isBakdWorkInProgress = isBakd && block.title === 'Work in progress'
+          const isWorkInProgressBlock = isWorkInProgress && block.title === 'Work in progress'
 
           if (isSafespace || isEncore || isBananaStyle || isDoom || isBlueprint) {
-            if (isBakdWorkInProgress) {
+            if (isWorkInProgressBlock) {
               items.push(
                 <div key={block.title} className="flex flex-col gap-2 rounded-[10px] bg-white/90">
                   {block.text ? <p className={`${mutedClass} text-[16px] leading-[1.6]`}>{block.text}</p> : null}
