@@ -6,6 +6,7 @@ const categoryClass: Record<FeaturedProject['category'], string> = {
   Leadership: 'border-pink-200 bg-pink-100 text-pink-700',
   Product: 'border-sky-200 bg-sky-100 text-sky-700',
   Marketing: 'border-emerald-200 bg-emerald-100 text-emerald-700',
+  Work: 'border-pink-200 bg-pink-100 text-pink-700',
 }
 
 export const ProjectCard = ({ project, animate = true }: { project: FeaturedProject; animate?: boolean }) => (

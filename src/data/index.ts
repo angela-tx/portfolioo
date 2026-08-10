@@ -4,7 +4,7 @@ export const featuredProjects: FeaturedProject[] = [
   {
     id: 'banana-art-lab',
     title: 'Art Studio Brand Redesign',
-    description: 'Full branding and website redesign for a local client',
+    description: 'Full branding and website redesign for a local café',
     image:
       '/BananaArtLab.webm',
     category: 'Marketing',
@@ -12,7 +12,7 @@ export const featuredProjects: FeaturedProject[] = [
   {
     id: 'safespace',
     title: 'safespace',
-    description: 'Wellness app that integrates into the physical space',
+    description: 'Designing a wellness app that uses NFC technology',
     image:
       '/project-safespace.webp',
     category: 'Product',
@@ -20,7 +20,7 @@ export const featuredProjects: FeaturedProject[] = [
   {
     id: 'blueprint',
     title: 'BluePrint Conference',
-    description: "Leading Vancouver's largest student-run tech conference",
+    description: "Leading Vancouver's largest collegiate tech conference",
     image:
       '/project-blueprint.webp',
     category: 'Marketing',
@@ -33,7 +33,7 @@ export const allProjects: FeaturedProject[] = [
   {
     id: 'bakd-cookies-consulting',
     title: "BAK'D Cookies Consulting",
-    description: 'Building a cohesive and multi-channel bakery experience',
+    description: 'Building a cohesive bakery experience for 16k+ followers',
     image:
       '/project-bakd.webm',
     category: 'Marketing',
@@ -47,9 +47,17 @@ export const allProjects: FeaturedProject[] = [
     category: 'Product',
   },
   {
+    id: 'hootsuite',
+    title: 'Hootsuite Web Launch',
+    description: 'Analyzing positioning across enterprise web pages',
+    image:
+      '/project-hootsuite.webp',
+    category: 'Work',
+  },
+  {
     id: 'encore',
     title: 'Encore',
-    description: 'Making the concert experience more social and connected',
+    description: 'Developing an app to help concert-goers find friends',
     image:
       '/project-encore.webp',
     category: 'Product',
@@ -123,9 +131,10 @@ export const aboutGallery: AboutGalleryItem[] = [
     caption: 'going to concerts',
   },
   {
-    image: '/gallery-blueprint.webp',
-    caption: 'running UBC\'s largest tech conference',
+    image: '/gallery-spark.webp',
+    caption: 'guiding freshman around UBC & Sauder',
   },
+
   {
     image: '/gallery-food.webp',
     caption: 'discovering new restaurants',
@@ -136,7 +145,15 @@ export const aboutGallery: AboutGalleryItem[] = [
   },
   {
     image: '/gallery-pug.webp',
-    caption: 'competitive dance with my team',
+    caption: 'competitive dance with my team <3',
+  },
+    {
+    image: '/gallery-blueprint.webp',
+    caption: 'running UBC\'s largest tech conference',
+  },
+  {
+    image: '/gallery-bungee.webp',
+    caption: 'bungee jumping in nanaimo (never again)',
   },
 ]
 
@@ -244,7 +261,7 @@ export const projectStories: ProjectStory[] = [
       year: '2026',
     },
     summary:
-      'We live in a culture that rewards being “always on.” Students track workouts, study time, and habits. But almost no one tracks recovery. We enable users to reframe how they set goals by focusing on recovery metrics, rather than productivity.',
+      'We live in a culture that rewards being “always on.” Students track workouts and study time, but almost no one tracks recovery. We enable users to reframe how they set goals by focusing on healthy metrics.',
     sections: [
       {
         title: 'The given prompt',
@@ -447,6 +464,33 @@ export const projectStories: ProjectStory[] = [
       {
         title: 'Work in progress',
         text: 'This page is a work in progress :)',
+      },
+    ],
+  },
+  {
+    id: 'hootsuite',
+    title: 'Hootsuite Web Launch',
+    navTitle: 'Hootsuite',
+    headline: 'Hootsuite Web Launch',
+    hero:
+      '/hootsuite-cover.webp',
+    meta: {
+      role: 'Marketing Transformation Intern',
+      tools: 'PowerPoint, Miro, 6sense',
+      links: [
+        {
+          label: 'Enterprise Page',
+          url: 'https://www.hootsuite.com/plans/enterprise?srsltid=AfmBOoocvDKLEmYFsFBJVjN2RWhYFH-UKz1mnA_AszaCCocFwL8cbMCn',
+        },
+      ],
+      year: '2026',
+    },
+    summary:
+      'I assessed enterprise marketing channels to identify gaps in messaging and recommended lead nurturing systems to improve funnel conversion.',
+    sections: [
+      {
+        title: 'Work in progress',
+        text: 'This project was a part of my internship, please contact me for more details :)',
       },
     ],
   },

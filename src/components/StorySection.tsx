@@ -9,7 +9,8 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
   const isBanana = story.id === 'banana-art-lab'
   const isBakd = story.id === 'bakd-cookies-consulting'
   const isMarketingPortal = story.id === 'marketing-association-membership-portal'
-  const isWorkInProgress = isBakd || isMarketingPortal
+  const isHootsuiteWebMessaging = story.id === 'hootsuite'
+  const isWorkInProgress = isBakd || isMarketingPortal || isHootsuiteWebMessaging
   const isBananaStyle = isBanana || isWorkInProgress
   const isDoom = story.id === 'doomagotchi'
 
@@ -85,6 +86,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
     story.id === 'blueprint' ||
     story.id === 'banana-art-lab' ||
     story.id === 'bakd-cookies-consulting' ||
+    story.id === 'hootsuite' ||
     story.id === 'doomagotchi'
       ? 'aspect-[16/9]'
       : ''

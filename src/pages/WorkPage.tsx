@@ -7,7 +7,7 @@ import type { FeaturedProject } from '../types'
 
 type ProjectFilter = 'All' | FeaturedProject['category']
 
-const projectFilters: ProjectFilter[] = ['All', 'Marketing', 'Product']
+const projectFilters: ProjectFilter[] = ['All', 'Marketing', 'Product', 'Work']
 
 export const WorkPage = () => {
   const [activeFilter, setActiveFilter] = useState<ProjectFilter>('All')
@@ -23,7 +23,7 @@ export const WorkPage = () => {
           className="max-w-[760px] text-[clamp(44px,5.5vw,66px)] leading-[1.05] animate-fade-in-up"
           style={{ animationDelay: '40ms' }}
         >
-          work & project portfolio
+          project portfolio
         </h1>
         <p
           className={`${mutedClass} max-w-[720px] animate-fade-in-up`}

@@ -79,6 +79,19 @@ export const ProjectPage = () => {
     setProgress(newTime / duration)
   }
 
+  const achievementLabel =
+    story.id === 'banana-art-lab'
+      ? 'stream winner - flui design competition'
+      : story.id === 'encore'
+      ? 'stream winner - stormhacks'
+      : story.id === 'blueprint'
+      ? 'top conference - sauder cus 2026'
+      : story.id === 'marketing-association-membership-portal'
+      ? 'top club - sauder cus 2026'
+      : story.id === 'safespace'
+      ? '1st place advanced & best pitch - UXathon'
+      : ''
+
   return (
     <div className="flex flex-col gap-12">
       <div className="flex flex-col gap-8">
@@ -90,28 +103,24 @@ export const ProjectPage = () => {
             <span className="text-primary">/</span>
             <span className="font-body text-primary">{story.navTitle}</span>
           </div>
-          <span className="inline-flex items-center gap-2 font-body text-[12px] uppercase tracking-[0.12em] text-muted">
-            <svg
-              className="h-[14px] w-[14px]"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M4 22h16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            {story.id === 'banana-art-lab'
-              ? 'stream winner - flui design competition 2025'
-              : story.id === 'encore'
-              ? 'stream winner - stormhacks 2025'
-              : story.id === 'blueprint'
-              ? 'top conference - sauder cus 2026'
-              : ''}
-          </span>
+          {achievementLabel ? (
+            <span className="inline-flex items-center gap-2 font-body text-[12px] uppercase tracking-[0.12em] text-muted">
+              <svg
+                className="h-[14px] w-[14px]"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M4 22h16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {achievementLabel}
+            </span>
+          ) : null}
         </div>
 
         <div className="flex flex-col gap-4">
@@ -139,6 +148,8 @@ export const ProjectPage = () => {
                 ? 'Campaign strategy\nEvent activation\nBrand storytelling'
                 : story.id === 'marketing-association-membership-portal'
                 ? 'UX research\nInformation architecture'
+                : story.id === 'hootsuite'
+                ? 'Storytelling\nCompetitive Analysis\nMQL Tracking'
                 : story.id === 'doomagotchi'
                 ? 'Storytelling\nPrototyping\nProduct strategy'
                 : 'placeholder'}

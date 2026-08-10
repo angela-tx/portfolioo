@@ -8,7 +8,7 @@ export type FeaturedProject = {
   title: string
   description: string
   image: string
-  category: 'Leadership' | 'Product' | 'Marketing'
+  category: 'Leadership' | 'Product' | 'Marketing' | 'Work'
 }
 
 export type ExperienceItem = {

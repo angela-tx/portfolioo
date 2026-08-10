@@ -57,7 +57,7 @@ export const AboutPage = () => {
           className={`${mutedClass} max-w-[720px] animate-fade-in-up`}
           style={{ animationDelay: '80ms' }}
         >
-          I believe that gaining perspective from life outside of work makes me a better thinker & teammate. Here are highlights of what I do in my free time!
+          I'm an ambitious student who believes that gaining perspective from life outside of work makes me a better thinker & teammate. I value balance through dance and building good community. Here are some highlights:
         </p>
       </section>
 
