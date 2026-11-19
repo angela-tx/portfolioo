@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { featuredProjects, experiences, funGallery } from '../data'
+import { projectCardContent } from '../data/projectCardContent'
 import { ProjectCard } from '../components/ProjectCard'
 import { ContactSection } from '../components/ContactSection'
 import { HomeCursorTrail } from '../components/HomeCursorTrail'
@@ -47,9 +48,22 @@ export const HomePage = () => (
         <div className="home-divider-blue relative h-[1px] w-full flex-none overflow-hidden" />
       </div>
       <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5">
-        {featuredProjects.slice(0, 2).map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+        {featuredProjects.slice(0, 2).map((project) => {
+          const cardContent = projectCardContent[project.id]
+
+          return (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              displayTitle={cardContent.title}
+              supportingLine={cardContent.accolade}
+              supportingIcon={cardContent.icon}
+              projectMetadataSupportingStyle
+              showCategory={false}
+              showDescription={false}
+            />
+          )
+        })}
       </div>
     </section>
 
