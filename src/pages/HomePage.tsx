@@ -10,28 +10,32 @@ export const HomePage = () => (
   <div className="flex flex-col gap-12">
     <HomeCursorTrail />
     <section className="grid gap-5 pt-2">
-      <div className="w-full">
-        <h1
-          className="mt-1 text-[clamp(64px,8vw,96px)] text-title leading-[1.05] animate-fade-in-up"
-          style={{ animationDelay: '40ms' }}
-        >
-          Angela Huang
-        </h1>
-        <div className="mt-5 flex flex-col gap-4 text-[17px] font-geist tracking-[-0.02em] leading-[1.6]">
-          <p className="text-primary animate-fade-in-up" style={{ animationDelay: '120ms' }}>
-            I’m a storyteller who loves turning ideas into products people enjoy. Outside of work, you can find me on a mountain or in the dance studio ٩(ᵔᴗᵔ )و
-          </p>
-          <p className="text-primary animate-fade-in-up" style={{ animationDelay: '160ms' }}>
-            <a
-              className="font-body text-primary hover:text-[#65638f] italic underline-offset-4"
-              href="https://globalnews.ca/video/11648924/ubc-biztechs-2026-blueprint-conference"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Check out my interview on Global News!
-            </a>
-          </p>
+      <div className="grid w-full items-start gap-7 md:grid-cols-[minmax(0,1fr)_202px] lg:grid-cols-[minmax(0,1fr)_220px]">
+        <div>
+          <h1
+            className="mt-1 text-[clamp(64px,8vw,96px)] text-title leading-[1.05] animate-fade-in-up"
+            style={{ animationDelay: '40ms' }}
+          >
+            Angela Huang
+          </h1>
+          <div className="mt-5 flex flex-col gap-4 text-[17px] font-geist tracking-[-0.02em] leading-[1.6]">
+            <p className="text-primary animate-fade-in-up" style={{ animationDelay: '120ms' }}>
+              I’m a storyteller who loves turning ideas into products people enjoy.
+              <span className="block">Outside of work, you can find me on a mountain or in the dance studio ٩(ᵔᴗᵔ )و</span>
+            </p>
+            <p className="text-primary animate-fade-in-up" style={{ animationDelay: '160ms' }}>
+              <a
+                className="font-body text-primary hover:text-[#65638f] italic underline-offset-4"
+                href="https://globalnews.ca/video/11648924/ubc-biztechs-2026-blueprint-conference"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Check out my interview on Global News!
+              </a>
+            </p>
+          </div>
         </div>
+        
       </div>
     </section>
 
