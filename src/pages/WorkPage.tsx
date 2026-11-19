@@ -9,24 +9,25 @@ export const WorkPage = () => {
   return (
     <div className="min-w-0 flex flex-col gap-[72px]">
       <HomeCursorTrail />
-      <section className="-mb-2 flex flex-col gap-5">
-        <h1
-          className="max-w-[760px] text-[clamp(44px,5.5vw,66px)] leading-[1.05] animate-fade-in-up"
-          style={{ animationDelay: '40ms' }}
-        >
-          project portfolio
-        </h1>
-        <p
-          className="max-w-[720px] font-body text-[17px] leading-[1.6] text-primary animate-fade-in-up"
-          style={{ animationDelay: '80ms' }}
-        >
-          Thanks for being here and building with me ^_^
-        </p>
-      </section>
-      <section className="min-w-0 flex flex-col gap-6">
-        <p className={overlineClass}>projects</p>
-        <div className="grid min-w-0 w-full grid-cols-1 gap-5 animate-fade-in-up sm:grid-cols-2">
-          {allProjects.map((project) => {
+      <div className="flex flex-col gap-8">
+        <section className="flex flex-col gap-5">
+          <h1
+            className="max-w-[760px] text-[clamp(44px,5.5vw,66px)] leading-[1.05] animate-fade-in-up"
+            style={{ animationDelay: '40ms' }}
+          >
+            project portfolio
+          </h1>
+          <p
+            className="max-w-[720px] font-body text-[17px] leading-[1.6] text-primary animate-fade-in-up"
+            style={{ animationDelay: '80ms' }}
+          >
+            Thanks for being here and building with me ^_^
+          </p>
+        </section>
+        <section className="min-w-0 flex flex-col gap-6 border-t border-[#d8d6ea] pt-8">
+          <p className={overlineClass}>projects</p>
+          <div className="grid min-w-0 w-full grid-cols-1 gap-5 animate-fade-in-up sm:grid-cols-2">
+            {allProjects.map((project) => {
             const cardContent = projectCardContent[project.id]
 
             return (
@@ -43,9 +44,10 @@ export const WorkPage = () => {
                 />
               </div>
             )
-          })}
-        </div>
-      </section>
+            })}
+          </div>
+        </section>
+      </div>
 
       <ContactSection />
     </div>

@@ -35,7 +35,20 @@ export const HomePage = () => (
             </p>
           </div>
         </div>
-        
+        <div
+          className="mt-1 w-fit justify-self-end rotate-[2deg] shadow-[0_12px_28px_rgba(35,57,93,0.12)] animate-fade-in-up"
+          style={{ animationDelay: '80ms' }}
+        >
+          <img
+            className="h-[202px] w-[152px] object-cover object-center md:h-[248px] md:w-[188px] lg:h-[274px] lg:w-[208px]"
+            src="/angela-pic.JPG"
+            alt="Angela Huang"
+            width="750"
+            height="1000"
+            draggable={false}
+            onContextMenu={(event) => event.preventDefault()}
+          />
+        </div>
       </div>
     </section>
 

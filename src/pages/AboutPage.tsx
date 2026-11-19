@@ -47,24 +47,25 @@ export const AboutPage = () => {
   return (
     <div className="flex flex-col gap-[72px]">
       <HomeCursorTrail />
-      <section className="-mb-2 flex flex-col gap-5">
-        <h1
-          className="max-w-[760px] text-[clamp(48px,6vw,72px)] leading-[1.05] animate-fade-in-up"
-          style={{ animationDelay: '40ms' }}
-        >
-          about me (˶ᵔ ᵕ ᵔ˶)
-        </h1>
-        <p
-          className="w-full font-body text-[17px] leading-[1.6] text-primary animate-fade-in-up"
-          style={{ animationDelay: '80ms' }}
-        >
-          I think gaining perspective from life outside of work makes me more ambitious and a better thinker. I value balance through dance and building good community. Here are some highlights:
-        </p>
-      </section>
+      <div className="flex flex-col gap-8">
+        <section className="flex flex-col gap-5">
+          <h1
+            className="max-w-[760px] text-[clamp(48px,6vw,72px)] leading-[1.05] animate-fade-in-up"
+            style={{ animationDelay: '40ms' }}
+          >
+            about me (˶ᵔ ᵕ ᵔ˶)
+          </h1>
+          <p
+            className="w-full font-body text-[17px] leading-[1.6] text-primary animate-fade-in-up"
+            style={{ animationDelay: '80ms' }}
+          >
+            I think gaining perspective from life outside of work makes me more ambitious and a better thinker. I value balance through dance and building good community. Here are some highlights:
+          </p>
+        </section>
 
-      <section className="flex flex-col gap-8">
-        <div className="columns-1 gap-3 border-y border-[#d8d6ea] py-6 sm:columns-2 lg:columns-3">
-          {aboutGallery.map((item, index) => {
+        <section className="flex flex-col gap-8">
+          <div className="columns-1 gap-3 border-y border-[#d8d6ea] pb-6 pt-8 sm:columns-2 lg:columns-3">
+            {aboutGallery.map((item, index) => {
             const frameClass =
               index % 6 === 0
                 ? 'aspect-[4/5]'
@@ -108,9 +109,10 @@ export const AboutPage = () => {
                 </figcaption>
               </figure>
             )
-          })}
-        </div>
-      </section>
+            })}
+          </div>
+        </section>
+      </div>
 
       <ContactSection />
     </div>
