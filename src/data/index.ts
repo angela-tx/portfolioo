@@ -66,7 +66,7 @@ export const allProjects: FeaturedProject[] = [
         title: "BAK'D Cookies Consulting",
         description: 'Building a cohesive bakery experience for 16k+ followers',
         image:
-            '/project-bakd.webm',
+            '/project-bakd.mp4',
         category: 'Marketing',
     },
     {
@@ -98,7 +98,7 @@ export const allProjects: FeaturedProject[] = [
         id: 'doomagotchi',
         title: 'Doomagotchi',
         description: 'A counterintuitive browser extension pet',
-        image: '/project-doomagotchi.webm',
+        image: '/project-doomagotchi.mp4',
         category: 'Product',
     },
 ]

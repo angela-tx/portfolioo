@@ -36,7 +36,7 @@ export const HomePage = () => (
           </div>
         </div>
         <div
-          className="order-first mt-1 w-fit justify-self-start rotate-[2deg] shadow-[0_12px_28px_rgba(35,57,93,0.12)] animate-fade-in-up md:order-none md:justify-self-end"
+          className="order-first mt-1 w-fit justify-self-start rotate-[2deg] animate-fade-in-up md:order-none md:justify-self-end"
           style={{ animationDelay: '80ms' }}
         >
           <img

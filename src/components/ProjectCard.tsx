@@ -65,7 +65,7 @@ export const ProjectCard = ({
     aria-label={`Open ${displayTitle}`}
   >
     <div className="relative overflow-hidden rounded-none">
-      {project.image.toLowerCase().endsWith('.webm') ? (
+      {/\.(mp4|webm)$/i.test(project.image) ? (
         <video
           className={`w-full object-cover transition-all duration-300 group-hover:opacity-85 ${
             compactOnMobile ? 'aspect-[16/9] h-auto sm:aspect-auto sm:h-[240px]' : 'h-[240px]'

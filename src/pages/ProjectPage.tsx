@@ -3,7 +3,6 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { projectStories } from '../data'
 import { projectCardContent } from '../data/projectCardContent'
 import { StorySection } from '../components/StorySection'
-import { ContactSection } from '../components/ContactSection'
 
 export const ProjectPage = () => {
   const { slug } = useParams()
@@ -246,8 +245,6 @@ export const ProjectPage = () => {
       </div>
 
       <StorySection story={story} />
-
-      <ContactSection />
     </div>
   )
 }

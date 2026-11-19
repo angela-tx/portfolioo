@@ -53,19 +53,19 @@ export const Layout = () => {
   return (
   <div className="min-h-screen bg-white text-primary">
     <header className={`sticky top-0 z-10 bg-white/95 backdrop-blur-md transition-transform duration-500 ease-out ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <div className="site-container flex flex-col items-start justify-between gap-4 py-[14px] lg:flex-row lg:items-center">
-        <div className="inline-flex items-center">
+      <div className="site-container flex items-center justify-between gap-1 py-[14px]">
+        <div className="inline-flex min-w-0 items-center">
           <Link className="inline-flex items-center text-accent no-underline" to="/" aria-label="Back to home">
             <span className="text-[32px] leading-none mb-1">🪽</span>
           </Link>
           <span 
-            className="font-geist text-[18px] font-normal tracking-[-0.02em] leading-none text-start no-underline ml-5 mr-2" 
+            className="ml-2 mr-1 font-geist text-[18px] font-normal leading-none tracking-[-0.02em] text-start no-underline sm:ml-5 sm:mr-2"
             style={{ color: 'rgba(101, 99, 143, 0.3)' }}
             aria-hidden="true"
           >
             |
           </span>
-          <nav className="flex flex-wrap items-center gap-1" aria-label="Primary">
+          <nav className="flex flex-nowrap items-center gap-1" aria-label="Primary">
             {navItems.map((item) => (
               // Highlight current page in accent color
               // Treat nested routes (e.g., /work/slug) as active for their parent
@@ -84,7 +84,7 @@ export const Layout = () => {
             ))}
           </nav>
         </div>
-        <div className="inline-flex items-center gap-0">
+        <div className="ml-auto inline-flex shrink-0 items-center gap-0">
           <a
             className="inline-flex rounded-[6px] p-2 text-primary hover:text-[#65638f]"
             href="https://www.linkedin.com/in/angelatxhuang/"

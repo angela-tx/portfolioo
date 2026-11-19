@@ -45,7 +45,7 @@ export const AboutPage = () => {
   }, [])
 
   return (
-    <div className="flex flex-col gap-[72px]">
+    <div className="flex flex-col gap-12">
       <HomeCursorTrail />
       <div className="flex flex-col gap-8">
         <section className="flex flex-col gap-5">
@@ -64,7 +64,7 @@ export const AboutPage = () => {
         </section>
 
         <section className="flex flex-col gap-8">
-          <div className="columns-2 gap-3 border-y border-[#d8d6ea] pb-6 pt-8 lg:columns-3">
+          <div className="columns-2 gap-3 border-t border-[#d8d6ea] pt-8 lg:columns-3">
             {aboutGallery.map((item, index) => {
             const frameClass =
               index % 6 === 0
