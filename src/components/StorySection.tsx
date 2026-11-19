@@ -293,7 +293,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
       </div>
 
       {story.gallery ? (
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-2 gap-3 md:gap-6">
           {story.gallery.map((image) => (
             <figure
               key={image.src}

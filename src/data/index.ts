@@ -200,7 +200,7 @@ export const projectStories: ProjectStory[] = [
             links: [
                 {
                     label: 'Event Website',
-                    url: 'https://www.ubcbiztech.com/events/blueprint2026',
+                    url: 'https://www.blueprint.ubcbiztech.com/',
                 },
                 {
                     label: 'Global News Interview',
@@ -515,13 +515,8 @@ export const projectStories: ProjectStory[] = [
             year: '2026',
         },
         summary:
-            'I assessed enterprise marketing channels to identify gaps in messaging and recommended lead nurturing systems to improve funnel conversion.',
-        sections: [
-            {
-                title: 'Work in progress',
-                text: 'This project was a part of my internship, please contact me for more details :)',
-            },
-        ],
+            'This project was a part of my internship, please contact me for more details :)',
+        sections: [],
     },
     {
         id: 'doomagotchi',

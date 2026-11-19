@@ -19,7 +19,7 @@ export const projectCardContent: Record<string, { title: string; accolade?: stri
     accolade: 'Top Club - Sauder CUS 2026',
   },
   encore: {
-    title: 'Encore: making the concert experience more social with a mobile app',
+    title: 'Encore: making a companion app to enhance the live music experience',
     accolade: 'Stream winner - StormHacks',
   },
   blueprint: {
@@ -27,7 +27,7 @@ export const projectCardContent: Record<string, { title: string; accolade?: stri
     accolade: 'Top Conference - Sauder CUS 2026',
   },
   doomagotchi: {
-    title: 'Doomagotchi: a counterintuitive browser pet',
+    title: 'Doomagotchi: a counterintuitive SillyHacks browser pet',
     accolade: 'Project',
     icon: 'folder',
   },

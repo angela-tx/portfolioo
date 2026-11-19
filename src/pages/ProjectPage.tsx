@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { projectStories } from '../data'
+import { projectCardContent } from '../data/projectCardContent'
 import { StorySection } from '../components/StorySection'
 import { ContactSection } from '../components/ContactSection'
 
@@ -10,7 +11,6 @@ export const ProjectPage = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [progress, setProgress] = useState(0)
-  const [duration, setDuration] = useState(0)
 
   useEffect(() => {
     if (!slug) return
@@ -34,49 +34,57 @@ export const ProjectPage = () => {
     return <Navigate to="/work" replace />
   }
 
+  const caseStudyTitle = projectCardContent[story.id]?.title ?? story.headline
   const isBlueprint = story.id === 'blueprint'
   const heroWrapperClass = isBlueprint
     ? 'overflow-hidden rounded-[6px]'
     : 'overflow-hidden rounded-[6px] border border-[#d8d6ea] bg-white shadow-soft'
 
-  const handleVideoToggle = () => {
-    if (!videoRef.current) return
-    if (videoRef.current.paused) {
-      videoRef.current.play()
-      setIsPlaying(true)
+  const handleVideoToggle = async () => {
+    const video = videoRef.current
+    if (!video) return
+
+    if (video.paused || video.ended) {
+      try {
+        await video.play()
+      } catch {
+        setIsPlaying(false)
+      }
     } else {
-      videoRef.current.pause()
-      setIsPlaying(false)
+      video.pause()
     }
   }
 
-  const handleVideoEnded = () => setIsPlaying(false)
   const handleLoadedMetadata = () => {
-    if (videoRef.current?.duration) {
-      setDuration(videoRef.current.duration)
+    const video = videoRef.current
+    if (video && Number.isFinite(video.duration) && video.duration > 0) {
+      setProgress(video.currentTime / video.duration)
     }
   }
 
   const handleTimeUpdate = () => {
-    if (videoRef.current && duration) {
-      setProgress(videoRef.current.currentTime / duration)
+    const video = videoRef.current
+    if (video && Number.isFinite(video.duration) && video.duration > 0) {
+      setProgress(video.currentTime / video.duration)
     }
   }
 
   const handleSeek = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!videoRef.current || !duration) return
+    const video = videoRef.current
+    if (!video || !Number.isFinite(video.duration) || video.duration <= 0) return
     const rect = event.currentTarget.getBoundingClientRect()
     const ratio = Math.min(Math.max((event.clientX - rect.left) / rect.width, 0), 1)
-    videoRef.current.currentTime = ratio * duration
+    video.currentTime = ratio * video.duration
     setProgress(ratio)
   }
 
   const handleWheelSeek = (event: React.WheelEvent<HTMLVideoElement>) => {
-    if (!videoRef.current || !duration) return
+    const video = videoRef.current
+    if (!video || !Number.isFinite(video.duration) || video.duration <= 0) return
     const deltaSeconds = event.deltaY > 0 ? -5 : 5
-    const newTime = Math.min(Math.max(videoRef.current.currentTime + deltaSeconds, 0), duration)
-    videoRef.current.currentTime = newTime
-    setProgress(newTime / duration)
+    const newTime = Math.min(Math.max(video.currentTime + deltaSeconds, 0), video.duration)
+    video.currentTime = newTime
+    setProgress(newTime / video.duration)
   }
 
   const achievementLabel =
@@ -91,6 +99,34 @@ export const ProjectPage = () => {
       : story.id === 'safespace'
       ? '1st place advanced & best pitch - UXathon'
       : ''
+
+  const compactMetadata = (
+    <div className="flex flex-wrap items-start gap-x-8 gap-y-4">
+      <div className="flex shrink-0 flex-col gap-2">
+        <span className="font-body text-[11px] uppercase tracking-[0.12em] text-muted">Year</span>
+        <span className="font-body text-[16px] text-primary">{story.meta.year}</span>
+      </div>
+      <div className="flex flex-col gap-2">
+        <span className="font-body text-[11px] uppercase tracking-[0.12em] text-muted">Links</span>
+        <div className="flex flex-wrap items-center gap-2">
+          {story.meta.links.map((link) => (
+            <a
+              key={link.url}
+              className="group inline-flex min-h-[44px] items-start font-body text-[14px] text-primary focus-visible:outline-none"
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="inline-flex h-[26px] items-center justify-center gap-1 rounded-[6px] bg-[#f4f2fa] px-3 transition-colors duration-200 group-hover:bg-[#ebe8f5] group-focus-visible:ring-2 group-focus-visible:ring-[#65638f] group-focus-visible:ring-offset-2">
+                {link.label}
+                <span aria-hidden="true">↗</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 
   return (
     <div className="flex flex-col gap-12">
@@ -124,57 +160,14 @@ export const ProjectPage = () => {
           ) : null}
         </div>
 
-        <div className="flex flex-col gap-4">
-          <h1 className="max-w-[920px] text-[clamp(38px,5vw,68px)] leading-[1.05] text-title">{story.headline}</h1>
-          <p className="max-w-[840px] font-body text-[17px] leading-[1.7] text-primary">{story.summary}</p>
-        </div>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4">
+            <h1 className="max-w-[920px] text-[clamp(38px,5vw,68px)] leading-[1.05] text-title">{caseStudyTitle}</h1>
+            {compactMetadata}
+          </div>
 
-        <div className="grid grid-cols-1 gap-6 border-t border-[#d8d6ea] pt-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="flex flex-col gap-2">
-            <span className="font-body text-[11px] uppercase tracking-[0.12em] text-muted">Role</span>
-            <span className="font-body text-[16px] text-primary">{story.meta.role}</span>
-          </div>
-          <div className="flex flex-col gap-2">
-            <span className="font-body text-[11px] uppercase tracking-[0.12em] text-muted">Skills</span>
-            <span className="whitespace-pre-line font-body text-[16px] text-primary">
-              {story.id === 'blueprint'
-                ? 'Leadership\nProject management\nRoadmap alignment'
-                : story.id === 'safespace'
-                ? 'Product design\nFeature scoping\nUser research'
-                : story.id === 'encore'
-                ? '0→1 product ideation\nPitching & storytelling\nUser journey mapping'
-                : story.id === 'banana-art-lab'
-                ? 'Brand positioning\nCommunication\nCompetitive analysis'
-                : story.id === 'bakd-cookies-consulting'
-                ? 'Campaign strategy\nEvent activation\nBrand storytelling'
-                : story.id === 'marketing-association-membership-portal'
-                ? 'UX research\nInformation architecture'
-                : story.id === 'hootsuite'
-                ? 'Storytelling\nCompetitive Analysis\nMQL Tracking'
-                : story.id === 'doomagotchi'
-                ? 'Storytelling\nPrototyping\nProduct strategy'
-                : 'placeholder'}
-            </span>
-          </div>
-          <div className="flex flex-col gap-2">
-            <span className="font-body text-[11px] uppercase tracking-[0.12em] text-muted">Links</span>
-            <div className="flex flex-wrap gap-2">
-              {story.meta.links.map((link) => (
-                <a
-                  key={link.url}
-                  className="font-body text-[15px] text-primary underline-offset-4 hover:text-accent"
-                  href={link.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className="flex flex-col gap-2">
-            <span className="font-body text-[11px] uppercase tracking-[0.12em] text-muted">Year</span>
-            <span className="font-body text-[16px] text-primary">{story.meta.year}</span>
+          <div className="border-t border-[#d8d6ea] pt-6">
+            <p className="max-w-[840px] font-body text-[17px] leading-[1.7] text-primary">{story.summary}</p>
           </div>
         </div>
       </div>
@@ -192,9 +185,11 @@ export const ProjectPage = () => {
                 poster="/project-blueprint.webp"
                 playsInline
                 onClick={handleVideoToggle}
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
                 onLoadedMetadata={handleLoadedMetadata}
                 onTimeUpdate={handleTimeUpdate}
-                onEnded={handleVideoEnded}
+                onEnded={() => setIsPlaying(false)}
                 onWheel={handleWheelSeek}
               />
                 {!isPlaying ? (
@@ -209,7 +204,7 @@ export const ProjectPage = () => {
                     </svg>
                   </button>
                 ) : null}
-                <div className="pointer-events-auto absolute inset-x-0 bottom-12 flex w-full items-center gap-3 bg-white/45 px-4 py-2 opacity-0 transition-opacity duration-200 backdrop-blur-sm group-hover:opacity-100 group-focus-within:opacity-100 relative">
+                <div className="pointer-events-auto absolute inset-x-0 bottom-12 flex w-full items-center gap-3 bg-white/45 px-4 py-2 opacity-0 transition-opacity duration-200 backdrop-blur-sm group-hover:opacity-100 group-focus-within:opacity-100">
                   <div className="flex items-center gap-3 w-full">
                     <button
                       type="button"
@@ -246,7 +241,7 @@ export const ProjectPage = () => {
             </figure>
           </>
         ) : (
-          <img className="h-full w-full object-cover" src={story.hero} alt={`${story.headline} hero`} loading="lazy" />
+          <img className="h-full w-full object-cover" src={story.hero} alt={`${caseStudyTitle} hero`} loading="lazy" />
         )}
       </div>
 
