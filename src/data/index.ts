@@ -1,543 +1,577 @@
 import type { FeaturedProject, ExperienceItem, GalleryItem, AboutGalleryItem, ProjectStory } from '../types'
 
 export const featuredProjects: FeaturedProject[] = [
-  {
-    id: 'banana-art-lab',
-    title: 'Art Studio Brand Redesign',
-    description: 'Full branding and website redesign for a local café',
-    image:
-      '/BananaArtLab.webm',
-    category: 'Marketing',
-  },
-  {
-    id: 'safespace',
-    title: 'safespace',
-    description: 'Designing a wellness app that uses NFC technology',
-    image:
-      '/project-safespace.webp',
-    category: 'Product',
-  },
-  {
-    id: 'blueprint',
-    title: 'BluePrint Conference',
-    description: "Leading Vancouver's largest collegiate tech conference",
-    image:
-      '/project-blueprint.webp',
-    category: 'Marketing',
-  },
-]
-
-export const allProjects: FeaturedProject[] = [
-  featuredProjects[0],
-  featuredProjects[1],
-  {
-    id: 'bakd-cookies-consulting',
-    title: "BAK'D Cookies Consulting",
-    description: 'Building a cohesive bakery experience for 16k+ followers',
-    image:
-      '/project-bakd.webm',
-    category: 'Marketing',
-  },
-  {
-    id: 'marketing-association-membership-portal',
-    title: 'Marketing Association Membership Portal',
-    description: 'A digital hub for 400+ club members to access events',
-    image:
-      '/project-maportal.webp',
-    category: 'Product',
-  },
-  {
-    id: 'hootsuite',
-    title: 'Hootsuite Web Launch',
-    description: 'Analyzing positioning across enterprise web pages',
-    image:
-      '/project-hootsuite.webp',
-    category: 'Work',
-  },
-  {
-    id: 'encore',
-    title: 'Encore',
-    description: 'Developing an app to help concert-goers find friends',
-    image:
-      '/project-encore.webp',
-    category: 'Product',
-  },
-  featuredProjects[2],
-  {
-    id: 'doomagotchi',
-    title: 'Doomagotchi',
-    description: 'A counterintuitive browser extension pet',
-    image: '/project-doomagotchi.webm',
-    category: 'Product',
-  },
+    {
+        id: 'banana-art-lab',
+        title: 'Art Studio Brand Redesign',
+        description: 'Full branding and website redesign for a local café',
+        image:
+            '/BananaArtLab.webm',
+        category: 'Marketing',
+    },
+    {
+        id: 'safespace',
+        title: 'safespace',
+        description: 'Designing a wellness app that uses NFC technology',
+        image:
+            '/project-safespace.webp',
+        category: 'Product',
+    },
+    {
+        id: 'blueprint',
+        title: 'BluePrint Conference',
+        description: "Leading Vancouver's largest collegiate tech conference",
+        image:
+            '/project-blueprint.webp',
+        category: 'Marketing',
+    },
 ]
 
 export const experiences: ExperienceItem[] = [
+    {
+        role: 'Campus Lead @ Lovable',
+        dates: 'Sep 2026 – May 2027',
+        detail: '🌐 Product localization',
+        link: 'https://community.lovable.app/',
+        logo: '/experience-lovable.webp',
+    },
+    {
+        role: 'Technical Project Manager Intern @ SAP',
+        dates: 'May 2026 – Aug 2026',
+        detail: '🌐 Product localization',
+        link: 'https://translation.sap.com/index.html',
+        logo: '/experience-sap.webp',
+    },
+    {
+        role: 'Marketing Transformation Intern @ Hootsuite',
+        dates: 'Jan 2026 – Apr 2026',
+        detail: '🚀 Enterprise acceleration',
+        link: 'https://www.hootsuite.com/',
+        logo: '/experience-hootsuite.png',
+    },
+    {
+        role: 'Social Media Marketer @ Wun2Free Entertainment',
+        dates: 'Mar 2023 – Dec 2025',
+        detail: '📲 Social media growth',
+        link: 'https://www.tiktok.com/@playsidegg',
+        logo: '/experience-wun2free.webp',
+    },
+]
+
+export const allProjects: FeaturedProject[] = [
+    featuredProjects[0],
+    featuredProjects[1],
+    {
+        id: 'bakd-cookies-consulting',
+        title: "BAK'D Cookies Consulting",
+        description: 'Building a cohesive bakery experience for 16k+ followers',
+        image:
+            '/project-bakd.webm',
+        category: 'Marketing',
+    },
+    {
+        id: 'marketing-association-membership-portal',
+        title: 'Marketing Association Membership Portal',
+        description: 'A digital hub for 400+ club members to access events',
+        image:
+            '/project-maportal.webp',
+        category: 'Product',
+    },
+    {
+        id: 'hootsuite',
+        title: 'Hootsuite Web Launch',
+        description: 'Analyzing positioning across enterprise web pages',
+        image:
+            '/project-hootsuite.webp',
+        category: 'Work',
+    },
+    {
+        id: 'encore',
+        title: 'Encore',
+        description: 'Developing an app to help concert-goers find friends',
+        image:
+            '/project-encore.webp',
+        category: 'Product',
+    },
+    featuredProjects[2],
+    {
+        id: 'doomagotchi',
+        title: 'Doomagotchi',
+        description: 'A counterintuitive browser extension pet',
+        image: '/project-doomagotchi.webm',
+        category: 'Product',
+    },
+]
+
+export const leadership: ExperienceItem[] = [
   {
-    role: 'Technical Project Manager Intern @ SAP',
-    dates: 'May 2026 – Aug 2026',
-    detail: '🌐 Product localization',
-    link: 'https://translation.sap.com/index.html',
+    role: 'Product Manager @ UBC Marketing Association',
+    dates: '2025 - Present',
+    detail: '',
   },
   {
-    role: 'Marketing Transformation Intern @ Hootsuite',
-    dates: 'Jan 2026 – Apr 2026',
-    detail: '🚀 Enterprise acceleration',
-    link: 'https://www.hootsuite.com/',
+    role: 'Marketing Coordinator | Previously Sponsorships @ Unlimited Dance Club',
+    dates: '2025 - Present',
+    detail: '',
   },
-  {
-    role: 'Social Media Marketer @ Wun2Free Entertainment',
-    dates: 'Mar 2023 – Dec 2025',
-    detail: '📲 Social media growth',
-    link: 'https://www.tiktok.com/@playsidegg',
-  },
+    {
+    role: 'Marketing Director | Previously Conference Director, First Year Representative @ UBC BizTech',
+    dates: '2024 - Present',
+    detail: '',
+  }
 ]
 
 export const funGallery: GalleryItem[] = [
-  {
-    title: 'blueprint tech conference',
-    image: '/carousel-blueprint.webp',
-    link: '/work/blueprint',
-  },
     {
-    title: 'last day in the nest :(',
-    image: '/carousel-hootsuite.webp',
-  },
+        title: 'blueprint tech conference',
+        image: '/carousel-blueprint.webp',
+        link: '/work/blueprint',
+    },
     {
-    title: 'SAP developer conference',
-    image: '/carousel-dcom.webp',
-  },
-
-  {
-    title: 'dance battle!',
-    image: '/carousel-udcbattle.webp',
-    link: 'https://www.instagram.com/unlimiteddanceclub/',
-  },
-  {
-    title: 'gateways marketing conference',
-    image: '/carousel-gateways.webp',
-    link: 'https://www.ubcma.ca/',
-  },
+        title: 'last day in the nest :(',
+        image: '/carousel-hootsuite.webp',
+    },
+    {
+        title: 'SAP developer conference',
+        image: '/carousel-dcom.webp',
+    },
+    {
+        title: 'dance battle!',
+        image: '/carousel-udcbattle.webp',
+        link: 'https://www.instagram.com/unlimiteddanceclub/',
+    },
+    {
+        title: 'gateways marketing conference',
+        image: '/carousel-gateways.webp',
+        link: 'https://www.ubcma.ca/',
+    },
 
 ]
 
 export const aboutGallery: AboutGalleryItem[] = [
-  {
-    image: '/gallery-hike.webp',
-    caption: 'hiking in BC',
-  },
-  {
-    image: '/gallery-concert.webp',
-    caption: 'going to concerts',
-  },
-  {
-    image: '/gallery-spark.webp',
-    caption: 'guiding freshman around UBC & Sauder',
-  },
-
-  {
-    image: '/gallery-food.webp',
-    caption: 'discovering new restaurants',
-  },
-  {
-    image: '/gallery-nyc.webp',
-    caption: 'travelling',
-  },
-  {
-    image: '/gallery-pug.webp',
-    caption: 'competitive dance with my team <3',
-  },
     {
-    image: '/gallery-blueprint.webp',
-    caption: 'running UBC\'s largest tech conference',
-  },
-  {
-    image: '/gallery-bungee.webp',
-    caption: 'bungee jumping in nanaimo (never again)',
-  },
+        image: '/gallery-hike.webp',
+        caption: 'hiking in BC',
+    },
+    {
+        image: '/gallery-concert.webp',
+        caption: 'going to concerts',
+    },
+    {
+        image: '/gallery-cafe.webp',
+        caption: 'visiting cafés',
+    },
+
+    {
+        image: '/gallery-food.webp',
+        caption: 'discovering new restaurants',
+    },
+    
+    {
+        image: '/gallery-blueprint.webp',
+        caption: 'running a tech conference',
+    },
+
+    {
+        image: '/gallery-nyc.webp',
+        caption: 'travelling',
+    },
+   
+    {
+        image: '/gallery-bungee.webp',
+        caption: 'bungee jumping in nanaimo (never again)',
+    },
+        {
+        image: '/gallery-pug.webp',
+        caption: 'competitive dance with my team <3',
+    },
+    {
+        image: '/gallery-spikeball.webp',
+        caption: 'playing spikeball',
+    },
 ]
 
 export const projectStories: ProjectStory[] = [
-  {
-    id: 'blueprint',
-    title: 'Club Event',
-    navTitle: 'BluePrint Conference',
-    headline: "BluePrint – Vancouver's Largest Collegiate Tech Conference",
-    hero:
-      '/project-blueprint.webp',
-    meta: {
-      role: 'Project Manager',
-      tools: 'Notion, Excel, Figma',
-      links: [
-        {
-          label: 'Event Website',
-          url: 'https://www.ubcbiztech.com/events/blueprint2026',
+    {
+        id: 'blueprint',
+        title: 'Club Event',
+        navTitle: 'BluePrint Conference',
+        headline: "BluePrint – Vancouver's Largest Collegiate Tech Conference",
+        hero:
+            '/project-blueprint.webp',
+        meta: {
+            role: 'Project Manager',
+            tools: 'Notion, Excel, Figma',
+            links: [
+                {
+                    label: 'Event Website',
+                    url: 'https://www.ubcbiztech.com/events/blueprint2026',
+                },
+                {
+                    label: 'Global News Interview',
+                    url: 'https://globalnews.ca/video/11648924/ubc-biztechs-2026-blueprint-conference',
+                },
+            ],
+            year: '2026',
         },
-        {
-          label: 'Global News Interview',
-          url: 'https://globalnews.ca/video/11648924/ubc-biztechs-2026-blueprint-conference',
-        },
-      ],
-      year: '2026',
-    },
-    summary:
-      "BluePrint is a conference I led for UBC's largest tech & business club with 900+ members. Our mission was to help students find their place in the industry through workshops, networking, and mentor chats.",
-    sections: [
-      {
-        title: 'My role sat at the intersection of creative strategy, execution, and people. Some of my responsibilities included:',
-        bullets: [
-          'Designing practical career workshops for students with Microsoft, TELUS, and Asana',
-          'Coordinating across marketing, engineering, design, and sponsorship teams to align priorities over 8 months',
-          'Communicating day-of roles so everyone knew where to be 🏃‍♀️',
-          'Leading a career night event for 70+ 1st and 2nd year students to prepare them before BluePrint',
+        summary:
+            "BluePrint is a conference I led for UBC's largest tech & business club with 900+ members. Our mission was to help students find their place in the industry through workshops, networking, and mentor chats.",
+        sections: [
+            {
+                title: 'My role sat at the intersection of creative strategy, execution, and people. Some of my responsibilities included:',
+                bullets: [
+                    'Designing practical career workshops for students with Microsoft, TELUS, and Asana',
+                    'Coordinating across marketing, engineering, design, and sponsorship teams to align priorities over 8 months',
+                    'Communicating day-of roles so everyone knew where to be 🏃‍♀️',
+                    'Leading a career night event for 70+ 1st and 2nd year students to prepare them before BluePrint',
+                ],
+            },
+            {
+                title: 'Internal day-of schedules that I made for all of our execs',
+                inlineVisual: {
+                    src: '/blueprint-compendium.webp',
+                    alt: 'Blueprint compendium schedules',
+                },
+                inlineCaption: 'Internal day-of schedules that I made for all of our execs',
+            },
+            {
+                title: 'Learning about leadership',
+                text: "I thought the hardest part would be logistics, but it turned out to be responsibility. When things go wrong, people look to you. When things go right, you make space for the team to be proud of what they’ve built. I learned that being a leader is less about having all the answers and more about creating enough clarity that others can do their best work, even when everything feels urgent.",
+            },
+            {
+                title: 'MCing at the opening ceremony',
+                inlineVisual: {
+                    src: '/blueprint-mc.webp',
+                    alt: 'MCing at Blueprint',
+                },
+                inlineCaption: 'MCing at the opening ceremony',
+            },
+            {
+                title: 'Accessibility, inclusion, and impact',
+                text: "Representation played a heavy influence throughout my planning. I'm proud of:",
+                bullets: [
+                    'Intentionally sending female-identifying reps to the news, amplifying underrepresented voices',
+                    'Marketing the event to students of all backgrounds and skill levels, with the only requirement being an interest in business or technology',
+                    'Creating space for each attendee to make lasting connections, as company booths help them learn about the company, but small chats make real connections',
+                ],
+            },
+            {
+                title: 'Looking back',
+                text: 'I’m incredibly grateful for the commitment that BizTech brought to the table each day. What makes our club special isn’t just the scale of what we do, but rather the intention behind it. That shared ambition is what drew me in, and it’s what made leading BluePrint both incredibly rewarding and incredibly hard.',
+            },
         ],
-      },
-      {
-        title: 'Internal day-of schedules that I made for all of our execs',
-        inlineVisual: {
-          src: '/blueprint-compendium.webp',
-          alt: 'Blueprint compendium schedules',
-        },
-        inlineCaption: 'Internal day-of schedules that I made for all of our execs',
-      },
-      {
-        title: 'Learning about leadership',
-        text: "I thought the hardest part would be logistics, but it turned out to be responsibility. When things go wrong, people look to you. When things go right, you make space for the team to be proud of what they’ve built. I learned that being a leader is less about having all the answers and more about creating enough clarity that others can do their best work, even when everything feels urgent.",
-      },
-      {
-        title: 'MCing at the opening ceremony',
-        inlineVisual: {
-          src: '/blueprint-mc.webp',
-          alt: 'MCing at Blueprint',
-        },
-        inlineCaption: 'MCing at the opening ceremony',
-      },
-      {
-        title: 'Accessibility, inclusion, and impact',
-        text: "Representation played a heavy influence throughout my planning. I'm proud of:",
-        bullets: [
-          'Intentionally sending female-identifying reps to the news, amplifying underrepresented voices',
-          'Marketing the event to students of all backgrounds and skill levels, with the only requirement being an interest in business or technology',
-          'Creating space for each attendee to make lasting connections, as company booths help them learn about the company, but small chats make real connections',
+        gallery: [
+            {
+                src: '/blueprint-commercenight.webp',
+                alt: 'Winning Top Conference in my business school!',
+            },
+            {
+                src: '/blueprint-slide.webp',
+                alt: 'Our engineering team\'s tech',
+            },
         ],
-      },
-      {
-        title: 'Looking back',
-        text: 'I’m incredibly grateful for the commitment that BizTech brought to the table each day. What makes our club special isn’t just the scale of what we do, but rather the intention behind it. That shared ambition is what drew me in, and it’s what made leading BluePrint both incredibly rewarding and incredibly hard.',
-      },
-    ],
-    gallery: [
-      {
-        src: '/blueprint-commercenight.webp',
-        alt: 'Winning Top Conference in my business school!',
-      },
-      {
-        src: '/blueprint-slide.webp',
-        alt: 'Our engineering team\'s tech',
-      },
-    ],
-    closing: '',
-  },
-  {
-    id: 'safespace',
-    title: 'UXathon - 1st Place, Best Pitch',
-    navTitle: 'safespace',
-    headline: 'safespace – a habit app that integrates into the physical space',
-    hero:
-      '/Safespace-cover.webp',
-    meta: {
-      role: 'Product Manager, Designer',
-      tools: 'Figma, Google Slides, NFCs',
-      links: [
-        {
-          label: 'Prototype',
-          url: 'https://www.figma.com/proto/aCJg2mqV3BmTS1veJaiiNl/SafeSpace-UXHub?page-id=124%3A6328&node-id=124-6375&viewport=-1206%2C-271%2C0.29&t=yvS7S6NuAP8mLcxm-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=124%3A6329&show-proto-sidebar=1',
-        },
-        {
-          label: 'Devpost',
-          url: 'https://devpost.com/software/safe-space-your-wellness-companion',
-        },
-      ],
-      year: '2026',
+        closing: '',
     },
-    summary:
-      'We live in a culture that rewards being “always on.” Students track workouts and study time, but almost no one tracks recovery. We enable users to reframe how they set goals by focusing on healthy metrics.',
-    sections: [
-      {
-        title: 'The given prompt',
-        quote:
-          'In a world that rewards being “always on,” how might we design an experience that helps people set and keep boundaries to make recovery time feel socially safe, rewarding, and easy to sustain?',
-      },
-      {
-        title: 'To further undertand the prompt, our team explored:',
-        text: 'A core feature is our NFC journal sticker. When placed on a notebook or in a designated goal space, it acts as a physical barrier for intentional rest. The sticker automatically launches safespace when you tap your phone and opens to a guided page with prompts and a focus timer.',
-      },
-      {
-        title: 'Instead of asking: What did you accomplish today? It asks: Did you take time for your wellness goals today? to make recovery intentional',
-        text: 'The focus is our NFC sticker. When placed on a notebook or in another designated goal space, it acts as a physical barrier for intentional rest. The NFC automatically launches safespace when you tap your phone and opens to a guided page with prompts and a focus timer.',
-        inlineVisual: {
-          src: '/Safespace-screens.webp',
-          alt: 'Safespace screens',
+    {
+        id: 'safespace',
+        title: 'UXathon - 1st Place, Best Pitch',
+        navTitle: 'safespace',
+        headline: 'safespace – a habit app that integrates into the physical space',
+        hero:
+            '/Safespace-cover.webp',
+        meta: {
+            role: 'Product Manager, Designer',
+            tools: 'Figma, Google Slides, NFCs',
+            links: [
+                {
+                    label: 'Prototype',
+                    url: 'https://www.figma.com/proto/aCJg2mqV3BmTS1veJaiiNl/SafeSpace-UXHub?page-id=124%3A6328&node-id=124-6375&viewport=-1206%2C-271%2C0.29&t=yvS7S6NuAP8mLcxm-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=124%3A6329&show-proto-sidebar=1',
+                },
+                {
+                    label: 'Devpost',
+                    url: 'https://devpost.com/software/safe-space-your-wellness-companion',
+                },
+            ],
+            year: '2026',
         },
-      },
-      {
-        title: 'What I learned when designing this product',
-        bullets: [
-          'Focusing on a narrow segment clarified the core problem',
-          'For an MVP: Quality of features > quantity',
-          'Conducting early user research grounded our assumptions and validated the problem',
+        summary:
+            'We live in a culture that rewards being “always on.” Students track workouts and study time, but almost no one tracks recovery. We enable users to reframe how they set goals by focusing on healthy metrics.',
+        sections: [
+            {
+                title: 'The given prompt',
+                quote:
+                    'In a world that rewards being “always on,” how might we design an experience that helps people set and keep boundaries to make recovery time feel socially safe, rewarding, and easy to sustain?',
+            },
+            {
+                title: 'To further undertand the prompt, our team explored:',
+                text: 'A core feature is our NFC journal sticker. When placed on a notebook or in a designated goal space, it acts as a physical barrier for intentional rest. The sticker automatically launches safespace when you tap your phone and opens to a guided page with prompts and a focus timer.',
+            },
+            {
+                title: 'Instead of asking: What did you accomplish today? It asks: Did you take time for your wellness goals today? to make recovery intentional',
+                text: 'The focus is our NFC sticker. When placed on a notebook or in another designated goal space, it acts as a physical barrier for intentional rest. The NFC automatically launches safespace when you tap your phone and opens to a guided page with prompts and a focus timer.',
+                inlineVisual: {
+                    src: '/Safespace-screens.webp',
+                    alt: 'Safespace screens',
+                },
+            },
+            {
+                title: 'What I learned when designing this product',
+                bullets: [
+                    'Focusing on a narrow segment clarified the core problem',
+                    'For an MVP: Quality of features > quantity',
+                    'Conducting early user research grounded our assumptions and validated the problem',
+                ],
+            },
         ],
-      },
-    ],
-    gallery: [
-      {
-        src: '/Safespace-slide.webp',
-        alt: 'Research pitch slide',
-      },
-      {
-        src: '/Safespace-slidestyle.webp',
-        alt: 'Brand style guide (essential for a design competition)',
-      },
-    ],
-  },
-  {
-    id: 'encore',
-    title: 'StormHacks Winner (2/220 Projects)',
-    navTitle: 'Encore',
-    headline: 'Encore – Your Concert Companion App',
-    hero:
-      '/encore-cover.webp',
-    meta: {
-      role: 'PM, UI/UX Designer',
-      tools: 'TypeScript, CSS, Figma, Firebase, Ticketmaster API',
-      links: [
-        {
-          label: 'Devpost',
-          url: 'https://devpost.com/software/encore-vzilag',
-        },
-      ],
-      year: '2025',
+        gallery: [
+            {
+                src: '/Safespace-slide.webp',
+                alt: 'Research pitch slide',
+            },
+            {
+                src: '/Safespace-slidestyle.webp',
+                alt: 'Brand style guide (essential for a design competition)',
+            },
+        ],
     },
-    summary:
-      'Live music is one of the fastest-growing spending categories among students. But while concerts are inherently social, the digital experience around them is not.',
-    sections: [
-      {
-        title: 'Each of our team members have gone to the same concerts this summer, yet we didn’t realize until after.',
-        text: "Encore is our answer to two common pain points music-lovers face: (1) Not knowing who in your network is going to the same show, (2) Being unable to find each other once you’ve arrived at the crowded venue."
-      },
-      {
-        title: 'Ticketing platforms currently optimize for sales, while social platforms optimize for post-event updates.',
-        text: 'Our app bridges this social connection gap by allowing users to:',
-        inlineVisual: {
-          src: '/Encore-screens.webp',
-          alt: 'Encore mobile screens',
+    {
+        id: 'encore',
+        title: 'StormHacks Winner (2/220 Projects)',
+        navTitle: 'Encore',
+        headline: 'Encore – Your Concert Companion App',
+        hero:
+            '/encore-cover.webp',
+        meta: {
+            role: 'PM, UI/UX Designer',
+            tools: 'TypeScript, CSS, Figma, Firebase, Ticketmaster API',
+            links: [
+                {
+                    label: 'Devpost',
+                    url: 'https://devpost.com/software/encore-vzilag',
+                },
+            ],
+            year: '2025',
         },
-      },
+        summary:
+            'Live music is one of the fastest-growing spending categories among students. But while concerts are inherently social, the digital experience around them is not.',
+        sections: [
+            {
+                title: 'Each of our team members have gone to the same concerts this summer, yet we didn’t realize until after.',
+                text: "Encore is our answer to two common pain points music-lovers face: (1) Not knowing who in your network is going to the same show, (2) Being unable to find each other once you’ve arrived at the crowded venue."
+            },
+            {
+                title: 'Ticketing platforms currently optimize for sales, while social platforms optimize for post-event updates.',
+                text: 'Our app bridges this social connection gap by allowing users to:',
+                inlineVisual: {
+                    src: '/Encore-screens.webp',
+                    alt: 'Encore mobile screens',
+                },
+            },
 
-      {
-        title: 'What I learned from my first time at SFU ◡̈',
-        bullets: [
-          'Forestry is an important major',
-          'The power of networking = free poke bowls',
-          'Redbull gives you wings',
+            {
+                title: 'What I learned from my first time at SFU ◡̈',
+                bullets: [
+                    'Forestry is an important major',
+                    'The power of networking = free poke bowls',
+                    'Redbull gives you wings',
+                ],
+            },
         ],
-      },
-  ],
-  gallery: [
+        gallery: [
+            {
+                src: '/Encore-flow.webp',
+                alt: 'Pitch slide',
+            },
+            {
+                src: '/Encore-win.webp',
+                alt: 'Our team :)',
+            },
+        ],
+    },
     {
-      src: '/Encore-flow.webp',
-      alt: 'Pitch slide',
+        id: 'banana-art-lab',
+        title: 'FLUI Design Competition - Best Visual Design',
+        navTitle: 'Art Studio Brand Redesign',
+        headline: 'Banana Art Lab – Website Brand and UX Redesign',
+        hero:
+            '/artstudio-cover.webp',
+        meta: {
+            role: 'UI/UX Designer, Researcher',
+            tools: 'Figma',
+            links: [
+                {
+                    label: 'Slide Deck',
+                    url: 'https://www.figma.com/deck/iqoHbuOJ1O5ApfDLUp9SuP/FLUI-PPT?node-id=32-704&t=SOzqfqaPbv168vFA-1',
+                },
+                {
+                    label: 'Prototype',
+                    url: 'https://www.figma.com/proto/eB8OacJactPKIiabV4I4xw/FLUI-Figma-File?node-id=128-7611&t=7JX3hA9zYiBpWjh8-1&scaling=scale-down&content-scaling=fixed&page-id=116%3A1902&starting-point-node-id=128%3A7611',
+                },
+            ],
+            year: '2025',
+        },
+        summary:
+            "Banana Art Lab's website lacked clarity and ease of use, making it difficult for prospective customers to book DIY workshops, ultimately hindering business growth.",
+        sections: [
+            {
+                title: 'After meeting with our client, we clarified the objectives, limitations, and 3 pain points to influence our product design.',
+                bullets: [
+                    'A faulty booking system',
+                    'Inconsistent branding & visual identity',
+                    "Interface that wasn't user-friendly",
+                ],
+            },
+            {
+                title: 'We approached this as both a UX and positioning problem.',
+                text: 'Instead of only fixing the booking system, our team aligned brand and conversion flow to support one goal: making it easy and trustworthy to book. The actions included:',
+                bullets: [
+                    'Developing a refined GTM strategy aligned with their target audience',
+                    'Revamping website pages including Hero, About, Gallery, and Booking',
+                    'Redesigning branding (logo, colour palette, messaging) to reflect positioning',
+                    'Improving usability through simpler navigation flows',
+                ],
+            },
+            {
+                title: 'Impact',
+                text: 'With these changes, Banana Art Lab is now set to attract more customers, promote a unified brand image, and drive business growth through an engaging digital experience.',
+            },
+        ],
+        gallery: [
+            {
+                src: '/artstudio-research.webp',
+                alt: 'FigJam notes from our client meeting',
+            },
+            {
+                src: '/artstudio-slide.webp',
+                alt: 'Hi-fi comparison with the original',
+            },
+        ],
     },
     {
-      src: '/Encore-win.webp',
-      alt: 'Our team :)',
-    },
-  ],
-},
-  {
-    id: 'banana-art-lab',
-    title: 'FLUI Design Competition - Best Visual Design',
-    navTitle: 'Art Studio Brand Redesign',
-    headline: 'Banana Art Lab – Website Brand and UX Redesign',
-    hero:
-      '/artstudio-cover.webp',
-    meta: {
-      role: 'UI/UX Designer, Researcher',
-      tools: 'Figma',
-      links: [
-        {
-          label: 'Slide Deck',
-          url: 'https://www.figma.com/deck/iqoHbuOJ1O5ApfDLUp9SuP/FLUI-PPT?node-id=32-704&t=SOzqfqaPbv168vFA-1',
+        id: 'bakd-cookies-consulting',
+        title: "BAK'D Cookies Consulting",
+        navTitle: "BAK'D Cookies Consulting",
+        headline: "BAK'D Cookies Consulting",
+        hero:
+            '/bakd-cover.webp',
+        meta: {
+            role: 'Consultant, Product Designer',
+            tools: 'Campaign strategy, Wireframing, Brand storytelling',
+            links: [
+                {
+                    label: 'Slide Deck',
+                    url: 'https://canva.link/zwxuy7257ejchx3',
+                },
+            ],
+            year: '2026',
         },
-        {
-          label: 'Prototype',
-          url: 'https://www.figma.com/proto/eB8OacJactPKIiabV4I4xw/FLUI-Figma-File?node-id=128-7611&t=7JX3hA9zYiBpWjh8-1&scaling=scale-down&content-scaling=fixed&page-id=116%3A1902&starting-point-node-id=128%3A7611',
-        },
-      ],
-      year: '2025',
-    },
-    summary:
-      "Banana Art Lab's website lacked clarity and ease of use, making it difficult for prospective customers to book DIY workshops, ultimately hindering business growth.",
-    sections: [
-      {
-        title: 'After meeting with our client, we clarified the objectives, limitations, and 3 pain points to influence our product design.',
-        bullets: [
-          'A faulty booking system',
-          'Inconsistent branding & visual identity',
-          "Interface that wasn't user-friendly",
+        summary:
+            'Alongside UBC\'s premier marketing strategy consulting team, we transformed BAK\'D\'s marketing to better promote their iconic, ooey gooey cookies!',
+        sections: [
+            {
+                title: 'Work in progress',
+                text: 'This page is a work in progress :)',
+            },
         ],
-      },
-      {
-        title: 'We approached this as both a UX and positioning problem.',
-        text: 'Instead of only fixing the booking system, our team aligned brand and conversion flow to support one goal: making it easy and trustworthy to book. The actions included:',
-        bullets: [
-          'Developing a refined GTM strategy aligned with their target audience',
-          'Revamping website pages including Hero, About, Gallery, and Booking',
-          'Redesigning branding (logo, colour palette, messaging) to reflect positioning',
-          'Improving usability through simpler navigation flows',
+    },
+    {
+        id: 'marketing-association-membership-portal',
+        title: 'Marketing Association Membership Portal',
+        navTitle: 'Marketing Association Membership Portal',
+        headline: 'Marketing Association Membership Portal',
+        hero:
+            '/maportal-cover.webp',
+        meta: {
+            role: 'Product Designer',
+            tools: 'Figma',
+            links: [
+                {
+                    label: 'Portal',
+                    url: 'https://app.ubcma.ca/sign-in',
+                },
+            ],
+            year: '2026',
+        },
+        summary:
+            'Our team set out to streamline ticketing, job searching, and community engagement with technology. Our innovations led us to win Club of the Year 2026 from the Sauder School of Business!',
+        sections: [
+            {
+                title: 'Work in progress',
+                text: 'This page is a work in progress :)',
+            },
         ],
-      },
-      {
-        title: 'Impact',
-        text: 'With these changes, Banana Art Lab is now set to attract more customers, promote a unified brand image, and drive business growth through an engaging digital experience.',
-      },
-    ],
-    gallery: [
-      {
-        src: '/artstudio-research.webp',
-        alt: 'FigJam notes from our client meeting',
-      },
-      {
-        src: '/artstudio-slide.webp',
-        alt: 'Hi-fi comparison with the original',
-      },
-    ],
-  },
-  {
-    id: 'bakd-cookies-consulting',
-    title: "BAK'D Cookies Consulting",
-    navTitle: "BAK'D Cookies Consulting",
-    headline: "BAK'D Cookies Consulting",
-    hero:
-      '/bakd-cover.webp',
-    meta: {
-      role: 'Consultant, Product Designer',
-      tools: 'Campaign strategy, Wireframing, Brand storytelling',
-      links: [
-        {
-          label: 'Slide Deck',
-          url: 'https://canva.link/zwxuy7257ejchx3',
-        },
-      ],
-      year: '2026',
     },
-    summary:
-      'Alongside UBC\'s premier marketing strategy consulting team, we transformed BAK\'D\'s marketing to better promote their iconic, ooey gooey cookies!',
-    sections: [
-      {
-        title: 'Work in progress',
-        text: 'This page is a work in progress :)',
-      },
-    ],
-  },
-  {
-    id: 'marketing-association-membership-portal',
-    title: 'Marketing Association Membership Portal',
-    navTitle: 'Marketing Association Membership Portal',
-    headline: 'Marketing Association Membership Portal',
-    hero:
-      '/maportal-cover.webp',
-    meta: {
-      role: 'Product Designer',
-      tools: 'Figma',
-      links: [
-        {
-          label: 'Portal',
-          url: 'https://app.ubcma.ca/sign-in',
+    {
+        id: 'hootsuite',
+        title: 'Hootsuite Web Launch',
+        navTitle: 'Hootsuite',
+        headline: 'Hootsuite Web Launch',
+        hero:
+            '/hootsuite-cover.webp',
+        meta: {
+            role: 'Marketing Transformation Intern',
+            tools: 'PowerPoint, Miro, 6sense',
+            links: [
+                {
+                    label: 'Enterprise Page',
+                    url: 'https://www.hootsuite.com/plans/enterprise?srsltid=AfmBOoocvDKLEmYFsFBJVjN2RWhYFH-UKz1mnA_AszaCCocFwL8cbMCn',
+                },
+            ],
+            year: '2026',
         },
-      ],
-      year: '2026',
+        summary:
+            'I assessed enterprise marketing channels to identify gaps in messaging and recommended lead nurturing systems to improve funnel conversion.',
+        sections: [
+            {
+                title: 'Work in progress',
+                text: 'This project was a part of my internship, please contact me for more details :)',
+            },
+        ],
     },
-    summary:
-      'Our team set out to streamline ticketing, job searching, and community engagement with technology. Our innovations led us to win Club of the Year 2026 from the Sauder School of Business!',
-    sections: [
-      {
-        title: 'Work in progress',
-        text: 'This page is a work in progress :)',
-      },
-    ],
-  },
-  {
-    id: 'hootsuite',
-    title: 'Hootsuite Web Launch',
-    navTitle: 'Hootsuite',
-    headline: 'Hootsuite Web Launch',
-    hero:
-      '/hootsuite-cover.webp',
-    meta: {
-      role: 'Marketing Transformation Intern',
-      tools: 'PowerPoint, Miro, 6sense',
-      links: [
-        {
-          label: 'Enterprise Page',
-          url: 'https://www.hootsuite.com/plans/enterprise?srsltid=AfmBOoocvDKLEmYFsFBJVjN2RWhYFH-UKz1mnA_AszaCCocFwL8cbMCn',
+    {
+        id: 'doomagotchi',
+        title: 'Doomagotchi',
+        navTitle: 'Doomagotchi',
+        headline: 'Doomagotchi – A SillyHacks browser pet',
+        hero: '/project-doomagotchi.webp',
+        meta: {
+            role: 'Product Manager',
+            tools: 'React, TailwindCSS, Figma',
+            links: [
+                {
+                    label: 'Devpost',
+                    url: 'https://devpost.com/software/doomagatchi',
+                },
+                {
+                    label: 'Deck',
+                    url: 'https://canva.link/jw2y38pbievoiv0',
+                },
+            ],
+            year: '2026',
         },
-      ],
-      year: '2026',
+        summary: 'Instead of fighting against doomscrolling short-form content, we\'re embracing it.',
+        sections: [
+            {
+                title: 'overview',
+                quote: 'Small habits, when repeated consistently, lead to remarkable results.',
+                text: 'Doomagotchi is a Chrome extension Tamagotchi that reacts to your browsing behavior in real time.\n\nYour pet gains health when you visit doomscrolling sites like TikTok, Discord, or X, and loses health when you open productive tools like Google Docs or Canvas. This is how we\'re tackling the ever-growing problem of low attention spans.',
+            },
+        ],
+        gallery: [
+            {
+                src: '/doomagotchi-functionality.webp',
+                alt: 'Functionality preview',
+            },
+            {
+                src: '/doomagotchi-slide.webp',
+                alt: 'Technical considerations',
+            },
+        ],
+        closing: '',
     },
-    summary:
-      'I assessed enterprise marketing channels to identify gaps in messaging and recommended lead nurturing systems to improve funnel conversion.',
-    sections: [
-      {
-        title: 'Work in progress',
-        text: 'This project was a part of my internship, please contact me for more details :)',
-      },
-    ],
-  },
-  {
-    id: 'doomagotchi',
-    title: 'Doomagotchi',
-    navTitle: 'Doomagotchi',
-    headline: 'Doomagotchi – A SillyHacks browser pet',
-    hero: '/project-doomagotchi.webp',
-    meta: {
-      role: 'Product Manager',
-      tools: 'React, TailwindCSS, Figma',
-      links: [
-        {
-          label: 'Devpost', 
-          url: 'https://devpost.com/software/doomagatchi',
-        },
-        {
-          label: 'Deck',
-          url: 'https://canva.link/jw2y38pbievoiv0',
-        },
-      ],
-      year: '2026',
-    },
-    summary: 'Instead of fighting against doomscrolling short-form content, we\'re embracing it.',
-    sections: [
-      {
-        title: 'overview',
-        quote: 'Small habits, when repeated consistently, lead to remarkable results.',
-        text: 'Doomagotchi is a Chrome extension Tamagotchi that reacts to your browsing behavior in real time.\n\nYour pet gains health when you visit doomscrolling sites like TikTok, Discord, or X, and loses health when you open productive tools like Google Docs or Canvas. This is how we\'re tackling the ever-growing problem of low attention spans.',
-      },
-    ],
-    gallery: [
-      {
-        src: '/doomagotchi-functionality.webp',
-        alt: 'Functionality preview',
-      },
-      {
-        src: '/doomagotchi-slide.webp',
-        alt: 'Technical considerations',
-      },
-    ],
-    closing: '',
-  },
 ]
 
 export const navItems = [
-  { to: '/about', label: 'about me' },
-  { to: '/work', label: 'projects' },
+    { to: '/about', label: 'about me' },
+    { to: '/work', label: 'projects' },
 ]

@@ -3,10 +3,12 @@ import { projectCardContent } from '../data/projectCardContent'
 import { overlineClass } from '../utils/constants'
 import { ProjectCard } from '../components/ProjectCard'
 import { ContactSection } from '../components/ContactSection'
+import { HomeCursorTrail } from '../components/HomeCursorTrail'
 
 export const WorkPage = () => {
   return (
     <div className="min-w-0 flex flex-col gap-[72px]">
+      <HomeCursorTrail />
       <section className="-mb-2 flex flex-col gap-5">
         <h1
           className="max-w-[760px] text-[clamp(44px,5.5vw,66px)] leading-[1.05] animate-fade-in-up"
@@ -15,7 +17,7 @@ export const WorkPage = () => {
           project portfolio
         </h1>
         <p
-          className="max-w-[720px] font-body text-[17px] leading-[1.6] text-[#3f4d5f] animate-fade-in-up"
+          className="max-w-[720px] font-body text-[17px] leading-[1.6] text-primary animate-fade-in-up"
           style={{ animationDelay: '80ms' }}
         >
           Thanks for being here and building with me ^_^

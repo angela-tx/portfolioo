@@ -17,6 +17,7 @@ export type ExperienceItem = {
   detail: string
   link?: string
   company?: string
+  logo?: string
 }
 
 export type GalleryItem = {

@@ -11,7 +11,7 @@ type StarParticle = {
   y: number
 }
 
-const starGlyphs = ['⋆', '⭒', '⊹', '˚', '｡', '˖']
+const starGlyphs = ['⋆', '⭒', '⊹', '˚', '｡', '˖', '⟡', '˙']
 const starColors = ['#65638f', '#9a96bd', '#d8d6ea']
 
 export const HomeCursorTrail = () => {
@@ -70,7 +70,7 @@ export const HomeCursorTrail = () => {
       element.style.pointerEvents = 'none'
       element.style.userSelect = 'none'
       element.style.lineHeight = '1'
-      element.style.fontSize = `${13 + Math.random() * 6}px`
+      element.style.fontSize = `${15 + Math.random() * 6}px`
       element.style.color = starColors[Math.floor(Math.random() * starColors.length)]
       element.style.willChange = 'transform, opacity'
       document.body.appendChild(element)

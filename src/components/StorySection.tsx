@@ -165,7 +165,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 items.push(
                   <div className="flex flex-col gap-2 pt-4" key="growth-strategy">
                     <span className="text-[11px] uppercase tracking-[0.12em] text-muted">growth strategy</span>
-                    <h3 className='font-["Instrument Sans","Inter",system-ui,sans-serif] text-[22px] leading-[1.25] text-title'>
+                    <h3 className='font-["Instrument Sans","Inter",system-ui,sans-serif] text-[22px] leading-[1.25] text-primary'>
                       Rather than mass user acquisition, we focus on getting people you already know onto the platform.
                     </h3>
                     <p className={`${mutedClass} max-w-[760px] text-[15px] leading-[1.65]`}>
@@ -191,7 +191,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
               items.push(
                 <div key={block.title} className="flex flex-col gap-2 rounded-[10px] bg-white/90">
                   <span className="text-[11px] uppercase tracking-[0.12em] text-muted">problem</span>
-                  <h3 className='text-[22px] leading-[1.25] text-title font-["Instrument Sans","Inter",system-ui,sans-serif]'>
+                  <h3 className='text-[22px] leading-[1.25] text-primary font-["Instrument Sans","Inter",system-ui,sans-serif]'>
                     {block.title}
                   </h3>
                   {bananaBullets}
@@ -216,7 +216,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                     className={
                       isSafespace || isBlueprint
                         ? 'text-[22px] leading-[1.25] text-title'
-                        : 'text-[22px] leading-[1.25] text-title font-["Instrument Sans","Inter",system-ui,sans-serif]'
+                        : 'text-[22px] leading-[1.25] text-primary font-["Instrument Sans","Inter",system-ui,sans-serif]'
                     }
                   >
                     {block.title}

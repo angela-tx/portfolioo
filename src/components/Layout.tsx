@@ -73,7 +73,7 @@ export const Layout = () => {
                 key={item.to}
                 className={`rounded-[6px] px-2 py-2 text-[15px] font-normal tracking-[-0.01em] no-underline ${
                   pathname.startsWith(item.to)
-                    ? 'text-[#65638f] hover:text-[#65638f]'
+                    ? 'text-primary hover:text-[#65638f]'
                     : 'text-primary hover:text-[#65638f]'
                 }`}
                 aria-current={pathname.startsWith(item.to) ? 'page' : undefined}

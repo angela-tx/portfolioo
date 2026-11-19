@@ -97,11 +97,12 @@ export const ProjectPage = () => {
       <div className="flex flex-col gap-8">
         <div className="flex flex-wrap items-center justify-between gap-3 text-[12px] uppercase tracking-[0.12em] text-muted">
           <div className="flex flex-wrap items-center gap-3">
-            <Link className="font-body text-primary no-underline hover:text-accent" to="/work">
+            <Link className="inline-flex items-center gap-2 font-body text-primary no-underline hover:text-accent" to="/work">
+              <svg className="h-[14px] w-[14px]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M19 12H5M11 18l-6-6 6-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
               all projects
             </Link>
-            <span className="text-primary">/</span>
-            <span className="font-body text-primary">{story.navTitle}</span>
           </div>
           {achievementLabel ? (
             <span className="inline-flex items-center gap-2 font-body text-[12px] uppercase tracking-[0.12em] text-muted">
@@ -125,7 +126,7 @@ export const ProjectPage = () => {
 
         <div className="flex flex-col gap-4">
           <h1 className="max-w-[920px] text-[clamp(38px,5vw,68px)] leading-[1.05] text-title">{story.headline}</h1>
-          <p className="max-w-[840px] font-body text-[17px] leading-[1.7] text-muted">{story.summary}</p>
+          <p className="max-w-[840px] font-body text-[17px] leading-[1.7] text-primary">{story.summary}</p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 border-t border-[#d8d6ea] pt-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -161,7 +162,7 @@ export const ProjectPage = () => {
               {story.meta.links.map((link) => (
                 <a
                   key={link.url}
-                  className="font-body text-[15px] text-muted underline-offset-4 hover:text-accent"
+                  className="font-body text-[15px] text-primary underline-offset-4 hover:text-accent"
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
@@ -239,7 +240,7 @@ export const ProjectPage = () => {
                   </div>
                 </div>
               </div>
-              <figcaption className="text-left text-[14px] text-muted">
+              <figcaption className="text-left text-[14px] text-primary">
                 Conference recap video by Ali Hosseini with BizTech media
               </figcaption>
             </figure>

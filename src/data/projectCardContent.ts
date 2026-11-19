@@ -6,7 +6,7 @@ export const projectCardContent: Record<string, { title: string; accolade?: stri
     accolade: 'Stream Winner - FLUI Design Competition',
   },
   safespace: {
-    title: 'safespace: designing a journalling app that uses NFC technology',
+    title: 'safespace: designing a journaling app that uses NFC technology',
     accolade: '1st Place Advanced & Best Pitch - UXathon',
   },
   'bakd-cookies-consulting': {

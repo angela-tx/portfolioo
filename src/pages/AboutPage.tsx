@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { ContactSection } from '../components/ContactSection'
+import { HomeCursorTrail } from '../components/HomeCursorTrail'
 import { aboutGallery } from '../data'
 
 export const AboutPage = () => {
@@ -45,6 +46,7 @@ export const AboutPage = () => {
 
   return (
     <div className="flex flex-col gap-[72px]">
+      <HomeCursorTrail />
       <section className="-mb-2 flex flex-col gap-5">
         <h1
           className="max-w-[760px] text-[clamp(48px,6vw,72px)] leading-[1.05] animate-fade-in-up"
@@ -53,7 +55,7 @@ export const AboutPage = () => {
           about me (˶ᵔ ᵕ ᵔ˶)
         </h1>
         <p
-          className="w-full font-body text-[17px] leading-[1.6] text-[#3f4d5f] animate-fade-in-up"
+          className="w-full font-body text-[17px] leading-[1.6] text-primary animate-fade-in-up"
           style={{ animationDelay: '80ms' }}
         >
           I think gaining perspective from life outside of work makes me more ambitious and a better thinker. I value balance through dance and building good community. Here are some highlights:
@@ -100,7 +102,7 @@ export const AboutPage = () => {
                   />
                 </div>
                 <figcaption className="pt-1">
-                  <span className="font-body text-[12px] font-medium tracking-[0.01em] text-[#65638f]">
+                  <span className="font-body text-[12px] font-medium tracking-[0.01em] text-primary">
                     {item.caption}
                   </span>
                 </figcaption>
