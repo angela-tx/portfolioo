@@ -45,7 +45,7 @@ export const AboutPage = () => {
   }, [])
 
   return (
-    <div className="flex flex-col gap-[72px] sm:gap-12">
+    <div className="flex flex-col gap-0 sm:gap-12">
       <HomeCursorTrail />
       <div className="flex flex-col gap-8">
         <section className="flex flex-col gap-5">
