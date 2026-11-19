@@ -12,6 +12,7 @@ const categoryClass: Record<FeaturedProject['category'], string> = {
 type ProjectCardProps = {
   project: FeaturedProject
   animate?: boolean
+  compactOnMobile?: boolean
   displayTitle?: string
   supportingLine?: string
   supportingIcon?: 'trophy' | 'folder' | 'suitcase'
@@ -48,6 +49,7 @@ const SupportingIcon = ({
 export const ProjectCard = ({
   project,
   animate = true,
+  compactOnMobile = false,
   displayTitle = project.title,
   supportingLine,
   supportingIcon = 'trophy',
@@ -56,14 +58,18 @@ export const ProjectCard = ({
   showDescription = true,
 }: ProjectCardProps) => (
   <Link
-    className={`group flex flex-col gap-3 transition-all duration-300 ease-out ${animate ? 'animate-fade-in-up' : ''}`}
+    className={`group flex flex-col transition-all duration-300 ease-out ${
+      compactOnMobile ? 'gap-2 sm:gap-3' : 'gap-3'
+    } ${animate ? 'animate-fade-in-up' : ''}`}
     to={`/work/${project.id}`}
     aria-label={`Open ${displayTitle}`}
   >
     <div className="relative overflow-hidden rounded-none">
       {project.image.toLowerCase().endsWith('.webm') ? (
         <video
-          className="h-[240px] w-full object-cover transition-all duration-300 group-hover:opacity-85"
+          className={`w-full object-cover transition-all duration-300 group-hover:opacity-85 ${
+            compactOnMobile ? 'aspect-[16/9] h-auto sm:aspect-auto sm:h-[240px]' : 'h-[240px]'
+          }`}
           src={project.image}
           autoPlay
           loop
@@ -74,16 +80,22 @@ export const ProjectCard = ({
         />
       ) : (
         <img
-          className="h-[240px] w-full object-cover transition-all duration-300 group-hover:opacity-85"
+          className={`w-full object-cover transition-all duration-300 group-hover:opacity-85 ${
+            compactOnMobile ? 'aspect-[16/9] h-auto sm:aspect-auto sm:h-[240px]' : 'h-[240px]'
+          }`}
           src={project.image}
           alt={displayTitle}
           loading="lazy"
         />
       )}
     </div>
-    <div className="px-1 pb-4">
+    <div className={compactOnMobile ? 'pb-3 sm:px-1 sm:pb-4' : 'px-1 pb-4'}>
       <div className="flex items-start justify-between transition-colors duration-300 group-hover:text-[#65638f]">
-        <h3 className="mb-[6px] mt-[2px] text-[18px] font-geist text-primary transition-colors duration-300 group-hover:text-[#65638f]">
+        <h3
+          className={`mb-[6px] mt-[2px] font-geist text-primary transition-colors duration-300 group-hover:text-[#65638f] ${
+            compactOnMobile ? 'text-[14px] leading-[1.4] sm:text-[18px] sm:leading-[1.6]' : 'text-[18px]'
+          }`}
+        >
           {displayTitle}
         </h3>
       </div>
@@ -91,7 +103,11 @@ export const ProjectCard = ({
         <p
           className={
             projectMetadataSupportingStyle
-              ? 'inline-flex items-center gap-2 font-body text-[12px] uppercase tracking-[0.08em] text-muted'
+              ? `inline-flex items-center font-body uppercase text-muted ${
+                  compactOnMobile
+                    ? 'gap-1 text-[11px] leading-[1.4] tracking-[0.04em] sm:gap-2 sm:text-[12px] sm:leading-[1.6] sm:tracking-[0.08em]'
+                    : 'gap-2 text-[12px] tracking-[0.08em]'
+                }`
               : `${mutedClass} flex items-start gap-1.5 text-[13px]`
           }
         >

@@ -18,7 +18,7 @@ export const WorkPage = () => {
             project portfolio
           </h1>
           <p
-            className="max-w-[720px] font-body text-[17px] leading-[1.6] text-primary animate-fade-in-up"
+            className="max-w-[720px] font-body text-[15px] leading-[1.6] text-primary animate-fade-in-up sm:text-[17px]"
             style={{ animationDelay: '80ms' }}
           >
             Thanks for being here and building with me ^_^
@@ -26,7 +26,7 @@ export const WorkPage = () => {
         </section>
         <section className="min-w-0 flex flex-col gap-6 border-t border-[#d8d6ea] pt-8">
           <p className={overlineClass}>projects</p>
-          <div className="grid min-w-0 w-full grid-cols-1 gap-5 animate-fade-in-up sm:grid-cols-2">
+          <div className="grid min-w-0 w-full grid-cols-2 gap-3 animate-fade-in-up sm:gap-5">
             {allProjects.map((project) => {
             const cardContent = projectCardContent[project.id]
 
@@ -35,6 +35,7 @@ export const WorkPage = () => {
                 <ProjectCard
                   project={project}
                   animate={false}
+                  compactOnMobile
                   displayTitle={cardContent.title}
                   supportingLine={cardContent.accolade}
                   supportingIcon={cardContent.icon}

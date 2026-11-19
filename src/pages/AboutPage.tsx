@@ -56,7 +56,7 @@ export const AboutPage = () => {
             about me
           </h1>
           <p
-            className="w-full font-body text-[17px] leading-[1.6] text-primary animate-fade-in-up"
+            className="w-full font-body text-[15px] leading-[1.6] text-primary animate-fade-in-up sm:text-[17px]"
             style={{ animationDelay: '80ms' }}
           >
             I think gaining perspective from life outside of work makes me more ambitious and a better thinker. I value balance through dance and building good community. Here are some highlights:
@@ -64,7 +64,7 @@ export const AboutPage = () => {
         </section>
 
         <section className="flex flex-col gap-8">
-          <div className="columns-1 gap-3 border-y border-[#d8d6ea] pb-6 pt-8 sm:columns-2 lg:columns-3">
+          <div className="columns-2 gap-3 border-y border-[#d8d6ea] pb-6 pt-8 lg:columns-3">
             {aboutGallery.map((item, index) => {
             const frameClass =
               index % 6 === 0
