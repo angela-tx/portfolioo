@@ -6,7 +6,7 @@ export const featuredProjects: FeaturedProject[] = [
         title: 'Art Studio Brand Redesign',
         description: 'Full branding and website redesign for a local café',
         image:
-            '/BananaArtLab.webm',
+            '/project-bal.png',
         category: 'Marketing',
     },
     {
@@ -66,7 +66,7 @@ export const allProjects: FeaturedProject[] = [
         title: "BAK'D Cookies Consulting",
         description: 'Building a cohesive bakery experience for 16k+ followers',
         image:
-            '/project-bakd.mp4',
+            '/project-bakd.png',
         category: 'Marketing',
     },
     {
@@ -74,7 +74,7 @@ export const allProjects: FeaturedProject[] = [
         title: 'Marketing Association Membership Portal',
         description: 'A digital hub for 400+ club members to access events',
         image:
-            '/project-maportal.webp',
+            '/project-maportal.png',
         category: 'Product',
     },
     {
@@ -82,7 +82,7 @@ export const allProjects: FeaturedProject[] = [
         title: 'Hootsuite Web Launch',
         description: 'Analyzing positioning across enterprise web pages',
         image:
-            '/project-hootsuite.webp',
+            '/project-hootsuite.png',
         category: 'Work',
     },
     {
@@ -90,7 +90,7 @@ export const allProjects: FeaturedProject[] = [
         title: 'Encore',
         description: 'Developing an app to help concert-goers find friends',
         image:
-            '/project-encore.webp',
+            '/project-encore.png',
         category: 'Product',
     },
     featuredProjects[2],
@@ -98,7 +98,7 @@ export const allProjects: FeaturedProject[] = [
         id: 'doomagotchi',
         title: 'Doomagotchi',
         description: 'A counterintuitive browser extension pet',
-        image: '/project-doomagotchi.mp4',
+        image: '/project-doomagotchi.png',
         category: 'Product',
     },
 ]
