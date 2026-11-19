@@ -53,7 +53,7 @@ export const AboutPage = () => {
             className="max-w-[760px] text-[clamp(48px,6vw,72px)] leading-[1.05] animate-fade-in-up"
             style={{ animationDelay: '40ms' }}
           >
-            about me (˶ᵔ ᵕ ᵔ˶)
+            about me
           </h1>
           <p
             className="w-full font-body text-[17px] leading-[1.6] text-primary animate-fade-in-up"

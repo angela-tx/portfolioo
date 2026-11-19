@@ -166,11 +166,6 @@ export const aboutGallery: AboutGalleryItem[] = [
         image: '/gallery-food.webp',
         caption: 'discovering new restaurants',
     },
-    
-    {
-        image: '/gallery-blueprint.webp',
-        caption: 'running a tech conference',
-    },
 
     {
         image: '/gallery-nyc.webp',
