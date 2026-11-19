@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { mutedClass } from '../utils/constants'
 import { ContactSection } from '../components/ContactSection'
 import { aboutGallery } from '../data'
 
@@ -46,7 +45,7 @@ export const AboutPage = () => {
 
   return (
     <div className="flex flex-col gap-[72px]">
-      <section className="flex flex-col gap-5">
+      <section className="-mb-2 flex flex-col gap-5">
         <h1
           className="max-w-[760px] text-[clamp(48px,6vw,72px)] leading-[1.05] animate-fade-in-up"
           style={{ animationDelay: '40ms' }}
@@ -54,15 +53,15 @@ export const AboutPage = () => {
           about me (˶ᵔ ᵕ ᵔ˶)
         </h1>
         <p
-          className={`${mutedClass} max-w-[720px] animate-fade-in-up`}
+          className="w-full font-body text-[17px] leading-[1.6] text-[#3f4d5f] animate-fade-in-up"
           style={{ animationDelay: '80ms' }}
         >
-          I'm an ambitious student who believes that gaining perspective from life outside of work makes me a better thinker & teammate. I value balance through dance and building good community. Here are some highlights:
+          I think gaining perspective from life outside of work makes me more ambitious and a better thinker. I value balance through dance and building good community. Here are some highlights:
         </p>
       </section>
 
       <section className="flex flex-col gap-8">
-        <div className="columns-1 gap-3 border-y border-[rgba(116,99,150,0.14)] py-6 sm:columns-2 lg:columns-3">
+        <div className="columns-1 gap-3 border-y border-[#d8d6ea] py-6 sm:columns-2 lg:columns-3">
           {aboutGallery.map((item, index) => {
             const frameClass =
               index % 6 === 0
@@ -101,7 +100,7 @@ export const AboutPage = () => {
                   />
                 </div>
                 <figcaption className="pt-1">
-                  <span className="font-body text-[12px] font-medium tracking-[0.01em] text-[#746396]">
+                  <span className="font-body text-[12px] font-medium tracking-[0.01em] text-[#65638f]">
                     {item.caption}
                   </span>
                 </figcaption>

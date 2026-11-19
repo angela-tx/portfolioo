@@ -2,31 +2,27 @@ import { Link } from 'react-router-dom'
 import { featuredProjects, experiences, funGallery } from '../data'
 import { ProjectCard } from '../components/ProjectCard'
 import { ContactSection } from '../components/ContactSection'
+import { HomeCursorTrail } from '../components/HomeCursorTrail'
 
 export const HomePage = () => (
   <div className="flex flex-col">
+    <HomeCursorTrail />
     <section className="grid gap-5 pt-2">
-      <div className="max-w-[760px]">
+      <div className="w-full">
         <h1
-          className="mb-4 mt-1 text-[clamp(64px,8vw,96px)] text-[rgb(116,99,150)] leading-[1.05] animate-fade-in-up"
+          className="mt-1 text-[clamp(64px,8vw,96px)] text-title leading-[1.05] animate-fade-in-up"
           style={{ animationDelay: '40ms' }}
         >
           Angela Huang
         </h1>
-        <p
-          className="text-[18px] text-[rgb(143,128,173)] animate-fade-in-up"
-          style={{ animationDelay: '80ms' }}
-        >
-          ✧ Human-centered tech + marketing
-        </p>
-        <div className="mt-9 flex flex-col gap-4 text-[18px] font-geist tracking-[-0.02em] leading-[1.6] text-black">
-          <p className="animate-fade-in-up" style={{ animationDelay: '120ms' }}>
-            Hi! I’m currently a Project Management Intern @ SAP, where I drive product localization initiatives. Professional world aside, I&apos;m also a competitive dancer (´｡• ◡ •｡`)
+        <div className="mt-5 flex flex-col gap-4 text-[17px] font-geist tracking-[-0.02em] leading-[1.6]">
+          <p className="text-[#3f4d5f] animate-fade-in-up" style={{ animationDelay: '120ms' }}>
+            I’m a storyteller who loves turning ideas into products people enjoy. Outside of work, you can find me on a mountain or in the dance studio ٩(ᵔᴗᵔ )و
           </p>
-          <p className="animate-fade-in-up" style={{ animationDelay: '160ms' }}>
+          <p className="text-[#3f4d5f] animate-fade-in-up" style={{ animationDelay: '160ms' }}>
             Check out my conference interview:{' '}
             <a
-              className="font-body text-black hover:text-[#5b50b5] italic underline-offset-4"
+              className="font-body text-[#3f4d5f] hover:text-[#65638f] italic underline-offset-4"
               href="https://globalnews.ca/video/11648924/ubc-biztechs-2026-blueprint-conference"
               target="_blank"
               rel="noreferrer"
@@ -38,7 +34,7 @@ export const HomePage = () => (
       </div>
     </section>
 
-    <section className="flex flex-col gap-6 mt-[72px]">
+    <section className="flex flex-col gap-6 mt-16">
       <div className="flex flex-col gap-1">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
@@ -48,7 +44,7 @@ export const HomePage = () => (
             view all
           </Link>
         </div>
-        <div className="relative h-[1px] w-full flex-none overflow-hidden bg-[#9f80ff4d]" />
+        <div className="home-divider-blue relative h-[1px] w-full flex-none overflow-hidden" />
       </div>
       <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5">
         {featuredProjects.slice(0, 2).map((project) => (
@@ -59,40 +55,52 @@ export const HomePage = () => (
 
     <section className="flex flex-col gap-5 mt-6 mb-10">
       <div className="flex flex-col gap-2">
-        <h2 className="font-display text-[30px] text-primary">experience</h2>
-        <div className="h-[1px] w-full bg-[#E5E5E5]" />
+        <h2 className="font-display text-[30px] text-title">experience</h2>
+        <div className="h-[1px] w-full bg-[#d8d6ea]" />
       </div>
-      <div className="flex flex-col">
+      <div className="relative flex flex-col">
+        <span className="absolute bottom-4 left-[7px] top-4 w-px bg-[#d8d6ea]" aria-hidden="true" />
         {experiences.map((item, index) => {
           const company = item.company ?? item.role.split('@')[1]?.trim() ?? ''
           const title = item.role.split('@')[0]?.trim() || item.role
 
           const content = (
             <article
-              className={`group relative flex flex-col md:flex-row md:items-center justify-between gap-1 py-3 transition-colors duration-500 ease-out hover:bg-accent-soft/30 animate-fade-in-up md:px-3 md:-mx-3 rounded-sm ${index === experiences.length - 1 ? '' : 'border-b border-[#E5E5E5]'}`}
+              className="group relative grid grid-cols-[16px_minmax(0,1fr)] items-start gap-x-3 py-3.5 animate-fade-in-up md:grid-cols-[16px_minmax(0,1fr)_auto] md:items-center"
               style={{ animationDelay: `${150 + index * 40}ms` }}
             >
-              <div className="flex flex-col md:w-2/3">
-                <span className="font-geist text-[12px] uppercase tracking-[0.08em] text-muted font-normal mb-0.5">{company || 'Independent'}</span>
-                <div className="flex items-center gap-2">
-                    <span className="font-geist text-[16px] tracking-[-0.01em] text-primary font-medium transition-colors duration-300">
-                      {title}
-                    </span>
-                    {item.link && (
-                      <span className="text-accent opacity-0 -translate-x-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0 text-sm">
-                        ↗
-                      </span>
-                    )}
-                </div>
+              <span
+                className="absolute inset-y-1 left-6 right-0 rounded-[6px] bg-transparent transition-colors duration-200 group-hover:bg-[#f4f2fa] group-focus-within:bg-[#f4f2fa]"
+                aria-hidden="true"
+              />
+              <div className="relative flex justify-center pt-[2px]">
+                <span className="bg-white text-[16px] leading-none text-[#65638f]" aria-hidden="true">✦</span>
               </div>
-              <div className="flex flex-col md:w-1/3 md:items-end mt-0.5 md:mt-0">
-                <span className="font-geist text-[13px] text-[#6c6c6c]">{item.dates}</span>
+              <div className="relative flex min-w-0 flex-col gap-0.5 px-2">
+                <span className="font-geist text-[11px] font-medium uppercase tracking-[0.09em] text-[#65638f]">
+                  {company || 'Independent'}
+                </span>
+                <span className="font-geist text-[16px] font-medium tracking-[-0.01em] text-title">{title}</span>
+              </div>
+              <div className="relative col-start-2 mt-1 flex items-center gap-2 px-2 md:col-start-3 md:mt-0 md:justify-self-end">
+                <span className="whitespace-nowrap font-geist text-[12px] text-[#718398]">{item.dates}</span>
+                {item.link ? (
+                  <span className="text-[13px] text-[#65638f] transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">
+                    ↗
+                  </span>
+                ) : null}
               </div>
             </article>
           )
 
           return item.link ? (
-            <a href={item.link} target="_blank" rel="noreferrer" className="block outline-none" key={item.role}>
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+              className="block rounded-[6px] outline-none focus-visible:ring-2 focus-visible:ring-[#65638f] focus-visible:ring-offset-2"
+              key={item.role}
+            >
               {content}
             </a>
           ) : (
@@ -109,7 +117,7 @@ export const HomePage = () => (
             <h2 className="text-[30px]">more fun stuff I've been a part of:</h2>
           </div>
         </div>
-        <div className="relative h-[1px] w-full flex-none overflow-hidden bg-[#9f80ff4d]" />
+        <div className="home-divider-lavender relative h-[1px] w-full flex-none overflow-hidden" />
       </div>
       <div className="group relative flex overflow-hidden pt-6 pb-10" style={{ containerType: 'inline-size' }}>
         {[0, 1].map((copyIdx) => (
@@ -125,7 +133,7 @@ export const HomePage = () => (
                 <div className={`flex h-full flex-col bg-white p-[10px] pb-[14px] shadow-xl transition-transform duration-300 ease-out hover:scale-[1.03] hover:z-20 ${rotationClass}`}>
                   <img className="aspect-square w-full object-cover" src={item.image} alt={item.title} loading="lazy" />
                   <div className="mt-2 flex flex-grow items-center justify-center text-center">
-                    <p className="font-body text-[14px] font-medium text-[#746396]">{item.title}</p>
+                    <p className="font-body text-[14px] font-medium text-[#65638f]">{item.title}</p>
                   </div>
                 </div>
               )

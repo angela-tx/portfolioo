@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { allProjects } from '../data'
-import { overlineClass, mutedClass } from '../utils/constants'
+import { overlineClass } from '../utils/constants'
 import { ProjectCard } from '../components/ProjectCard'
 import { ContactSection } from '../components/ContactSection'
 import type { FeaturedProject } from '../types'
@@ -18,7 +18,7 @@ export const WorkPage = () => {
 
   return (
     <div className="flex flex-col gap-[72px]">
-      <section className="flex flex-col gap-5">
+      <section className="-mb-2 flex flex-col gap-5">
         <h1
           className="max-w-[760px] text-[clamp(44px,5.5vw,66px)] leading-[1.05] animate-fade-in-up"
           style={{ animationDelay: '40ms' }}
@@ -26,7 +26,7 @@ export const WorkPage = () => {
           project portfolio
         </h1>
         <p
-          className={`${mutedClass} max-w-[720px] animate-fade-in-up`}
+          className="max-w-[720px] font-body text-[17px] leading-[1.6] text-[#3f4d5f] animate-fade-in-up"
           style={{ animationDelay: '80ms' }}
         >
           Thanks for being here and building with me ^_^
@@ -43,8 +43,8 @@ export const WorkPage = () => {
                   key={filter}
                   className={`rounded-sm border px-2.5 py-1 font-geist text-[11px] font-medium uppercase tracking-[0.08em] transition-colors duration-200 ${
                     isActive
-                      ? 'border-[rgb(143,128,173)] bg-[rgba(143,128,173,0.12)] text-[rgb(116,99,150)]'
-                      : 'border-border bg-white text-muted hover:border-[rgba(143,128,173,0.45)] hover:text-[rgb(116,99,150)]'
+                      ? 'border-[#d8d6ea] bg-[#f4f2fa] text-[#65638f]'
+                      : 'border-border bg-white text-muted hover:border-[#d8d6ea] hover:text-[#65638f]'
                   }`}
                   type="button"
                   aria-pressed={isActive}
@@ -58,7 +58,7 @@ export const WorkPage = () => {
         </div>
         <div
           key={activeFilter}
-          className="grid w-full grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-5 animate-fade-in-up"
+          className="grid w-full grid-cols-1 gap-5 animate-fade-in-up sm:grid-cols-2"
         >
           {visibleProjects.map((project) => (
             <ProjectCard key={project.id} project={project} animate={false} />

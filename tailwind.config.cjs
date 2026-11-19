@@ -5,9 +5,10 @@ module.exports = {
     extend: {
       colors: {
         primary: '#0f1120',
+        title: '#23395d',
         muted: '#5d5f75',
-        accent: '#6d63ce',
-        'accent-soft': 'rgba(109, 99, 206, 0.12)',
+        accent: '#65638f',
+        'accent-soft': '#f4f2fa',
         border: '#e7e8f2',
         surface: '#f6f7fb',
       },
@@ -23,8 +24,8 @@ module.exports = {
       boxShadow: {
         elevated: '0 22px 64px rgba(15, 17, 32, 0.12)',
         soft: '0 14px 32px rgba(15, 17, 32, 0.08)',
-        button: '0 8px 24px rgba(109, 99, 206, 0.22)',
-        'button-hover': '0 12px 28px rgba(109, 99, 206, 0.28)',
+        button: '0 8px 24px rgba(101, 99, 143, 0.22)',
+        'button-hover': '0 12px 28px rgba(101, 99, 143, 0.28)',
       },
       keyframes: {
         'fade-in-up': {

@@ -2,7 +2,7 @@ import { mutedClass } from '../utils/constants'
 
 export const ContactSection = () => (
   <section className="flex flex-col gap-6" id="contact">
-    <div className="grid grid-cols-1 items-center gap-3 rounded-[6px] border border-[rgba(116,99,150,0.12)] bg-[#f9f9f9] p-4 sm:grid-cols-[160px,1fr] sm:p-5">
+    <div className="grid grid-cols-1 items-center gap-3 rounded-[6px] border border-[#d8d6ea] bg-[#f7fafc] p-4 sm:grid-cols-[160px,1fr] sm:p-5">
       <div className="overflow-hidden rounded-[6px] border border-border">
         <img
           className="h-[140px] w-full object-cover sm:h-[150px]"

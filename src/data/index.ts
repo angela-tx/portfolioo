@@ -74,8 +74,8 @@ export const allProjects: FeaturedProject[] = [
 
 export const experiences: ExperienceItem[] = [
   {
-    role: 'Project Manager Intern @ SAP',
-    dates: 'May 2026 – Present',
+    role: 'Technical Project Manager Intern @ SAP',
+    dates: 'May 2026 – Aug 2026',
     detail: '🌐 Product localization',
     link: 'https://translation.sap.com/index.html',
   },

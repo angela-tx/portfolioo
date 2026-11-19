@@ -36,8 +36,8 @@ export const EmailCopyButton = () => {
 
   return (
     <button
-      className={`inline-flex h-[33px] items-center overflow-hidden rounded-[6px] border-0 bg-transparent px-2 text-primary transition-[max-width,color,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-[rgb(143,128,173)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(116,99,150,0.2)] [&_svg]:shrink-0 ${
-        emailCopied ? 'max-w-[340px] bg-[#f7f5fb] text-[rgb(143,128,173)]' : 'max-w-[33px]'
+      className={`inline-flex h-[33px] items-center overflow-hidden rounded-[6px] border-0 bg-transparent px-2 text-primary transition-[max-width,color,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-[#65638f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d8d6ea] [&_svg]:shrink-0 ${
+        emailCopied ? 'max-w-[340px] bg-[#f4f2fa] text-[#65638f]' : 'max-w-[33px]'
       }`}
       type="button"
       aria-label="Copy email address"

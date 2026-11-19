@@ -16,7 +16,7 @@
   h2,
   h3,
   h4 {
-    @apply font-display font-normal tracking-[-0.02em] text-primary;
+    @apply font-display font-normal tracking-[-0.02em] text-title;
   }
 
   p {
@@ -28,7 +28,7 @@
   }
 
   a:hover {
-    color: #5b50b5;
+    color: #65638f;
   }
 
   * {
@@ -37,7 +37,26 @@
 }
 
 ::selection {
-  background: rgba(109, 99, 206, 0.12);
+  background: #d8d6ea;
+}
+
+.site-container {
+  width: min(880px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .site-container {
+    width: min(880px, calc(100% - 64px));
+  }
+}
+
+.home-divider-blue {
+  background: #d8d6ea;
+}
+
+.home-divider-lavender {
+  background: #d8d6ea;
 }
 
 .animate-page {

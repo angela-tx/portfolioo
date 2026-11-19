@@ -53,14 +53,14 @@ export const Layout = () => {
   return (
   <div className="min-h-screen bg-white text-primary">
     <header className={`sticky top-0 z-10 bg-white/95 backdrop-blur-md transition-transform duration-500 ease-out ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <div className="mx-auto flex w-[min(800px,calc(100%-160px))] flex-col items-start justify-between gap-4 py-[14px] lg:flex-row lg:items-center">
+      <div className="site-container flex flex-col items-start justify-between gap-4 py-[14px] lg:flex-row lg:items-center">
         <div className="inline-flex items-center">
           <Link className="inline-flex items-center text-accent no-underline" to="/" aria-label="Back to home">
             <span className="text-[32px] leading-none mb-1">🪽</span>
           </Link>
           <span 
             className="font-geist text-[18px] font-normal tracking-[-0.02em] leading-none text-start no-underline ml-5 mr-2" 
-            style={{ color: 'rgba(97, 90, 117, 0.3)' }}
+            style={{ color: 'rgba(101, 99, 143, 0.3)' }}
             aria-hidden="true"
           >
             |
@@ -73,8 +73,8 @@ export const Layout = () => {
                 key={item.to}
                 className={`rounded-[6px] px-2 py-2 text-[15px] font-normal tracking-[-0.01em] no-underline ${
                   pathname.startsWith(item.to)
-                    ? 'text-[rgb(143,128,173)] hover:text-[rgb(143,128,173)]'
-                    : 'text-primary hover:text-[rgb(143,128,173)]'
+                    ? 'text-[#65638f] hover:text-[#65638f]'
+                    : 'text-primary hover:text-[#65638f]'
                 }`}
                 aria-current={pathname.startsWith(item.to) ? 'page' : undefined}
                 to={item.to}
@@ -86,7 +86,7 @@ export const Layout = () => {
         </div>
         <div className="inline-flex items-center gap-0">
           <a
-            className="inline-flex rounded-[6px] p-2 text-primary hover:text-[rgb(143,128,173)]"
+            className="inline-flex rounded-[6px] p-2 text-primary hover:text-[#65638f]"
             href="https://www.linkedin.com/in/angelatxhuang/"
             aria-label="LinkedIn"
             target="_blank"
@@ -99,7 +99,7 @@ export const Layout = () => {
       </div>
     </header>
 
-    <main className="mx-auto flex w-[min(800px,calc(100%-160px))] flex-col gap-[88px] pt-16">
+    <main className="site-container flex flex-col gap-[88px] pt-16">
       <div key={pathname} className="animate-page">
         <Outlet />
       </div>

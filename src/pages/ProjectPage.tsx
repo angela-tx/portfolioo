@@ -37,7 +37,7 @@ export const ProjectPage = () => {
   const isBlueprint = story.id === 'blueprint'
   const heroWrapperClass = isBlueprint
     ? 'overflow-hidden rounded-[6px]'
-    : 'overflow-hidden rounded-[6px] border border-border bg-white shadow-soft'
+    : 'overflow-hidden rounded-[6px] border border-[#d8d6ea] bg-white shadow-soft'
 
   const handleVideoToggle = () => {
     if (!videoRef.current) return
@@ -124,11 +124,11 @@ export const ProjectPage = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <h1 className="max-w-[920px] text-[clamp(38px,5vw,68px)] leading-[1.05] text-primary">{story.headline}</h1>
+          <h1 className="max-w-[920px] text-[clamp(38px,5vw,68px)] leading-[1.05] text-title">{story.headline}</h1>
           <p className="max-w-[840px] font-body text-[17px] leading-[1.7] text-muted">{story.summary}</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 border-t border-border pt-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 border-t border-[#d8d6ea] pt-6 sm:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-2">
             <span className="font-body text-[11px] uppercase tracking-[0.12em] text-muted">Role</span>
             <span className="font-body text-[16px] text-primary">{story.meta.role}</span>
@@ -232,7 +232,7 @@ export const ProjectPage = () => {
                       aria-label="Seek video"
                     >
                       <div
-                        className="h-full rounded-full bg-[rgb(143,128,173)] transition-[width] duration-150"
+                        className="h-full rounded-full bg-[#65638f] transition-[width] duration-150"
                         style={{ width: `${Math.min(Math.max(progress, 0), 1) * 100}%` }}
                       />
                     </div>

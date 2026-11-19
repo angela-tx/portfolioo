@@ -113,13 +113,13 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
     <div className="flex flex-col gap-3 pt-2 -mt-8" key="journey-block">
       <span className="text-[11px] uppercase tracking-[0.12em] text-muted">user journey</span>
       <div className="relative w-full py-4">
-        <div className="absolute inset-x-0 top-[27px] h-[1px] bg-[rgba(12,10,29,0.08)]" aria-hidden="true" />
+        <div className="absolute inset-x-0 top-[27px] h-[1px] bg-[#d8d6ea]" aria-hidden="true" />
         <div className="relative grid w-full grid-cols-1 gap-5 sm:grid-cols-5">
           {steps.map((step) => (
             <div key={step} className="flex flex-col items-center gap-2 text-center">
-              <span className="relative inline-flex h-[18px] w-[18px] items-center justify-center rounded-full border border-[rgba(143,128,173,0.38)] bg-white shadow-[0_4px_12px_rgba(12,10,29,0.08)]">
-                <span className="absolute inset-x-[calc(100%+4px)] top-1/2 hidden h-[1px] -translate-y-1/2 bg-[rgba(143,128,173,0.2)] sm:block" aria-hidden="true" />
-                <span className="block h-[10px] w-[10px] rounded-full bg-[rgb(143,128,173)]" />
+              <span className="relative inline-flex h-[18px] w-[18px] items-center justify-center bg-white text-[16px] leading-none text-[#65638f]">
+                <span className="absolute inset-x-[calc(100%+4px)] top-1/2 hidden h-[1px] -translate-y-1/2 bg-[#d8d6ea] sm:block" aria-hidden="true" />
+                <span aria-hidden="true">✦</span>
               </span>
               <span className="text-[12px] font-medium tracking-[-0.01em] text-primary">{step}</span>
             </div>
@@ -143,7 +143,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
             if (isWorkInProgressBlock) {
               items.push(
                 <div key={block.title} className="flex flex-col gap-2 rounded-[10px] bg-white/90">
-                  {block.text ? <p className={`${mutedClass} text-[16px] leading-[1.6]`}>{block.text}</p> : null}
+                  {block.text ? <p className={`${mutedClass} max-w-[760px] text-[16px] leading-[1.6]`}>{block.text}</p> : null}
                 </div>,
               )
               return items
@@ -165,10 +165,10 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 items.push(
                   <div className="flex flex-col gap-2 pt-4" key="growth-strategy">
                     <span className="text-[11px] uppercase tracking-[0.12em] text-muted">growth strategy</span>
-                    <h3 className='font-["Instrument Sans","Inter",system-ui,sans-serif] text-[22px] leading-[1.25] text-primary'>
+                    <h3 className='font-["Instrument Sans","Inter",system-ui,sans-serif] text-[22px] leading-[1.25] text-title'>
                       Rather than mass user acquisition, we focus on getting people you already know onto the platform.
                     </h3>
-                    <p className={`${mutedClass} text-[15px] leading-[1.65]`}>
+                    <p className={`${mutedClass} max-w-[760px] text-[15px] leading-[1.65]`}>
                       Our North Star Metric is the % of users who successfully connect with at least one person at an event. This is similar to other social apps, where there's a cold start risk of no friends on the platform leading to no value. To support this, we would focus on a "group invite" strategy, where a shareable event link lets someone add their friends so users immediately see people they know in attendance.
                     </p>
                   </div>,
@@ -179,7 +179,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
             if (isBananaStyle && (block.title.startsWith('After meeting with our client') || block.title.startsWith('Placeholder client context'))) {
               // Do not render label; render as standard text/bullets block
               const bananaBullets = (
-                <ul className="grid list-disc gap-2 pl-5">
+                <ul className="grid max-w-[760px] list-disc gap-2 pl-5">
                   {block.bullets?.map((item) => (
                     <li key={item} className="font-body text-[15px] text-primary">
                       {item}
@@ -191,7 +191,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
               items.push(
                 <div key={block.title} className="flex flex-col gap-2 rounded-[10px] bg-white/90">
                   <span className="text-[11px] uppercase tracking-[0.12em] text-muted">problem</span>
-                  <h3 className='text-[22px] leading-[1.25] text-primary font-["Instrument Sans","Inter",system-ui,sans-serif]'>
+                  <h3 className='text-[22px] leading-[1.25] text-title font-["Instrument Sans","Inter",system-ui,sans-serif]'>
                     {block.title}
                   </h3>
                   {bananaBullets}
@@ -215,20 +215,20 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                   <h3
                     className={
                       isSafespace || isBlueprint
-                        ? 'text-[22px] leading-[1.25] text-primary'
-                        : 'text-[22px] leading-[1.25] text-primary font-["Instrument Sans","Inter",system-ui,sans-serif]'
+                        ? 'text-[22px] leading-[1.25] text-title'
+                        : 'text-[22px] leading-[1.25] text-title font-["Instrument Sans","Inter",system-ui,sans-serif]'
                     }
                   >
                     {block.title}
                   </h3>
                 ) : null}
                 {block.quote ? (
-                  <blockquote className="relative pl-5 font-body italic text-primary">
-                    <span className="absolute left-0 top-0 h-full w-[3px] rounded-full bg-[#e7e8f2]" aria-hidden="true" />
+                  <blockquote className="relative max-w-[760px] pl-5 font-body italic text-primary">
+                    <span className="absolute left-0 top-0 h-full w-[3px] rounded-full bg-[#d8d6ea]" aria-hidden="true" />
                     {block.quote}
                   </blockquote>
                 ) : null}
-                {block.text ? <p className={`${mutedClass} text-[16px] leading-[1.6]`}>{block.text}</p> : null}
+                {block.text ? <p className={`${mutedClass} max-w-[760px] text-[16px] leading-[1.6]`}>{block.text}</p> : null}
                 {block.inlineVisual ? (
                   <figure className={`mt-3 overflow-hidden ${isBlueprintMC ? 'rounded-b-[6px] rounded-t-[6px]' : 'rounded-[12px]'}`}>
                     <img
@@ -244,7 +244,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                   </figure>
                 ) : null}
                 {block.bullets ? (
-                  <ul className="grid list-disc gap-2 pl-5">
+                  <ul className="grid max-w-[760px] list-disc gap-2 pl-5">
                     {block.bullets.map((item) => (
                       <li key={item} className="font-body text-[15px] text-primary">
                         {item}
@@ -264,16 +264,16 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 className="grid grid-cols-1 gap-6 rounded-[6px] border border-border bg-white px-6 py-7 shadow-soft md:grid-cols-12"
               >
                 <div className="md:col-span-4 lg:col-span-3">
-                  <h3 className="text-[22px] leading-[1.2] text-primary">{block.title}</h3>
+                  <h3 className="text-[22px] leading-[1.2] text-title">{block.title}</h3>
                 </div>
                 <div className="md:col-span-8 lg:col-span-8 md:col-start-5 lg:col-start-5 flex flex-col gap-4">
                   {block.quote ? (
-                    <blockquote className="relative pl-5 font-body italic text-primary">
-                      <span className="absolute left-0 top-0 h-full w-[3px] rounded-full bg-[#e7e8f2]" aria-hidden="true" />
+                    <blockquote className="relative max-w-[760px] pl-5 font-body italic text-primary">
+                      <span className="absolute left-0 top-0 h-full w-[3px] rounded-full bg-[#d8d6ea]" aria-hidden="true" />
                       {block.quote}
                     </blockquote>
                   ) : null}
-                  {block.text ? <p className={`${mutedClass} text-[16px] leading-[1.7]`}>{block.text}</p> : null}
+                  {block.text ? <p className={`${mutedClass} max-w-[760px] text-[16px] leading-[1.7]`}>{block.text}</p> : null}
                   {block.bullets ? (
                     <ul className="grid list-disc gap-2 pl-5">
                       {block.bullets.map((item) => (
