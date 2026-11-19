@@ -37,20 +37,25 @@ export const EmailCopyButton = () => {
   return (
     <button
       className={`inline-flex h-[33px] items-center overflow-hidden rounded-[6px] border-0 bg-transparent px-2 text-primary transition-[max-width,color,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-[#65638f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d8d6ea] [&_svg]:shrink-0 ${
-        emailCopied ? 'max-w-[340px] bg-[#f4f2fa] text-primary' : 'max-w-[33px]'
+        emailCopied ? 'max-w-[64px] bg-[#f4f2fa] text-primary md:max-w-[340px]' : 'max-w-[33px]'
       }`}
       type="button"
-      aria-label="Copy email address"
+      aria-label={emailCopied ? 'Email copied' : 'Copy email address'}
       aria-live="polite"
       onClick={handleCopyEmail}
     >
-      <IconMail />
+      <span className={emailCopied ? 'hidden md:inline-flex' : 'inline-flex'}>
+        <IconMail />
+      </span>
       <span
-        className={`whitespace-nowrap pl-2 font-body text-[13px] font-medium tracking-[0.01em] transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          emailCopied ? 'translate-x-0 opacity-100' : 'translate-x-1 opacity-0'
+        className={`pointer-events-none whitespace-nowrap font-body text-[12px] font-medium tracking-[0.01em] transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:pl-2 md:text-[13px] ${
+          emailCopied
+            ? 'translate-x-0 opacity-100'
+            : 'translate-x-1 opacity-0'
         }`}
       >
-        copied to clipboard: {emailAddress}
+        <span className="md:hidden">copied!</span>
+        <span className="hidden md:inline">copied to clipboard: {emailAddress}</span>
       </span>
     </button>
   )

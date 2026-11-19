@@ -56,10 +56,10 @@ export const Layout = () => {
       <div className="site-container flex items-center justify-between gap-1 py-[14px]">
         <div className="inline-flex min-w-0 items-center">
           <Link className="inline-flex items-center text-accent no-underline" to="/" aria-label="Back to home">
-            <span className="text-[32px] leading-none mb-1">🪽</span>
+            <span className="mb-1 text-[32px] leading-none max-[340px]:text-[28px]">🪽</span>
           </Link>
           <span 
-            className="ml-2 mr-1 font-geist text-[18px] font-normal leading-none tracking-[-0.02em] text-start no-underline sm:ml-5 sm:mr-2"
+            className="ml-2 mr-1 font-geist text-[18px] font-normal leading-none tracking-[-0.02em] text-start no-underline max-[340px]:ml-1 max-[340px]:mr-0 max-[340px]:text-[16px] sm:ml-5 sm:mr-2"
             style={{ color: 'rgba(101, 99, 143, 0.3)' }}
             aria-hidden="true"
           >
@@ -71,7 +71,7 @@ export const Layout = () => {
               // Treat nested routes (e.g., /work/slug) as active for their parent
               <Link
                 key={item.to}
-                className={`rounded-[6px] px-2 py-2 text-[15px] font-normal tracking-[-0.01em] no-underline ${
+                className={`rounded-[6px] px-2 py-2 text-[15px] font-normal tracking-[-0.01em] no-underline max-[340px]:px-1 max-[340px]:text-[14px] ${
                   pathname.startsWith(item.to)
                     ? 'text-primary hover:text-[#65638f]'
                     : 'text-primary hover:text-[#65638f]'

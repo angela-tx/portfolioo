@@ -56,7 +56,7 @@ export const AboutPage = () => {
             about me
           </h1>
           <p
-            className="w-full font-body text-[15px] leading-[1.6] text-primary animate-fade-in-up sm:text-[17px]"
+            className="w-full font-body text-[14px] leading-[1.6] text-primary animate-fade-in-up sm:text-[17px]"
             style={{ animationDelay: '80ms' }}
           >
             I think gaining perspective from life outside of work makes me more ambitious and a better thinker. I value balance through dance and building good community. Here are some highlights:

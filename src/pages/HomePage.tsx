@@ -18,20 +18,13 @@ export const HomePage = () => (
           >
             Angela Huang
           </h1>
-          <div className="mt-5 flex flex-col gap-4 text-[15px] font-geist tracking-[-0.02em] leading-[1.6] sm:text-[17px]">
+          <div className="mt-5 flex flex-col gap-4 text-[14px] font-geist tracking-[-0.02em] leading-[1.6] sm:text-[17px]">
             <p className="text-primary animate-fade-in-up" style={{ animationDelay: '120ms' }}>
               I’m a storyteller who loves turning ideas into products people enjoy.{' '}
               <span className="md:block">Outside of work, you can find me on a mountain or in the dance studio ٩(ᵔᴗᵔ )و</span>
             </p>
             <p className="text-primary animate-fade-in-up" style={{ animationDelay: '160ms' }}>
-              <a
-                className="font-body text-primary hover:text-[#65638f] italic underline-offset-4"
-                href="https://globalnews.ca/video/11648924/ubc-biztechs-2026-blueprint-conference"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Check out my interview on Global News!
-              </a>
+              ✩ ₊˚ 📖 Marketing + Business Technology Management @ UBC
             </p>
           </div>
         </div>
