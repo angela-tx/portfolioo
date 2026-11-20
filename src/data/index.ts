@@ -105,7 +105,7 @@ export const allProjects: FeaturedProject[] = [
 
 export const leadership: ExperienceItem[] = [
   {
-    role: 'Product Manager @ UBC Marketing Association',
+    role: 'Product Manager | Previously Studios Consultant @ UBC Marketing Association',
     dates: '2025 - Present',
     detail: '',
   },
