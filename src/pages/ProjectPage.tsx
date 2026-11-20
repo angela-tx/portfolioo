@@ -166,7 +166,7 @@ export const ProjectPage = () => {
           </div>
 
           <div className="border-t border-[#d8d6ea] pt-6">
-            <p className="max-w-[840px] font-body text-[17px] leading-[1.7] text-primary">{story.summary}</p>
+            <p className="font-body text-[17px] leading-[1.7] text-primary">{story.summary}</p>
           </div>
         </div>
       </div>

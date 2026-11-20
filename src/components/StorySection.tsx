@@ -143,7 +143,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
             if (isWorkInProgressBlock) {
               items.push(
                 <div key={block.title} className="flex flex-col gap-2 rounded-[10px] bg-white/90">
-                  {block.text ? <p className={`${mutedClass} max-w-[760px] text-[16px] leading-[1.6]`}>{block.text}</p> : null}
+                  {block.text ? <p className={`${mutedClass} text-[16px] leading-[1.6]`}>{block.text}</p> : null}
                 </div>,
               )
               return items
@@ -168,7 +168,7 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                     <h3 className='font-["Instrument Sans","Inter",system-ui,sans-serif] text-[22px] leading-[1.25] text-primary'>
                       Rather than mass user acquisition, we focus on getting people you already know onto the platform.
                     </h3>
-                    <p className={`${mutedClass} max-w-[760px] text-[15px] leading-[1.65]`}>
+                    <p className={`${mutedClass} text-[15px] leading-[1.65]`}>
                       Our North Star Metric is the % of users who successfully connect with at least one person at an event. This is similar to other social apps, where there's a cold start risk of no friends on the platform leading to no value. To support this, we would focus on a "group invite" strategy, where a shareable event link lets someone add their friends so users immediately see people they know in attendance.
                     </p>
                   </div>,
@@ -223,12 +223,16 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                   </h3>
                 ) : null}
                 {block.quote ? (
-                  <blockquote className="relative max-w-[760px] pl-5 font-body italic text-primary">
+                  <blockquote className="relative pl-5 font-body italic text-primary">
                     <span className="absolute left-0 top-0 h-full w-[3px] rounded-full bg-[#d8d6ea]" aria-hidden="true" />
                     {block.quote}
                   </blockquote>
                 ) : null}
-                {block.text ? <p className={`${mutedClass} max-w-[760px] text-[16px] leading-[1.6]`}>{block.text}</p> : null}
+                {block.text ? (
+                  <p className={`${mutedClass} text-[16px] leading-[1.6]`}>
+                    {block.text}
+                  </p>
+                ) : null}
                 {block.inlineVisual ? (
                   <figure className={`mt-3 overflow-hidden ${isBlueprintMC ? 'rounded-b-[6px] rounded-t-[6px]' : 'rounded-[12px]'}`}>
                     <img
@@ -268,12 +272,12 @@ export const StorySection = ({ story }: { story: ProjectStory }) => {
                 </div>
                 <div className="md:col-span-8 lg:col-span-8 md:col-start-5 lg:col-start-5 flex flex-col gap-4">
                   {block.quote ? (
-                    <blockquote className="relative max-w-[760px] pl-5 font-body italic text-primary">
+                    <blockquote className="relative pl-5 font-body italic text-primary">
                       <span className="absolute left-0 top-0 h-full w-[3px] rounded-full bg-[#d8d6ea]" aria-hidden="true" />
                       {block.quote}
                     </blockquote>
                   ) : null}
-                  {block.text ? <p className={`${mutedClass} max-w-[760px] text-[16px] leading-[1.7]`}>{block.text}</p> : null}
+                  {block.text ? <p className={`${mutedClass} text-[16px] leading-[1.7]`}>{block.text}</p> : null}
                   {block.bullets ? (
                     <ul className="grid list-disc gap-2 pl-5">
                       {block.bullets.map((item) => (
