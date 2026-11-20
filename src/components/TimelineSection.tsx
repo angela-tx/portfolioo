@@ -47,7 +47,7 @@ export const TimelineSection = ({
             style={{ animationDelay: `${150 + index * 40}ms` }}
           >
             <span
-              className={`absolute inset-y-1 right-0 rounded-[6px] bg-transparent transition-colors duration-200 md:group-hover:bg-[#f4f2fa] md:group-focus-within:bg-[#f4f2fa] ${showTimeline ? 'left-6' : 'left-0'}`}
+              className={`absolute inset-y-1 right-0 rounded-[6px] bg-transparent transition-colors duration-150 md:group-hover:bg-[#f4f2fa] md:group-focus-within:bg-[#f4f2fa] ${showTimeline ? 'left-6' : 'left-0'}`}
               aria-hidden="true"
             />
             {showTimeline ? (

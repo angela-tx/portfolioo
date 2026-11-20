@@ -24,7 +24,7 @@ export const HomePage = () => (
               <span className="md:block">Outside of work, you can find me on a mountain or in the dance studio ٩(ᵔᴗᵔ )و</span>
             </p>
             <p className="text-primary animate-fade-in-up" style={{ animationDelay: '160ms' }}>
-              ✩ ₊˚ 📖 Marketing + Business Technology Management @ UBC
+              📖 Marketing + Business Technology Management @ UBC
             </p>
           </div>
         </div>
